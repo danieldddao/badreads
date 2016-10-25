@@ -1,2 +1,5 @@
-class Book < ApplicationRecord
+class Book < ApplicationRecord::Base
+    has_many :reviews
+    has_many :users, :through => :reviews
+    
 end

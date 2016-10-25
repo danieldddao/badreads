@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021145944) do
+ActiveRecord::Schema.define(version: 20161025130418) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -21,9 +21,30 @@ ActiveRecord::Schema.define(version: 20161021145944) do
     t.integer  "publication_year", limit: 4
     t.string   "category"
     t.string   "edition"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "search_count",                default: 0
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "star",    limit: 5
+    t.text    "comment"
+    t.integer "book_id"
+    t.integer "user_id"
+    t.index ["book_id"], name: "index_reviews_on_book_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password"
+    t.string   "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
