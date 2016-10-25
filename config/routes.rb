@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root :to => redirect('/books')
+
   resources :books do
     resources :reviews
   end
