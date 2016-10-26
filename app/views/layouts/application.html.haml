@@ -8,10 +8,20 @@
 
   %body
     %h1.title BadReads!
+    
+    -if !@current_user
+      %table#signupsignin
+        %tbody
+          %tr
+            %td= button_to 'Sign In', login_path, :class => "signin", :method => :get
+            %td= button_to 'Sign Up', new_user_path, :class => "signup", :method => :get
+    -else
+      Welcome "#{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})"
+      = button_to 'Log Out', logout_path, :class => 'signout', :method => :delete
+
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
-
       = yield

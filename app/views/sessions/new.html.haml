@@ -1,0 +1,17 @@
+%h1{ :style => "text-align: center;" } Sign In
+
+%div{ :style => "text-align: center;" }
+  = form_tag login_create_path do
+
+    = label :user, :email, "Email"
+    = text_field :user, 'email', :placeholder => "Enter email"
+
+    = label :user, :password, 'Password'
+    = text_field :user, 'password', :placeholder => "Enter password"
+
+    %br 
+    %br
+    = submit_tag 'Login to my account'
+  
+%br
+= link_to 'Return to Homepage', books_path

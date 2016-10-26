@@ -1,0 +1,28 @@
+%h1{ :style => "text-align: center;" } Sign Up
+
+%div{ :style => "text-align: center;" }
+  = form_tag users_path do
+
+    = label :user, :first_name, 'First Name'
+    = text_field :user, 'first_name', :size => '30', :placeholder => "Enter your First Name"
+  
+    = label :user, :last_name, 'Last Name'
+    = text_field :user, 'last_name', :size => '30', :placeholder => "Enter your Last Name"
+  
+    = label :user, :email, 'Email'
+    = text_field :user, 'email', :size => '30', :placeholder => "Enter your Email Address"
+  
+    = label :user, :password, 'Password'
+    = text_field :user, 'password', :size => '30', :placeholder => "Enter your Password"
+  
+    = label :user, :password_confirmation, 'Password Confirmation'
+    = text_field :user, 'password_confirmation', :size => '30', :placeholder => "Re-enter your Password"
+  
+    = label :user, :role, 'Role'
+    = select :user, :role, ['User','Staff']
+    %br
+    %br
+    = submit_tag 'Create my account'
+
+%br
+= link_to 'Return to Homepage', books_path

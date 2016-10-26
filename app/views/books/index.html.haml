@@ -1,16 +1,28 @@
 %p#notice= notice
-= form_tag books_path, :method => :post do
-  = text_field_tag :search_terms, nil, :size => "50", :placeholder => "Search a book by isbn, title, author,...", :id => 'search_box'
-  = submit_tag 'Search', :id => 'search_button'
-%table#books
-  %thead
-    %tr
-      %th Top 10 Searched Books
-      %th Top 10 Reviewed Books
-  %tbody
-    - @books.each do |book|
+%div{ :style => "text-align: center;" }
+  = form_tag books_search_book_path, :method => :post do
+    = text_field_tag :search_terms, nil, :size => 35, :class => "search_box", :placeholder => "Search by isbn, title, author,...", :id => 'search_box'
+    = submit_tag 'Search', :class => "search_button", :id => 'search_button'
+
+%br
+%div{ :style => "display: inline-block;" }
+  %table#books
+    %thead
       %tr
-        %td= link_to "'#{book.title}' by #{book.author}", book
-        %td= link_to "'#{book.title}' by #{book.author}", book
-// %br/
+        %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Searched Books
+    %tbody
+      - @top_searched_books.each do |book|
+        %tr
+          %td= link_to "'#{book.title}' by #{book.author}", book
+
+%div{ :style => "float: left;" }
+  %table#books
+    %thead
+      %tr
+        %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Reviewed Books
+    %tbody
+      - @top_reviewed_books.each do |book|
+        %tr
+          %td= link_to "'#{book.title}' by #{book.author}", book
+// %br
 // = link_to 'New Book', new_book_path
