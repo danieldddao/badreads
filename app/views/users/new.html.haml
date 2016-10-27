@@ -13,16 +13,28 @@
     = text_field :user, 'email', :size => '30', :placeholder => "Enter your Email Address"
   
     = label :user, :password, 'Password'
-    = text_field :user, 'password', :size => '30', :placeholder => "Enter your Password"
-  
+    = password_field :user, 'password', :size => '30', :placeholder => "Enter your Password"
+    
     = label :user, :password_confirmation, 'Password Confirmation'
-    = text_field :user, 'password_confirmation', :size => '30', :placeholder => "Re-enter your Password"
-  
+    = password_field :user, 'password_confirmation', :size => '30', :placeholder => "Re-enter your Password"
+    
     = label :user, :role, 'Role'
-    = select :user, :role, ['User','Staff']
+    = select :user, :role, ['User','Staff'], :onChange => "findselected()"
+    
+    = text_field :user, 'staff_code', :id => "staffCodeField", :placeholder => "Enter Your Staff Code"
+
     %br
     %br
     = submit_tag 'Create my account'
 
 %br
 = link_to 'Return to Homepage', books_path
+
+:javascript
+  findselected()
+    var selMenu = document.getElementById('user_role');
+    var txtField = document.getElementById('staffCodeField');
+    if(selMenu.value == 'Staff') 
+        txtField.disabled = false
+    else
+        txtField.disabled = true

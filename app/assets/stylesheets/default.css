@@ -60,6 +60,12 @@ table#books tr {
   margin: 1em 0;
   padding: 4px;
 }
+#notice.message {
+  color: maroon;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
 form label {
   display: block;
   line-height: 25px;

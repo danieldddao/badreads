@@ -20,8 +20,11 @@
       = button_to 'Log Out', logout_path, :class => 'signout', :method => :delete
 
     #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
+      %div{ :style => "text-align: center;" }
+        - if flash[:notice]
+          #notice.message= flash[:notice]
+          %br
+        - elsif flash[:warning]
+          #warning.message= flash[:warning]
+          %br
       = yield
