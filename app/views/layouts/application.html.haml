@@ -5,10 +5,8 @@
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-
   %body
     %h1.title BadReads!
-    
     -if !@current_user
       %table#signupsignin
         %tbody
@@ -16,13 +14,12 @@
             %td= button_to 'Sign In', login_path, :class => "signin", :method => :get
             %td= button_to 'Sign Up', new_user_path, :class => "signup", :method => :get
     -else
-      Welcome "#{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})"
+      Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
       %table
         %tbody
           %tr
             %td= button_to 'Log Out', logout_path, :class => "signout", :method => :delete
-            %td= button_to 'View Profile', logout_path, :class => "profile", :method => :delete
-
+            %td= button_to 'View Profile', user_path(@current_user), :class => "profile", :method => :get
     #main
       %div{ :style => "text-align: center;" }
         - if flash[:notice]
