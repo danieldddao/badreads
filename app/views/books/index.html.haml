@@ -1,8 +1,7 @@
-%p#notice= notice
 %div{ :style => "text-align: center;" }
   = form_tag books_search_book_path, :method => :post do
     = text_field_tag :search_terms, nil, :size => 35, :class => "search_box", :placeholder => "Search by isbn, title, author,...", :id => 'search_box'
-    = submit_tag 'Search', :class => "search_button", :id => 'search_button'
+    = submit_tag 'Search', :class => "button", :id => 'search_button'
 
 %br
 %div{ :style => "display: inline-block;" }

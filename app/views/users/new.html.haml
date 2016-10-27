@@ -1,6 +1,12 @@
 %h1{ :style => "text-align: center;" } Sign Up
-
+      
 %div{ :style => "text-align: center;" }
+  -unless @user ==nil
+    -if @user.errors.any?
+      %ul
+      -@user.errors.full_messages.each do |msg|
+        %li{ :style => "color: maroon;" } #{msg}
+  %br
   = form_tag users_path do
 
     = label :user, :first_name, 'First Name'
@@ -18,23 +24,22 @@
     = label :user, :password_confirmation, 'Password Confirmation'
     = password_field :user, 'password_confirmation', :size => '30', :placeholder => "Re-enter your Password"
     
-    = label :user, :role, 'Role'
-    = select :user, :role, ['User','Staff'], :onChange => "findselected()"
+    = label :user, :position, 'Position'
+    = select :user, :position, ['User','Staff', 'Admin']
     
-    = text_field :user, 'staff_code', :id => "staffCodeField", :placeholder => "Enter Your Staff Code"
+    = text_field nil, 'position_code', :placeholder => "Enter your Code"
 
     %br
     %br
-    = submit_tag 'Create my account'
+    = submit_tag 'Create my account', :class => "submit_button"
 
 %br
 = link_to 'Return to Homepage', books_path
 
-:javascript
-  findselected()
-    var selMenu = document.getElementById('user_role');
-    var txtField = document.getElementById('staffCodeField');
-    if(selMenu.value == 'Staff') 
-        txtField.disabled = false
-    else
-        txtField.disabled = true
+//   findselected()
+//     var selMenu = document.getElementById('user_role');
+//     var txtField = document.getElementById('staffCodeField');
+//     if(selMenu.value == 'Staff') 
+//         txtField.disabled = false
+//     else
+//         txtField.disabled = true

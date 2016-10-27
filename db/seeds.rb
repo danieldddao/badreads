@@ -17,4 +17,6 @@ books =  [
 
 books.each do |book|
   Book.create!(book)
-end
+end 
+
+Role.create!(:position => "Staff", :position_code => "123")

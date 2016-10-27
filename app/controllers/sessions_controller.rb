@@ -1,34 +1,25 @@
 class SessionsController < ApplicationController
-
-  def session_params
-    params.require(:user).permit(:user_id, :email)
-  end
   
   def new
   end
 
   def create
-    if session_params[:user_id] == ""
-      flash[:warning] = "Sorry, user-id cannot be empty."
-      redirect_to login_path
-    elsif session_params[:email] == ""
-      flash[:warning] = "Sorry, email cannot be empty."
-      redirect_to login_path
-    elsif !User.exists?(user_id: session_params[:user_id], email: session_params[:email])
-      flash[:warning] = "Sorry, invalid user-id/email."
-      redirect_to login_path
-    else
-      user = User.where(user_id: session_params[:user_id]).first
+    user = User.find_by_email(params[:session][:email])
+    if user && user.authenticate(params[:session][:password])
+      #sign in and redirect to show page
       session[:session_token] = user.session_token
-      redirect_to movies_path
-    end
+      redirect_to books_path
+    else
+      flash.now[:warning] = 'Invalid email/password combination'
+      render 'new'
+    end  
   end
 
   def destroy
-    @current_user=nil
     session[:session_token] = nil
-    flash[:notice] = "You are logged out"
-    redirect_to movies_path
+    @current_user = nil
+    flash[:notice] = 'You have logged out'
+    redirect_to books_path
   end
 
 end

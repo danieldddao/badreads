@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.text :comment
       t.references 'book'
       t.references 'user'
+      t.timestamps
     end
   end
 end

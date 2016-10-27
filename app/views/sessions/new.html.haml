@@ -3,15 +3,15 @@
 %div{ :style => "text-align: center;" }
   = form_tag login_create_path do
 
-    = label :user, :email, "Email"
-    = text_field :user, 'email', :placeholder => "Enter email"
+    = label :session, :email, "Email"
+    = text_field :session, 'email', :size => '30', :placeholder => "Enter Your Email"
 
-    = label :user, :password, 'Password'
-    = text_field :user, 'password', :placeholder => "Enter password"
+    = label :session, :password, 'Password'
+    = password_field :session, 'password', :size => '30', :placeholder => "Enter Your Password"
 
     %br 
     %br
-    = submit_tag 'Login to my account'
+    = submit_tag 'Login to my account', :class => "submit_button"
   
 %br
 = link_to 'Return to Homepage', books_path

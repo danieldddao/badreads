@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025130418) do
+ActiveRecord::Schema.define(version: 20161027153632) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -28,12 +28,20 @@ ActiveRecord::Schema.define(version: 20161025130418) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "star",    limit: 5
-    t.text    "comment"
-    t.integer "book_id"
-    t.integer "user_id"
+    t.integer  "star",       limit: 5
+    t.text     "comment"
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "position"
+    t.string "position_code"
+    t.index ["position_code"], name: "index_roles_on_position_code", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,7 +49,7 @@ ActiveRecord::Schema.define(version: 20161025130418) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "password_digest"
-    t.string   "role"
+    t.string   "position"
     t.string   "session_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
