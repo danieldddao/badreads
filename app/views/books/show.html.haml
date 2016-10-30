@@ -1,4 +1,17 @@
 %p#notice= notice
+
+%br{ :style => "color: maroon; font-size: 13pt;" }Title: #{@book.title}
+
+%br{ :style => "color: maroon; font-size: 13pt;" }ISBN: #{@book.isbn}
+
+%br{ :style => "color: maroon; font-size: 13pt;" }Author: #{@book.author}
+
+%br{ :style => "color: maroon; font-size: 13pt;" }Publisher: #{@book.publisher}
+
+%br{ :style => "color: maroon; font-size: 13pt;" }Summary: #{@book.summary}
+%br{ :style => "color: maroon; font-size: 13pt;" }Year: #{@book.publication_year}
+%br{ :style => "color: maroon; font-size: 13pt;" }Edition: #{@book.edition}
+%br
 = link_to 'Edit', edit_book_path(@book)
-|
+
 = link_to 'Back', books_path
