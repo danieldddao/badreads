@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_filter :set_current_user
 
   def get_top_10_searched_books
-    [Book.last]
+    @books = Book.order(:search_count).limit(10)
   end
   
   def get_top_10_reviewed_books
