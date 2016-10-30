@@ -62,7 +62,13 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      if Book.where(id: params[:id]).exists?
+        @book = Book.find(params[:id])
+      else
+        redirect_to books_url
+        flash[:notice] = "The Book you are lookling for is not in the Database!"
+      end
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
