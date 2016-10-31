@@ -30,7 +30,7 @@ h1.title {
   width: 98%;
   background: MidnightBlue;
   color: white;
-  border-bottom: 3px solid gold;
+  border-bottom: 3px solid maroon;
   font-size: 3em;
   font-style: normal;
 }
@@ -61,7 +61,7 @@ table#books tr {
   padding: 4px;
 }
 #notice.message {
-  color: MidnightBlue;
+  color: maroon;
   font-weight: bold;
   font-size: 12pt;
 }

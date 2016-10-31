@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_filter :set_current_user
+  before_action :set_current_user
 
   def get_top_10_searched_books
     [Book.last]

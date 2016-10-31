@@ -1,0 +1,10 @@
+#spec/ﬁxtures/roles.yml
+role1 :   
+    id: 1   
+    position: Staff
+    position_code: Staff1 
+    
+role2 :   
+    id: 2 
+    position: Admin
+    position_code: Admin1 

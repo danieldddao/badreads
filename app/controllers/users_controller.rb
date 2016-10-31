@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :set_current_user
+  before_action :set_current_user
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :position)
@@ -9,7 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = @current_user
+    if !current_user?(params[:id])       
+      flash[:warning]= 'Can only show proﬁle of logged-in user'     
+    end  
   end
 
   def new
@@ -22,17 +25,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if user_params[:position] != "User"
-      role = Role.where(:position => user_params[:position], :position_code => params[:code])
+      role = Role.where(:position => user_params[:position], :position_code => params[:position_code])
       if params[:position_code].blank?
-        puts "code is blank"
         @user.errors.add(:position_code, "must not be empty if selected role is '#{user_params[:position]}'")
         render 'new' and return
       elsif role.empty?
-        puts "not found role"
         @user.errors.add(:position_code, "is invalid")
         render 'new' and return
       else
-        puts "found role"
         Role.destroy(role[0].id) #remove the position_code and position
       end
     end

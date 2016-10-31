@@ -1,0 +1,9 @@
+#spec/ﬁxtures/users.yml
+user1 :   
+    id: 1   
+    email: testuser1@gmail.com
+    first_name: testfirstname1 
+    last_name: testlastname1
+    password_digest: 123456
+    position: User
+    session_token: 123456
