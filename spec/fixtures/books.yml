@@ -1,0 +1,10 @@
+#spec/ﬁxtures/books.yml
+book1 :   
+    id: 1   
+    isbn: 1234567890000
+    title: TestBook1 
+    author: TestAuthor1
+    publisher: TestPublisher1
+    publication_year: 2000
+    category: Cat1
+    edition: 1st
