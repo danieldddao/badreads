@@ -10,10 +10,15 @@
       %tr
         %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Searched Books
     %tbody
-      - @top_searched_books.each do |book|
-        %tr
-        = if(book.present?)
-          %td= link_to "'#{book.title}' by #{book.author}", book
+      - if @top_searched_books != nil
+        - if @top_searched_books.count == 1
+          %tr
+            %td= link_to "'#{@top_searched_books[0].title}' by #{@top_searched_books[0].author}", @top_searched_books[0]
+        - else
+          - @top_searched_books.each do |book|
+            %tr
+              - if(book.present?)
+                %td= link_to "'#{book.title}' by #{book.author}", book
 
 %div{ :style => "float: left;" }
   %table#books
@@ -21,9 +26,14 @@
       %tr
         %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Reviewed Books
     %tbody
-      - @top_reviewed_books.each do |book|
-        %tr
-          = if (book.present?)
-            %td= link_to "'#{book.title}' by #{book.author}", book
+      - if @top_reviewed_books != nil
+        - if @top_reviewed_books.count == 1
+          %tr
+            %td= link_to "'#{@top_reviewed_books[0].title}' by #{@top_reviewed_books[0].author}", @top_reviewed_books[0]
+        - else
+          - @top_reviewed_books.each do |book|
+            %tr
+              - if (book.present?)
+                %td= link_to "'#{book.title}' by #{book.author}", book
 // %br
 // = link_to 'New Book', new_book_path
