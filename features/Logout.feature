@@ -2,7 +2,7 @@ Feature: User logs out from his/her account
 
 Background: books has been added to database
   
-  Given the following movies have been added to RottenPotatoes: 
+  Given the following books have been added to Badreads: 
   | isbn                   | title          | author       | publication_year | category | edition | search_count |
   | 9780806539966          | Test Book1     | TestAuthor1  | 1980             | Cat1     | 1       | 10           |
   | 9780806539967          | TestBook2      | TestAuthor2  | 1990             | Cat2     | 1       | 10           |

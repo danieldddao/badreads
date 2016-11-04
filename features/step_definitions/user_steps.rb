@@ -1,4 +1,4 @@
-Given(/^the following Books have been added to Badreads:$/) do |table|
+Given(/^the following books have been added to Badreads:$/) do |table|
    table.hashes.each do |book|
     Book.create!(book)
   end
