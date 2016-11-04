@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
+  
+  match '/new_staff_admin', to: 'roles#new', via: :get
+  match '/new_staff_admin_create', to: 'roles#create', via: :post
 
   post 'books/search_book'
 

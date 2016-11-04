@@ -1,7 +1,6 @@
 !!!
 %html
   %head
-    %title BadReads!
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -11,6 +10,7 @@
       %table#signupsignin
         %tbody
           %tr
+            %td= button_to 'Home', books_path, :class => "home", :method => :get
             %td= button_to 'Sign In', login_path, :class => "signin", :method => :get
             %td= button_to 'Sign Up', new_user_path, :class => "signup", :method => :get
     -else
@@ -18,9 +18,13 @@
       %table
         %tbody
           %tr
-            %td= button_to 'Log Out', logout_path, :class => "signout", :method => :delete
+            %td= button_to 'Home', books_path, :class => "home", :method => :get
             %td= button_to 'View Profile', user_path(@current_user), :class => "profile", :method => :get
+            -if @current_user.position == "Admin"
+              %td= button_to 'Add Position', new_staff_admin_path, :class => "newstaffadmin", :method => :get
+            %td= button_to 'Log Out', logout_path, :class => "signout", :method => :delete
     #main
+      %br
       %div{ :style => "text-align: center;" }
         - if flash[:notice]
           #notice.message= flash[:notice]

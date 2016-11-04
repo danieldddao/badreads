@@ -53,3 +53,14 @@ end
 Then(/^I should see "([^"]*)" button$/) do |arg1|
   expect(page).to have_button(arg1)
 end
+
+When(/^I have signed in to my account with email "([^"]*)", password "([^"]*)"$/) do |arg1, arg2|
+  click_on "Sign In"
+  fill_in 'session_email', :with => arg1
+  fill_in 'session_password', :with => arg2
+  click_on "Login to my account"
+end
+
+When(/^I choose "([^"]*)" from dropdown menu$/) do |arg1|
+  select arg1, :from => 'role_position'
+end

@@ -24,6 +24,13 @@ h1 {
   width: 100%;
   border-bottom: 2px solid DarkSlateGrey;
 }
+h3 {
+  color: maroon;
+  font-size: 110%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+}
 h1.title {
   text-align: center;
   padding: 15px;
@@ -65,7 +72,11 @@ table#books tr {
   font-weight: bold;
   font-size: 12pt;
 }
-
+#warning.message {
+  color: red;
+  font-weight: bold;
+  font-size: 12pt;
+}
 form label {
   display: block;
   line-height: 25px;
@@ -88,13 +99,21 @@ form label {
   font-size: 100%;
 }
 
-.signin, .signup, .signout, .profile {
+.signin, .signup, .signout, .profile, .newstaffadmin, .home {
   border-radius: 25px;
-  width: 90px;
+  width: 92px;
   height: 30px;
   font-size: 100%;
 }
 
+
 .field_with_errors {
   margin: auto auto
+}
+table#profile {
+  display: inline-table;
+  margin: 15px;
+  border-collapse: collapse;
+  width: 95%;
+  border-bottom: 2px solid MidnightBlue;
 }

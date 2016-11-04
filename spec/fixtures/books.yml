@@ -8,3 +8,37 @@ book1 :
     publication_year: 2000
     category: Cat1
     edition: 1st
+    search_count: 1
+    
+book2 :   
+    id: 2   
+    isbn: 1234567890001
+    title: TestBook2 
+    author: TestAuthor1
+    publisher: TestPublisher2
+    publication_year: 2001
+    category: Cat2
+    edition: 1st    
+    search_count: 10
+
+book3 :   
+    id: 3   
+    isbn: 1234567890002
+    title: TestBook3
+    author: TestAuthor2
+    publisher: TestPublisher2
+    publication_year: 2002
+    category: Cat1
+    edition: 1st    
+    search_count: 9
+    
+book4 :   
+    id: 4   
+    isbn: 1234567890003
+    title: TestBook4 
+    author: TestAuthor1
+    publisher: TestPublisher3
+    publication_year: 2011
+    category: Cat3
+    edition: 2nd    
+    search_count: 7

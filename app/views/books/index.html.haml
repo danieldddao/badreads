@@ -1,3 +1,4 @@
+%title Home!
 %div{ :style => "text-align: center;" }
   = form_tag books_search_book_path, :method => :post do
     = text_field_tag :search_terms, nil, :size => 35, :class => "search_box", :placeholder => "Search by isbn, title, author,...", :id => 'search_box'
@@ -13,13 +14,12 @@
       - if @top_searched_books != nil
         - if @top_searched_books.count == 1
           %tr
-            %td= link_to "'#{@top_searched_books[0].title}' by #{@top_searched_books[0].author}", @top_searched_books[0]
+            %td= link_to "'#{@top_searched_books[0].title}' by #{@top_searched_books[0].author} (#{top_searched_books[0].search_count})", @top_searched_books[0]
         - else
           - @top_searched_books.each do |book|
             %tr
               - if(book.present?)
-                %td= link_to "'#{book.title}' by #{book.author}", book
-
+                %td= link_to "'#{book.title}' by #{book.author} (#{book.search_count})", book
 %div{ :style => "float: left;" }
   %table#books
     %thead

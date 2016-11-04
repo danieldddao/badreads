@@ -1,4 +1,4 @@
-Feature: User logs out from his/her account
+Feature: User views his/her profile
 
 Background: books has been added to database
   
@@ -14,20 +14,15 @@ Background: books has been added to database
   | 9780806539973          | TestBook8      | TestAuthor7  | 1999             | Cat4     | 2       | 4            |
   | 9780806539974          | TestBook4 book | TestAuthor3  | 1999             | Cat2     | 2       | 6            |
 
-Scenario:  No Logout Button
-  When I am on the BadReads home page
-  Then I should not see "Log Out" button
+  And I am on the BadReads home page
+  And I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
 
-Scenario:  Logout button for existing account
-  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
-  When I log in to my account with information: email "test@gmail.com", password "123456"
-  Then I should see "Log Out" button
-
-Scenario:  Logout for existing account
-  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
-  And I log in to my account with information: email "test@gmail.com", password "123456"
-  When I click "Log Out"
-  Then I should see "You have logged out" notice
-  And I should not see "Log Out" button
+Scenario:  View Profile Button
+  When I have signed in to my account with email "test@gmail.com", password "123456"
+  Then I should see "View Profile" button
   And I am on the BadReads home page
 
+Scenario:  View Profile Page
+  When I have signed in to my account with email "test@gmail.com", password "123456"
+  And I click "View Profile"
+  Then I should see "My Profile" page

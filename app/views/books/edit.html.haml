@@ -1,5 +1,48 @@
-%h1 Editing Book
-= render 'form', book: @book
-= link_to 'Show', @book
-|
-= link_to 'Back', books_path
+%title Edit Book!
+%div{ :style => "text-align: center;" }
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } TITLE: '#{@book.title}'
+        = text_field :new_title, nil, :size => '30', :placeholder => "Enter New Title"
+        %br
+        = submit_tag "Update Book's Title"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } ISBN: '#{@book.isbn}'
+        = text_field :new_isbn, nil, :size => '30', :placeholder => "Enter New ISBN"
+        %br
+        = submit_tag "Update Book's ISBN"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } AUTHOR: '#{@book.author}'
+        = text_field :new_author, nil, :size => '30', :placeholder => "Enter New Author"
+        %br
+        = submit_tag "Update Book's Author"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } SUMMARY: '#{@book.summary}'
+        = text_field :new_summary, nil, :size => '30', :placeholder => "Enter New Summary"
+        %br
+        = submit_tag "Update Book's Summary"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } PUBLISHER: '#{@book.publisher}'
+        = text_field :new_publisher, nil, :size => '30', :placeholder => "Enter New Publisher"
+        %br
+        = submit_tag "Update Book's Publisher"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } PUBLICATION YEAR: '#{@book.publication_year}'
+        = text_field :new_publication_year, nil, :size => '30', :placeholder => "Enter New Publication Year"
+        %br
+        = submit_tag "Update Book's Publication Year"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } EDITION: '#{@book.edition}'
+        = text_field :new_edition, nil, :size => '30', :placeholder => "Enter New Edition"
+        %br
+        = submit_tag "Update Book's Edition"
+
+= link_to "Return to Book's page", book_path(@book)
+%br
+%br
+= link_to 'Return to Homepage', books_path

@@ -46,6 +46,13 @@ class UsersController < ApplicationController
   end
   
   def update
+    # @user = User.find_by_id(@current_user.id)
+    # if @user.update_attributes(:password => params[:password], :password_confirmation => params[:password_confirmation])
+    #   flash[:notice] = "Password changed successfuly!"
+    #   redirect_to user_path(@current_user)
+    # else
+    #   render 'show'
+    # end
   end
 
   def destroy
