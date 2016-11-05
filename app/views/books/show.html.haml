@@ -12,6 +12,4 @@
     %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
     %br
     -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
-        = link_to 'Edit This Book', edit_book_path(@book)
-%br
-= link_to 'Return to Homepage', books_path
+        = button_to 'Edit This Book', edit_book_path(@book), :method => :get

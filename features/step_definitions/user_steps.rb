@@ -22,7 +22,7 @@ When(/^I've submitted new user's information, email "([^"]*)", first_name "([^"]
   fill_in 'user_last_name', :with => arg3
   fill_in 'user_password', :with => arg4
   fill_in 'user_password_confirmation', :with => arg5
-  select arg6, :from => 'user_position'
+  select arg6, :from => 'role_position'
   click_on "Create my account"
 end
 
@@ -63,4 +63,24 @@ end
 
 When(/^I choose "([^"]*)" from dropdown menu$/) do |arg1|
   select arg1, :from => 'role_position'
+end
+
+Then(/^I should not see "([^"]*)" field$/) do |arg1|
+  puts page.body
+end
+
+Given(/^I have a role with information: role "([^"]*)", role position "([^"]*)"$/) do |arg1, arg2|
+  Role.create!(:position => arg1, :position_code => arg2)
+end
+
+When(/^I've submitted new user's information, email "([^"]*)", first_name "([^"]*)", last_name "([^"]*)", password "([^"]*)", password_confirmation "([^"]*)", position "([^"]*)", position code "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6, arg7|
+  visit new_user_path
+  fill_in 'user_email', :with => arg1
+  fill_in 'user_first_name', :with => arg2
+  fill_in 'user_last_name', :with => arg3
+  fill_in 'user_password', :with => arg4
+  fill_in 'user_password_confirmation', :with => arg5
+  select arg6, :from => 'role_position'
+  fill_in 'position_code', :with => arg7
+  click_on "Create my account"
 end

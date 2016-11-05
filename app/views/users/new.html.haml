@@ -26,21 +26,10 @@
     = password_field :user, 'password_confirmation', :size => '30', :placeholder => "Re-enter your Password"
     
     = label :user, :position, 'Position'
-    = select :user, :position, ['User','Staff', 'Admin']
-    
-    = text_field nil, 'position_code', :placeholder => "Enter your Position Code"
+    = select :user, :position, ['User','Staff', 'Admin'], {}, :onChange => "positionChange(this);", :id => "role_position"
+
+    = text_field nil, 'position_code', :placeholder => "Enter your Position Code", :id => "position_code"
 
     %br
     %br
     = submit_tag 'Create my account', :class => "submit_button"
-
-%br
-= link_to 'Return to Homepage', books_path
-
-//   findselected()
-//     var selMenu = document.getElementById('user_role');
-//     var txtField = document.getElementById('staffCodeField');
-//     if(selMenu.value == 'Staff') 
-//         txtField.disabled = false
-//     else
-//         txtField.disabled = true
