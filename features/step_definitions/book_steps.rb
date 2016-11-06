@@ -89,3 +89,10 @@ Then /^I should see the wiki for "(.*?)"$/ do |title|
    
     end
     
+When(/^I have visited the Details about "(.*?)" page$/) do |title|
+   visit books_path
+   click_on "#{title}"
+ end
+When(/^I follow "([^"]*)"$/) do |arg1|
+  click_on arg1
+end
