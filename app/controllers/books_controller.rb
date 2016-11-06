@@ -5,10 +5,6 @@ class BooksController < ApplicationController
     params.require(:book).permit(:isbn, :title, :author, :publisher, :summary, :publication_year, :category, :edition, :search_count)
   end
   
-  def delete_params
-      params.require(:book).permit(:title, :author)
-  end
-
   def index
     @top_10_searched_books = top_10_searched_books
   end
@@ -68,27 +64,26 @@ class BooksController < ApplicationController
       #Display form to delete a book
   end
     
-  def delete
-      #Delete a book here
-      if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
-        @books = Book.find_by_title(delete_params[:title])
-        if @books != nil then
-            if @books.author == delete_params[:author]
-                Book.destroy(@books.id)
-                flash[:notice] = "Book '#{@books.title}' deleted."
-                redirect_to root_path
-            else
-                flash[:notice] = "Book details didn't match"
-                redirect_to root_path
-            end
-        else
-            flash[:notice] = "Book title not in collection"
-            redirect_to root_path
-        end
-      else
-        redirect_to books_path
-      end
-      
-  end
+  # def destroy
+  #     #Delete a book here
+  #     if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
+  #       @books = Book.find_by_title(params[:book][:title])
+  #       if @books != nil then
+  #           if @books.author == params[:book][:author]
+  #               Book.destroy(@books.id)
+  #               flash[:notice] = "Book '#{@books.title}' deleted."
+  #               redirect_to root_path
+  #           else
+  #               flash[:notice] = "Book details didn't match"
+  #               redirect_to root_path
+  #           end
+  #       else
+  #           flash[:notice] = "Book title not in collection"
+  #           redirect_to root_path
+  #       end
+  #     else
+  #       redirect_to books_path
+  #     end
+  # end
   
 end
