@@ -33,7 +33,7 @@ class BooksController < ApplicationController
     flash[:notice] = "#{@books.title} was successfully added."
     redirect_to root_path
   end
-    
+  
   def search
     #Search for book based on form submission, render results page
     #Find by ISBN:
