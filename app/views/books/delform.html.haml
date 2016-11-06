@@ -1,12 +1,15 @@
 %div{ :style => "text-align: center;" }
   %h1 Delete a Book
-  
-  = form_tag booksdelform_path do
-    %br
-    = label :book, :title, 'Enter Book Title:'
-    = text_field :book, 'title'
-    %br
-    = label :book, :author, 'Enter Book Author:'
-    = text_field :book, 'author'
-    %br
-    = submit_tag 'Save Changes'
+  -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
+    = form_tag booksdelform_path do
+      %br
+      = label :book, :title, 'Enter Book Title:'
+      = text_field :book, 'title'
+      %br
+      = label :book, :author, 'Enter Book Author:'
+      = text_field :book, 'author'
+      %br
+      = submit_tag 'Save Changes'
+  -else
+    Users cannot delete books!!
+    

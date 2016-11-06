@@ -70,20 +70,25 @@ class BooksController < ApplicationController
     
   def delete
       #Delete a book here
-      @books = Book.find_by_title(delete_params[:title])
-      if @books != nil then
-          if @books.author == delete_params[:author]
-              Book.destroy(@books.id)
-              flash[:notice] = "Book '#{@books.title}' deleted."
-              redirect_to root_path
-          else
-              flash[:notice] = "Book details didn't match"
-              redirect_to root_path
-          end
+      if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
+        @books = Book.find_by_title(delete_params[:title])
+        if @books != nil then
+            if @books.author == delete_params[:author]
+                Book.destroy(@books.id)
+                flash[:notice] = "Book '#{@books.title}' deleted."
+                redirect_to root_path
+            else
+                flash[:notice] = "Book details didn't match"
+                redirect_to root_path
+            end
+        else
+            flash[:notice] = "Book title not in collection"
+            redirect_to root_path
+        end
       else
-          flash[:notice] = "Book title not in collection"
-          redirect_to root_path
+        redirect_to books_path
       end
+      
   end
   
 end
