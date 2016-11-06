@@ -1,0 +1,15 @@
+%div{ :style => "text-align: center;" }
+    %h2{ :style => "font-size: 160%; color: MidnightBlue" }= @book.title
+    %h2{ :style => "font-size: 110%;" }ISBN: #{@book.isbn}
+    %br
+    %h2{ :style => "font-size: 110%;" }Author:
+    %h3= @book.author
+    %h2{ :style => "font-size: 110%;" }Summary: 
+    %h3= @book.summary
+    %br
+    %h2{ :style => "font-size: 110%;" }Publisher: #{@book.publisher}
+    %h2{ :style => "font-size: 110%;" }Year: #{@book.publication_year}
+    %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
+    %br
+    -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
+        = button_to 'Edit This Book', edit_book_path(@book), :method => :get

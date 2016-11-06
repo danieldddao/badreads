@@ -1,11 +1,12 @@
-%h1 Delete a Book
-
-= form_tag books_delete_path do
-  %br
-  = label :book, :title, 'Enter Book Title:'
-  = text_field :book, 'title'
-  %br
-  = label :book, :author, 'Enter Book Author:'
-  = text_field :book, 'author'
+%div{ :style => "text-align: center;" }
+  %h1 Delete a Book
   
-  = submit_tag 'Save Changes'
+  = form_tag booksdelform_path do
+    %br
+    = label :book, :title, 'Enter Book Title:'
+    = text_field :book, 'title'
+    %br
+    = label :book, :author, 'Enter Book Author:'
+    = text_field :book, 'author'
+    %br
+    = submit_tag 'Save Changes'
