@@ -1,0 +1,80 @@
+%h1 All books in our collection
+
+
+%h2 Search Results by ISBN:
+
+%table#books_isbn
+  %thead
+    %tr
+      %th ISBN
+      %th Title
+      %th Author
+      %th Publication Year
+      %th Category
+      %th Edition
+  - if (@books_isbn == 'No Books found!') then
+    =@books_isbn
+  -else
+    %tbody
+    
+      %tr
+        %td= @books_isbn.isbn 
+        %td= @books_isbn.title
+        %td= @books_isbn.author
+        %td= @books_isbn.publication_year 
+        %td= @books_isbn.category
+        %td= @books_isbn.edition
+
+
+%h2 Search Results by TITLE:
+
+%table#books_title
+  %thead
+    %tr
+      %th ISBN
+      %th Title
+      %th Author
+      %th Publication Year
+      %th Category
+      %th Edition
+  - if (@books_title == 'No Books found!') then
+    =@books_title
+  - else
+    %tbody
+      
+      %tr
+        %td= @books_title.isbn 
+        %td= @books_title.title
+        %td= @books_title.author
+        %td= @books_title.publication_year 
+        %td= @books_title.category
+        %td= @books_title.edition
+
+
+%h2 Search Results by Author:
+
+%table#books_author
+  %thead
+    %tr
+      %th ISBN
+      %th Title
+      %th Author
+      %th Publication Year
+      %th Category
+      %th Edition
+  - if (@books_author == 'No Books found!') then
+    =@books_author
+  - else
+    %tbody
+      
+      %tr
+        %td= @books_author.isbn 
+        %td= @books_author.title
+        %td= @books_author.author
+        %td= @books_author.publication_year 
+        %td= @books_author.category
+        %td= @books_author.edition
+
+
+
+= link_to 'Return Home', root_path
