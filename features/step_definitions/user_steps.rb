@@ -84,3 +84,11 @@ When(/^I've submitted new user's information, email "([^"]*)", first_name "([^"]
   fill_in 'position_code', :with => arg7
   click_on "Create my account"
 end
+
+ When(/^I have visited the Details about "(.*?)" page$/) do |title|
+   visit books_path
+   click_on "#{title}"
+ end
+When(/^I follow "([^"]*)"$/) do |arg1|
+  click_on arg1
+end
