@@ -1,0 +1,30 @@
+!!! 5
+%html
+  %head
+    %title= "Your Website"
+    %meta{ :content => "", :name => "description" }
+    %meta{ :content => "", :name => "author" }
+    %meta{ :content => "3 days", :name => "revisit-after" }
+    %link{ :href => "http://creativecommons.org/licenses/by/3.0/", :rel => "license", :title => "Creative Commons Attribution 3.0 Unported License" }
+    %link{ :href => "/feed", :rel => "alternate", :title => "Atom", :type => "application/atom+xml" }
+    %link{ :href => "/css/screen.css", :media => "screen", :rel => "stylesheet" }
+  %body
+    = link_to 'View Book Collection', books_list_path
+    %br
+    = link_to 'Add a new book', books_new_path
+    %br
+    = link_to 'Show me the top 10 searched books', books_topten_path
+    %br
+    = link_to 'Delete a book from the database', books_delform_path
+    %br
+
+= form_tag books_search_path do
+  = label :book, :title, 'Search for books here:'
+  = text_field :book, 'title'
+  = submit_tag 'Search'
+%br
+
+- if flash[:notice]
+  #notice.message= flash[:notice]
+- elsif flash[:warning]
+  #warning.message= flash[:warning]

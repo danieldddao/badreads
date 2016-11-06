@@ -1,144 +1,95 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :set_current_user
+  #before_action :set_book, only: [:show, :edit, :update, :destroy]
+  #before_action :set_current_user
     
-  def book_params
-    params.require(:book).permit(:title, :isbn, :author, :summary, :publisher, :category, :publication_year, :edition)
-  end
-  
-  def get_top_10_searched_books
-    Book.order(search_count: :desc).limit(10)
-  end
-  
-  def get_top_10_reviewed_books
-  end
-  
-  def index
-    @top_searched_books = get_top_10_searched_books
-    # @top_reviewed_books = get_top_10_reviewed_books
-  end
-
-  def show
-  end
-
-  def new
-    # @book = Book.new
-  end
-
-  def edit
-    if !@current_user || @current_user.position == "User"
-      flash[:warning]= "WARN! You don't have authority to edit book!"  
-      redirect_to book_path(@book)
+    def book_params
+      params.require(:book).permit(:isbn, :title, :author, :publisher, :summary, :publication_year, :category, :edition, :search_count)
     end
-  end
-
-  def create
-    @book = Book.create!(book_params)
-
-    # respond_to do |format|
-    #   if @book.save
-    #     format.html { redirect_to @book, notice: 'Book was successfully created.' }
-    #     format.json { render :show, status: :created, location: @book }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @book.errors, status: :unprocessable_entity }
-    #   end
-    # end
-  end
-
-  def update
-  #   @book = Book.find(params[:id])
     
-  #   if params[:new_title] == nil
-  #     if params[:new_isbn] == nil
-  #       if params[:new_author] == nil
-  #         if params[:new_summary] == nil
-  #           if params[:new_publisher] == nil
-  #             if params[:new_publication_year] == nil
-  #               if params[:new_edition] == nil
-  #                 flash[:warning] = "Error! Please try again!"
-  #               else
-  #                 if params[:new_edition][0].empty?
-  #                   flash[:warning] = "New Edition can't be empty"
-  #                 else
-  #                   @book.update_attributes!(:edition => params[:new_edition][0])
-  #                   flash[:notice] = "Edition was successfully updated."
-  #                 end
-  #               end
-  #             else
-  #               if params[:new_publication_year][0].empty?
-  #                 flash[:warning] = "New Publication Year can't be empty"
-  #               else
-  #                 @book.update_attributes!(:publication_year => params[:new_publication_year][0])
-  #                 flash[:notice] = "Publication Year was successfully updated."
-  #               end
-  #             end
-  #           else
-  #             if params[:new_publisher][0].empty?
-  #               flash[:warning] = "New Publisher can't be empty"
-  #             else
-  #               @book.update_attributes!(:publisher => params[:new_publisher][0])
-  #               flash[:notice] = "Publisher was successfully updated."
-  #             end
-  #           end
-  #         else
-  #           if params[:new_summary][0].empty?
-  #             flash[:warning] = "New Summary can't be empty"
-  #           else
-  #             @book.update_attributes!(:summary => params[:new_summary][0])
-  #             flash[:notice] = "Summary was successfully updated."
-  #           end
-  #         end
-  #       else
-  #         if params[:new_author][0].empty?
-  #           flash[:warning] = "New Author can't be empty"
-  #         else
-  #           @book.update_attributes!(:author => params[:new_author][0])
-  #           flash[:notice] = "Author was successfully updated."
-  #         end
-  #       end
-  #     else
-  #       if params[:new_isbn][0].empty?
-  #         flash[:warning] = "New ISBN can't be empty"
-  #       else
-  #         if Book.find_by_isbn(params[:new_isbn][0])
-  #         flash[:warning] = "ISBN exists in the database"
-  #         else
-  #           @book.update_attributes!(:isbn => params[:new_isbn][0])
-  #           flash[:notice] = "ISBN was successfully updated."
-  #         end
-  #       end
-  #     end
-  #   else
-  #     if params[:new_title][0].empty?
-  #       flash[:warning] = "New Title can't be empty"
-  #     else
-  #       @book.update_attributes!(:title => params[:new_title][0])
-  #       flash[:notice] = "Title was successfully updated."
-  #     end
-  #   end
-  #   redirect_to edit_book_path(@book)
-  end
-
-  def destroy
-    # @book.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
-  end
+    def search_params
+        params.require(:book).permit(:title)
+    end
     
-  def search_book
-  end
-  
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      if Book.where(id: params[:id]).exists?
-        @book = Book.find(params[:id])
-      else
-        redirect_to books_path
-        flash[:warning] = "The Book you are lookling for is not in the Database!"
-      end
+    def delete_params
+        params.require(:book).permit(:title, :author)
+    end
+    
+    def welcome
+        #render welcome templete
+    end
+    
+    def index
+        #Display List of books
+        @books = Book.all
+    end
+    
+    def new
+        #render new book form
+    end
+    
+    def create
+        #create new book entry
+        @books = Book.create!(book_params)
+        @books.search_count = 0
+        @books.save
+        flash[:notice] = "#{@books.title} was successfully added."
+        redirect_to root_path
+    end
+    
+    def search
+        #Search for book based on form submission, render results page
+        #Find by ISBN:
+        @books_isbn = Book.find_by_isbn(search_params[:title])
+        if !(@books_isbn)
+            @books_isbn = "No Books found!"
+        else
+            Book.update_search_count(@books_isbn)
+        end
+        #Find by Title:
+        @books_title = Book.find_by_title(search_params[:title])
+        if !(@books_title)
+            @books_title = "No Books found!"
+        else
+            Book.update_search_count(@books_title)
+        end
+        #Find by Author:
+        @books_author = Book.find_by_author(search_params[:title])
+        if !(@books_author)
+            @books_author = "No Books found!"
+        else
+            Book.update_search_count(@books_author)
+        end
+        
+    end
+    
+    def topten
+        #Display top ten searched books
+        @books = Book.all.order('search_count DESC')
+    end
+    
+    def wiki
+        #Display wiki information about the books
+    end
+    
+    def delform
+        #Display form to delete a book
+    end
+    
+    def delete
+        #Delete a book here
+        @books = Book.find_by_title(delete_params[:title])
+        if @books != nil then
+            if @books.author == delete_params[:author]
+                Book.destroy(@books.id)
+                flash[:notice] = "Book '#{@books.title}' deleted."
+                redirect_to root_path
+            else
+                flash[:notice] = "Book details didn't match"
+                redirect_to root_path
+            end
+        else
+            flash[:notice] = "Book title not in collection"
+            redirect_to root_path
+        end
     end
 end
