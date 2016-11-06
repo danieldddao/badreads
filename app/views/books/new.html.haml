@@ -1,26 +1,27 @@
-%h1 Add a New Book
-
-= form_tag books_create_path do
-  %br
-  = label :book, :isbn, 'Enter Book ISBN:'
-  = text_field :book, 'isbn'
-  %br
-  = label :book, :title, 'Enter Book Title:'
-  = text_field :book, 'title'
-  %br
-  = label :book, :title, 'Enter Book Author:'
-  = text_field :book, 'author'
-  %br
-  = label :book, :publisher, 'Enter Book Publisher:'
-  = text_field :book, 'publisher'
-  %br
-  = label :book, :publication_year, 'Released On: '
-  = number_field :book, 'publication_year'
-  %br
-  = label :book, :category, 'Enter Book Category:'
-  = text_field :book, 'category'
-  %br
-  = label :book, :edition, 'Enter Book Edition:'
-  = text_field :book, 'edition'
-  %br
-  = submit_tag 'Save Changes'
+%div{ :style => "text-align: center;" }
+  %h1 Add a New Book
+  
+  = form_tag books_path do
+    %br
+    = label :book, :isbn, 'Enter Book ISBN:'
+    = text_field :book, 'isbn'
+    %br
+    = label :book, :title, 'Enter Book Title:'
+    = text_field :book, 'title'
+    %br
+    = label :book, :title, 'Enter Book Author:'
+    = text_field :book, 'author'
+    %br
+    = label :book, :publisher, 'Enter Book Publisher:'
+    = text_field :book, 'publisher'
+    %br
+    = label :book, :publication_year, 'Released On: '
+    = number_field :book, 'publication_year'
+    %br
+    = label :book, :category, 'Enter Book Category:'
+    = text_field :book, 'category'
+    %br
+    = label :book, :edition, 'Enter Book Edition:'
+    = text_field :book, 'edition'
+    %br
+    = submit_tag 'Save Changes'

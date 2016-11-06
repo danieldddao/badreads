@@ -1,0 +1,22 @@
+%div{ :style => "text-align: center;" }
+  %h1 All books in our collection
+  %table#books{ :style => "display: inline-table;" }
+    %thead
+      %tr
+        %th ISBN
+        %th Title
+        %th Author
+        %th Publication Year
+        %th Category
+        %th Edition
+        %th
+    %tbody
+      - @books.each do |book|
+        %tr
+          %td= book.isbn 
+          %td= book.title
+          %td= book.author
+          %td= book.publication_year 
+          %td= book.category
+          %td= book.edition
+          %td= link_to "More Information About #{book.title}", book_path(book)
