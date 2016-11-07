@@ -67,14 +67,33 @@ describe BooksController do
         fixtures :books
         context "Delete Form" do
             it "Should render the delete form page" do
-            get :delform
-            expect(response).to render_template('delform')
+                get :delform
+                expect(response).to render_template('delform')
+            end
         end
+        it "Should return to homepage" do
+            post :delete, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
+            expect(response).to redirect_to(root_path)
         end
-        # it "Should delete the book if found" do
-        #     controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
-        #     delete :destroy, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
-        #     expect(response).to render_template('delform')
-        # end
+        it "Should delete the book if found" do
+            controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
+            post :delete, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
+            expect(Book.count).to eq(3)
+            expect(response).to redirect_to(root_path)
+        end
+        it "Should show message if not found details" do
+            controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
+            post :delete, params: {:book => {:title => "TestBook4", :author => ""}}
+            expect(Book.count).to eq(4)
+            expect( flash[:notice]).to eq("Book details didn't match")
+            expect(response).to redirect_to(root_path)
+        end
+        it "Should show message if not found title" do
+            controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
+            post :delete, params: {:book => {:title => "", :author => ""}}
+            expect(Book.count).to eq(4)
+            expect( flash[:notice]).to eq("Book title not in collection")
+            expect(response).to redirect_to(root_path)
+        end
     end
 end
