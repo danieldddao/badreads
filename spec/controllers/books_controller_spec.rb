@@ -29,6 +29,11 @@ describe BooksController do
             expect(assigns(:book).title).to eq("TestBook1")
             expect(response).to render_template('show')
         end
+        it "Should show error for incorrect request" do
+            get :show, params: {:id => "fail"}
+            expect(flash[:warning]).to eq("The Book you are lookling for is not in the Database!")
+            expect(response).to redirect_to(books_url)
+        end
     end
     describe "Add a book to the database" do
         it "Should render new template" do
@@ -73,7 +78,7 @@ describe BooksController do
         end
         it "Should return to homepage" do
             post :delete, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
-            expect(response).to redirect_to(root_path)
+            expect(response).to redirect_to(books_path)
         end
         it "Should delete the book if found" do
             controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
