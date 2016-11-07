@@ -22,7 +22,12 @@ class BooksController < ApplicationController
   end
   
   def show
-    @book = Book.find(params[:id])
+    if Book.where(id: params[:id]).exists?
+        @book = Book.find(params[:id])
+    else
+        flash[:warning] = "The Book you are lookling for is not in the Database!"
+        redirect_to books_url
+    end
   end
 
   def create
