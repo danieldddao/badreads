@@ -14,10 +14,10 @@ Feature: See top Searched Books
     | 9780806539972          | TestBook7      | TestAuthor6  | 1980             | Cat3     | 3       |7               |
     | 9780806539973          | TestBook8      | TestAuthor7  | 1999             | Cat4     | 2       |8               |
     | 9780806539974          | TestBook4      | TestAuthor3  | 1999             | Cat2     | 2       |9               |
-  
-  And I am on the badreads home page
-  
-Scenario:  Click on the "Top Searched Books" for adding a book
+    | 9780806539975          | TestBook4      | TestAuthor3  | 1999             | Cat2     | 2       |9               |
+    | 9780806539976          | TestBookNo     | TestAuthor3  | 1999             | Cat2     | 2       |0               |
 
- When I have visited the "search results" page
- Then I should not see "Harry Potter"
+  
+Scenario:  Only top 10 searched books showed on home page
+ When I am on the badreads home page
+ Then I should not see "TestBookNo"

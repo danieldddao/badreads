@@ -61,7 +61,7 @@ class BooksController < ApplicationController
     
   def top_10_searched_books
       #Display top ten searched books
-      @books = Book.all.order('search_count DESC')
+      @books = Book.all.order('search_count DESC').limit(10)
   end
   
   def delform

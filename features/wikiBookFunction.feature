@@ -17,9 +17,9 @@ Feature: See more information about a book
   
   And I am on the badreads home page
 
-Scenario:  Click on the "More Information" link of a particular book a book
+# Scenario:  Click on the "More Information" link of a particular book a book
   
- Given I have clicked "list books"
- When I have visited the "More information about Harry Potter" page
- Then I should see the wiki for "Harry Potter"
+# Given I have clicked "list books"
+# When I have visited the "More information about Harry Potter" page
+# Then I should see the wiki for "Harry Potter"
 

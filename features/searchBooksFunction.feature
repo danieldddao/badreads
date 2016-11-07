@@ -19,5 +19,5 @@ Background: Books have been added to database
   
 Scenario:  Click on the "SEARCH" for searching for a book
 
- When I have searched a book with title "Harry Potter"
- Then I should see "Harry Potter" in the search results
+ When I have searched a book with title "TestBook1"
+ Then I should see "TestBook1" in the search results

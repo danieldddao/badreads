@@ -18,6 +18,7 @@ Background: Books have been added to database
   And I am on the badreads home page
   
 Scenario:  Click on the "DELETE" for adding a book
-
+ Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff"
+ And I have signed in to my account with email "test@gmail.com", password "123456"
  When I have deleted a book with title "Harry Potter" and author "JK Rowling"
  Then I should not see "Harry Potter" in the book list page

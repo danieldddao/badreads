@@ -11,16 +11,19 @@ Given /^I am on the badreads home page$/ do
     end
 
 ## ADD Books##
-When /^I have added a book with title "(.*?)" and author "(.*?)" and ISBN "(.*?)"$/ do |title, author, isbn|
-  visit books_new_path
-  fill_in 'Title', :with => title
-  fill_in 'Author', :with => author
-  fill_in 'ISBN', :with => isbn
-  click_button 'Save Changes'
-    end
+When(/^I have added a book with title "([^"]*)" and author "([^"]*)" and ISBN "([^"]*)" and Category "([^"]*)" and Edition "([^"]*)" and publication year "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6|
+    visit new_book_path
+    fill_in 'book_title', :with => arg1
+    fill_in 'book_author', :with => arg2
+    fill_in 'book_isbn', :with => arg3
+    fill_in 'book_category', :with => arg4
+    fill_in 'book_edition', :with => arg5
+    fill_in 'book_publication_year', :with => arg6
+    click_on "Save Changes"
+end
 
 Then /^I should see "(.*?)" in book list page$/ do |title| 
-   visit books_list_path
+   visit allbooks_path
    result=false
    all("tr").each do |tr|
      if tr.has_content?(title)
@@ -33,14 +36,14 @@ Then /^I should see "(.*?)" in book list page$/ do |title|
 
 ## Delete Books ##
 When /^I have deleted a book with title "(.*?)" and author "(.*?)"$/ do |title, author|
-  visit books_delform_path
-  fill_in 'Title', :with => title
-  fill_in 'Author', :with => author
+  visit booksdelform_path
+  fill_in 'book_title', :with => title
+  fill_in 'book_author', :with => author
   click_button 'Save Changes'
-    end
+end
 
 Then /^I should not see "(.*?)" in the book list page$/ do |title| 
-   visit books_list_path
+   visit allbooks_path
    result=false
    all("tr").each do |tr|
      if tr.has_content?(title)
@@ -53,7 +56,7 @@ Then /^I should not see "(.*?)" in the book list page$/ do |title|
 
 ## Search Books ##
 When /^I have searched a book with title "(.*?)"$/ do |title|
-  fill_in 'Search', :with => title
+  fill_in 'search_box', :with => title
   click_button 'Search'
     end
 
@@ -95,4 +98,15 @@ When(/^I have visited the Details about "(.*?)" page$/) do |title|
  end
 When(/^I follow "([^"]*)"$/) do |arg1|
   click_on arg1
+end
+
+Then(/^I should not see "([^"]*)"$/) do |arg1|
+   result=false
+   all("tr").each do |tr|
+     if tr.has_content?(arg1)
+       result = true
+       break
+     end
+   end  
+  expect(result).to be_falsey
 end
