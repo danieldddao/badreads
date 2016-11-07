@@ -3,23 +3,28 @@
 %h1{ :style => "text-align: center;" } Create New Staff or New Admin
 
 %div{ :style => "text-align: center;" }
-  = form_tag new_staff_admin_create_path do
-    = label :role, :position, 'Choose Position'
-    = select :role, :position, ['Staff', 'Admin']
+  -if (@current_user && @current_user.position != "User")
+    = form_tag new_staff_admin_create_path do
+      = label :role, :position, 'Choose Position'
+      = select :role, :position, ['Staff', 'Admin']
+      %br
+      %br
+      = submit_tag 'Add New Position', :class => "submit_button"
+  
     %br
     %br
-    = submit_tag 'Add New Position', :class => "submit_button"
-
-  %br
-  %br
-  %h2 List of created positions that haven't been used yet
-  %table#books{ :style => "display: inline-table;" }
-    %thead
-      %tr
-        %th Position
-        %th Position Code
-    %tbody
-      - @roles.each do |role|
+    %h2 List of created positions that haven't been used yet
+    %table#books{ :style => "display: inline-table;" }
+      %thead
         %tr
-          %td= role.position 
-          %td= role.position_code
+          %th Position
+          %th Position Code
+      %tbody
+        - @roles.each do |role|
+          %tr
+            %td= role.position 
+            %td= role.position_code
+            
+  -else
+    Users cannot login to this page!!
+  end
