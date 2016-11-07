@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'allbooks', to: 'books#allbooks'
   post 'books/search', to: 'books#search'
   get 'booksdelform', to: 'books#delform'
+
   
   resources :users
   
