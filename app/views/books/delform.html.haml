@@ -1,5 +1,6 @@
 %div{ :style => "text-align: center;" }
   %h1 Delete a Book
+
   -if (@current_user && @current_user.position != "User")
     = form_tag booksdelform_path do
       %br

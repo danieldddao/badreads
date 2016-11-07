@@ -89,7 +89,6 @@ class BooksController < ApplicationController
         flash[:error] = 'Cannot delete!!'
         redirect_to books_path
       end
-      
   end
   
 end

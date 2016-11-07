@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'allbooks', to: 'books#allbooks'
   post 'books/search', to: 'books#search'
   get 'booksdelform', to: 'books#delform'
+  post 'deletebook', to: 'books#delete'
 
-  
   resources :users
   
   match '/login', to: 'sessions#new', via: :get
