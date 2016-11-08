@@ -1,0 +1,7 @@
+
+%div{ :style => "text-align: center;" }
+  %h1 Event Calendar for this month:
+  
+%br
+= month_calendar do |date|
+  = date.mday
