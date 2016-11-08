@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   
   match '/new_staff_admin', to: 'roles#new', via: :get
   match '/new_staff_admin_create', to: 'roles#create', via: :post
-
+  
+  #Common Interest Group Routes:
+  match '/view_calendar', to: 'groups#view_calendar', via: :get
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

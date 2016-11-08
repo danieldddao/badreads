@@ -99,7 +99,7 @@ form label {
   font-size: 100%;
 }
 
-.signin, .signup, .signout, .profile, .newstaffadmin, .home, .books {
+.signin, .signup, .signout, .profile, .newstaffadmin, .home, .books, .groups {
   border-radius: 25px;
   width: 92px;
   height: 30px;
