@@ -14,7 +14,7 @@
             %td= button_to 'All Books', allbooks_path, :class => "books", :method => :get
             %td= button_to 'Sign In', login_path, :class => "signin", :method => :get
             %td= button_to 'Sign Up', new_user_path, :class => "signup", :method => :get
-            %td= button_to 'Common Interest Groups', view_calendar_path, :class => "groups", :method => :get
+            %td= button_to 'EVENTS', view_calendar_path, :class => "groups", :method => :get
     -else
       Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
       %table
@@ -24,7 +24,7 @@
             %td= button_to 'Home', root_path, :class => "home", :method => :get
             %td= button_to 'All Books', allbooks_path, :class => "books", :method => :get
             %td= button_to 'View Profile', user_path(@current_user), :class => "profile", :method => :get
-            %td= button_to 'Common Interest Groups', view_calendar_path, :class => "groups", :method => :get
+            %td= button_to 'EVENTS', view_calendar_path, :class => "groups", :method => :get
             -if @current_user.position == "Admin"
               %td= button_to 'Add Position', new_staff_admin_path, :class => "newstaffadmin", :method => :get
             -if @current_user.position == "Admin" || @current_user.position == "Staff"
