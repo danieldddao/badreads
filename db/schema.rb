@@ -59,9 +59,11 @@ ActiveRecord::Schema.define(version: 20161108195739) do
     t.string   "password_digest"
     t.string   "position"
     t.string   "session_token"
+    t.integer  "interest_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["interest_id"], name: "index_users_on_interest_id"
   end
 
 end
