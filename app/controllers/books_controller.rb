@@ -9,6 +9,15 @@ class BooksController < ApplicationController
       params.require(:book).permit(:title, :author)
   end
 
+  private def checkBookExist
+    if Book.exists?(params[:id])
+      @book = Book.find(params[:id])
+    else
+      flash[:warning] = "The Book you are looking for is not in the Database!"
+      redirect_to root_path
+    end
+  end
+  
   def index
     @top_10_searched_books = top_10_searched_books
   end
@@ -22,12 +31,7 @@ class BooksController < ApplicationController
   end
   
   def show
-    if Book.where(id: params[:id]).exists?
-        @book = Book.find(params[:id])
-    else
-        flash[:warning] = "The Book you are lookling for is not in the Database!"
-        redirect_to books_url
-    end
+    checkBookExist
   end
 
   def create
@@ -91,9 +95,105 @@ class BooksController < ApplicationController
             redirect_to root_path
         end
       else
-        flash[:error] = 'Cannot delete!!'
-        redirect_to books_path
+        flash[:warning] = 'Cannot delete!!'
+        redirect_to root_path
       end
   end
   
+  # Delete a book
+  def destroy
+    if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
+      checkBookExist
+      @book.destroy
+      flash[:notice] = "Book '#{@book.title}' deleted."
+      redirect_to root_path
+    else
+      flash[:warning] = "You don't have rights to delete this book"
+      redirect_to root_path
+    end
+  end
+  
+  # Show page for editting books
+  def edit
+    checkBookExist
+    if !@current_user || @current_user.position == "User"
+      flash[:warning]= "WARN! You don't have authority to edit book!"  
+      redirect_to book_path(@book)
+    end
+  end
+  
+  def update
+    checkBookExist
+    
+    if params[:new_title] == nil
+      if params[:new_isbn] == nil
+        if params[:new_author] == nil
+          if params[:new_summary] == nil
+            if params[:new_publisher] == nil
+              if params[:new_publication_year] == nil
+                if params[:new_edition] == nil
+                  flash[:warning] = "Error! Please try again!"
+                else
+                  if params[:new_edition][0].empty?
+                    flash[:warning] = "New Edition can't be empty"
+                  else
+                    @book.update_attributes!(:edition => params[:new_edition][0])
+                    flash[:notice] = "Edition was successfully updated."
+                  end
+                end
+              else
+                if params[:new_publication_year][0].empty?
+                  flash[:warning] = "New Publication Year can't be empty"
+                else
+                  @book.update_attributes!(:publication_year => params[:new_publication_year][0])
+                  flash[:notice] = "Publication Year was successfully updated."
+                end
+              end
+            else
+              if params[:new_publisher][0].empty?
+                flash[:warning] = "New Publisher can't be empty"
+              else
+                @book.update_attributes!(:publisher => params[:new_publisher][0])
+                flash[:notice] = "Publisher was successfully updated."
+              end
+            end
+          else
+            if params[:new_summary][0].empty?
+              flash[:warning] = "New Summary can't be empty"
+            else
+              @book.update_attributes!(:summary => params[:new_summary][0])
+              flash[:notice] = "Summary was successfully updated."
+            end
+          end
+        else
+          if params[:new_author][0].empty?
+            flash[:warning] = "New Author can't be empty"
+          else
+            @book.update_attributes!(:author => params[:new_author][0])
+            flash[:notice] = "Author was successfully updated."
+          end
+        end
+      else
+        if params[:new_isbn][0].empty?
+          flash[:warning] = "New ISBN can't be empty"
+        else
+          if Book.find_by_isbn(params[:new_isbn][0])
+          flash[:warning] = "ISBN exists in the database"
+          else
+            @book.update_attributes!(:isbn => params[:new_isbn][0])
+            flash[:notice] = "ISBN was successfully updated."
+          end
+        end
+      end
+    else
+      if params[:new_title][0].empty?
+        flash[:warning] = "New Title can't be empty"
+      else
+        @book.update_attributes!(:title => params[:new_title][0])
+        flash[:notice] = "Title was successfully updated."
+      end
+    end
+    redirect_to edit_book_path(@book)
+  end
+
 end

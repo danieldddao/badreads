@@ -12,10 +12,11 @@ Background: books has been added to database
   | 9780806539972          | TestBook7      | TestAuthor6  | 1980             | Cat3     | 3       | 3            |
   | 9780806539973          | TestBook8      | TestAuthor7  | 1999             | Cat4     | 2       | 4            |
   | 9780806539974          | TestBook4 book | TestAuthor3  | 1999             | Cat2     | 2       | 6            |
+  And I am on the badreads home page
 
 Scenario:  Click on the "ADD" for adding a book
-
- Given I am on the badreads home page
+ Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff"
+ And I have signed in to my account with email "test@gmail.com", password "123456"
  When I have added a book with title "Harry Potter" and author "JK Rowling" and ISBN "12334567890" and Category "Cat1" and Edition "1" and publication year "2000"
  Then I should see "Harry Potter" in book list page
 

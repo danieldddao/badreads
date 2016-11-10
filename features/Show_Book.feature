@@ -16,16 +16,8 @@ Background: books has been added to database
 
   And I am on the BadReads home page
 
-
-Scenario:  View Book Page
+Scenario:  View Book Page 1
   When I follow "Test Book1"
   Then I should see "TestAuthor1" page
   And I should see "1980" page
   And I should see "9780806539966" page
-  
-  When I am on the BadReads home page
-  Then I follow "TestBook2"
-  And I should see "TestAuthor2" page
-  And I should see "1990" page
-  
-  

@@ -4,9 +4,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :position)
   end
-  
-  def index
-  end
 
   def show
     @user = @current_user
@@ -16,10 +13,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    
-  end
-
-  def edit
   end
 
   def create
@@ -54,8 +47,5 @@ class UsersController < ApplicationController
     #   render 'show'
     # end
   end
-
-  def destroy
-  end
-
+  
 end

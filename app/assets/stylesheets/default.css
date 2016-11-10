@@ -88,24 +88,12 @@ form label {
   font-size: 150%;
 }
 
-.button {
-  width: 80px;
-  height: 100px;
-  font-size: 200%;
-}
-.submit_button {  
-  width: 200px;
-  height: 150px;
-  font-size: 100%;
-}
-
 .signin, .signup, .signout, .profile, .newstaffadmin, .home, .books, .groups {
   border-radius: 25px;
   width: 92px;
   height: 30px;
   font-size: 100%;
 }
-
 
 .field_with_errors {
   margin: auto auto
@@ -116,4 +104,8 @@ table#profile {
   border-collapse: collapse;
   width: 95%;
   border-bottom: 2px solid MidnightBlue;
+}
+table#editdeletebook {
+  display: inline-table;
+  width: 30%;
 }

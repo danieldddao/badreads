@@ -8,7 +8,7 @@ end
 
 Given /^I am on the badreads home page$/ do
   visit root_path
-    end
+end
 
 ## ADD Books##
 When(/^I have added a book with title "([^"]*)" and author "([^"]*)" and ISBN "([^"]*)" and Category "([^"]*)" and Edition "([^"]*)" and publication year "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6|
@@ -39,7 +39,7 @@ When /^I have deleted a book with title "(.*?)" and author "(.*?)"$/ do |title, 
   visit booksdelform_path
   fill_in 'book_title', :with => title
   fill_in 'book_author', :with => author
-  click_button 'Save Changes'
+  click_on 'Save Changes'
 end
 
 Then /^I should not see "(.*?)" in the book list page$/ do |title| 
@@ -109,4 +109,10 @@ Then(/^I should not see "([^"]*)"$/) do |arg1|
      end
    end  
   expect(result).to be_falsey
+end
+
+## Edit book ##
+When(/^I update "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
+  fill_in 'new_' + arg1.downcase + '_', :with => title
+  click_on "Update Book's " + arg1
 end

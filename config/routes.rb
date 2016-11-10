@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   resources :books do
     resources :reviews
   end
+  
   get 'allbooks', to: 'books#allbooks'
   post 'books/search', to: 'books#search'
   get 'booksdelform', to: 'books#delform'
   post 'deletebook', to: 'books#delete'
 
-  resources :users
+  resources :users, only: [:show, :new, :create, :update]
   
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post
