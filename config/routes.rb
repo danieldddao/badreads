@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   
   root 'books#index'
-
-  resources :books do
-    resources :reviews
-  end
   
+  #Book Routes:
+  resources :books
   get 'allbooks', to: 'books#allbooks'
   post 'books/search', to: 'books#search'
   get 'booksdelform', to: 'books#delform'
   post 'deletebook', to: 'books#delete'
+  
+  #Review Routes:
+  post '/books/:id/review_create', to: 'reviews#create', :as => 'review_create'
 
+  #User Routes:
   resources :users, only: [:show, :new, :create, :update]
   
   match '/login', to: 'sessions#new', via: :get

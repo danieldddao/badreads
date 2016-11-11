@@ -1,3 +1,4 @@
+%title #{@book.title}
 %div{ :style => "text-align: center;" }
     %h2{ :style => "font-size: 160%; color: MidnightBlue" }= @book.title
     %h2{ :style => "font-size: 110%;" }ISBN: #{@book.isbn}
@@ -17,28 +18,42 @@
                 %tr
                     %td= button_to 'Edit This Book', edit_book_path(@book), :method => :get
                     %td= button_to 'Delete This Book', book_path(@book), :method => :delete, :data => {:confirm => "Are you sure you want to delete this book, #{@book.title}?"}
-    %br
     %hr
     %h2{ :style => "font-size: 120%; color: Green" } Post New Review
-    %div{ :style => "text-align: center;" }
-        = form_tag new_book_path do
-            %p 
-                Rating :
-                %span(class="starRating")
-                    = radio_button nil, nil, "5", :name => "rating", :id => "rating5"
-                    = label nil, "5", :for => "rating5"
-                    
-                    = radio_button nil, nil, "4", :name => "rating", :id => "rating4"
-                    = label nil, "4", :for => "rating4"
-                    
-                    = radio_button nil, nil, "3", :name => "rating", :id => "rating3"
-                    = label nil, "3", :for => "rating3"
-                    
-                    = radio_button nil, nil, "2", :name => "rating", :id => "rating2"
-                    = label nil, "2", :for => "rating2"
-                    
-                    = radio_button nil, nil, "1", :name => "rating", :id => "rating1"
-                    = label nil, "1", :for => "rating1"
-            = text_area_tag 'new_review_comment', nil, size: "50x7", :placeholder => "Enter your Review", :id => "new_review_comment"
+    - if @current_user
+        - if @current_user_has_review
+            %h3{ :style => "color: Green" } You already posted review for this book!
+        - else
+            %div{ :style => "text-align: center;" }
+                = form_tag review_create_path do
+                    %p 
+                        Rating :
+                        %span(class="starRating")
+                            = radio_button nil, nil, "5", :name => "rating", :id => "rating5"
+                            = label nil, "5", :for => "rating5"
+                            
+                            = radio_button nil, nil, "4", :name => "rating", :id => "rating4"
+                            = label nil, "4", :for => "rating4"
+                            
+                            = radio_button nil, nil, "3", :name => "rating", :id => "rating3"
+                            = label nil, "3", :for => "rating3"
+                            
+                            = radio_button nil, nil, "2", :name => "rating", :id => "rating2"
+                            = label nil, "2", :for => "rating2"
+                            
+                            = radio_button nil, nil, "1", :name => "rating", :id => "rating1"
+                            = label nil, "1", :for => "rating1"
+                    = text_area_tag 'new_review_comment', nil, size: "50x7", :placeholder => "Enter your Review", :id => "new_review_comment"
+                    %br
+                    = submit_tag 'Submit Review', :class => "submit_button"
+    - else
+        %u= link_to "Please Sign-In to post review!", login_path
+    %hr
+    %h2{ :style => "font-size: 120%; color: Green" } Reviews
+    - if @book.reviews.empty?
+        %h2{ :style => "font-size: 90%; color: Maroon" } There're currently no reviews for this book!
+    - else
+        - @book.reviews.each .each do |review|
+            #{review.user.email}
+            #{review.comment}   #{review.star}
             %br
-            = submit_tag 'Submit Review', :class => "submit_button"

@@ -32,6 +32,10 @@ class BooksController < ApplicationController
   
   def show
     checkBookExist
+    @current_user_has_review = false
+    if @current_user && !@book.users.empty?
+      @book.users.each {|user| @current_user_has_review = true if user.id = @current_user.id}
+    end
   end
 
   def create
