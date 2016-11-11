@@ -19,11 +19,34 @@ class ReviewsController < ApplicationController
     
     @book = Book.find(params[:id])
     if @current_user
+      # if !current_user_has_review
+      #   if !params[:new_review_comment]
+      #     if params[:rating] != nil
+      #       @review = @book.reviews.build(:comment => params[:new_review_comment], :star => params[:rating])
+      #       @current_user.reviews << @review
+      #       flash[:notice] = "Your Review for '#{@book.title}' successfully submitted!"
+      #       redirect_to book_path(@book)
+      #     else
+      #       flash[:warning] = "Please select a rating!"
+      #       redirect_to book_path(@book)
+      #     end
+      #   else
+      #     flash[:warning] = "Comment can't be empty!"
+      #     redirect_to book_path(@book)
+      #   end
+      # else
+      #   flash[:warning] = "You already posted review for this book!"
+      #   redirect_to book_path(@book)
+      # end
       if !current_user_has_review
-        @review = @book.reviews.build(:comment => params[:new_review_comment], :star => params[:rating])
+        @review = @book.reviews.new(:comment => params[:new_review_comment], :star => params[:rating])
         @current_user.reviews << @review
-        flash[:notice] = "Your Review for '#{@book.title}' successfully submitted!"
-        redirect_to book_path(@book)
+        if @review.save
+          flash[:notice] = "Your Review for '#{@book.title}' successfully submitted!"
+          redirect_to book_path(@book)
+        else
+          render 'books/show'
+        end
       else
         flash[:warning] = "You already posted review for this book!"
         redirect_to book_path(@book)
