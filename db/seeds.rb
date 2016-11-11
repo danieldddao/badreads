@@ -24,9 +24,15 @@ books.each do |book|
   Book.create!(book)
 end 
 
-User.create!(:email => "admin@gmail.com", :first_name => "Default", :last_name => "Admin", :password => "123456", :password_confirmation => "123456", :position => "Admin")
-User.create!(:email => "staff@gmail.com", :first_name => "Default", :last_name => "Staff", :password => "123456", :password_confirmation => "123456", :position => "Staff")
-User.create!(:email => "user@gmail.com", :first_name => "Default", :last_name => "User", :password => "123456", :password_confirmation => "123456", :position => "User")
-
 Role.create!(:position => "Staff", :position_code => "Staff1")
 Role.create!(:position => "Admin", :position_code => "Admin1")
+
+User.create!(:email => "admin@gmail.com", :first_name => "Default", :last_name => "Admin", :password => "123456", :password_confirmation => "123456", :position => "Admin")
+User.create!(:email => "staff@gmail.com", :first_name => "Default", :last_name => "Staff", :password => "123456", :password_confirmation => "123456", :position => "Staff")
+User.create!(:email => "user1@gmail.com", :first_name => "User", :last_name => "No.1", :password => "123456", :password_confirmation => "123456", :position => "User")
+User.create!(:email => "user2@gmail.com", :first_name => "User", :last_name => "No.2", :password => "123456", :password_confirmation => "123456", :position => "User")
+
+Review.create!(:star => 4, :comment => "What a wonderful book! The iconic first book in the Harry Potter series, it sets the tone for the wonderful wizarding adventures to come.", :book_id => 9, :user_id => 3)
+Review.create!(:star => 5, :comment => "Loved this whole series!!!", :book_id => 2, :user_id => 3)
+Review.create!(:star => 4, :comment => "Each book in this series just gets better and better. Beautiful writing. Loved reading this", :book_id => 2, :user_id => 4)
+Review.create!(:star => 2, :comment => "A sloppy ripping-off book for students.", :book_id => 3, :user_id => 4)

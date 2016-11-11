@@ -57,12 +57,22 @@
         %h2{ :style => "font-size: 90%; color: Maroon;" } There're currently no reviews for this book!
     - else
         - @book.reviews.limit(5).each do |review|
-            %div{:class => "review_#{review.id}"}
             %hr{ :style => "width: 50%; font-size: 100%;" }
-            %h3 By #{review.user.last_name}, #{review.user.first_name}
-            %p 
-                Rating : #{review.star}
-            Comment:
-            %h2{ :style => "font-size: 100%;" } 
+            By 
+            %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
+            %div
+                %br
+                Rating : 
+                - if review.star == 5
+                    =image_tag("star_img/5stars.png", height: '17', width: '80')
+                - elsif review.star == 4
+                    =image_tag("star_img/4stars.png", height: '17', width: '80')
+                - elsif review.star == 3
+                    =image_tag("star_img/3stars.png", height: '17', width: '80')
+                - elsif review.star == 2
+                    =image_tag("star_img/2stars.png", height: '17', width: '80')
+                - else
+                    =image_tag("star_img/1star.png", height: '17', width: '80')
+            %div{:style => "display: inline-table; width: 50%; " }
+                %h2{ :style => "font-size: 100%;" } Comment:
                 #{review.comment}
-            %br
