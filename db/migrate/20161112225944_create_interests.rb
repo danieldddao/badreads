@@ -4,6 +4,5 @@ class CreateInterests < ActiveRecord::Migration[5.0]
       t.string :genre
       t.timestamps
     end
-    add_index :genre, unique: true
   end
 end

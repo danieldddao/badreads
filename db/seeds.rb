@@ -30,3 +30,40 @@ User.create!(:email => "user@gmail.com", :first_name => "Default", :last_name =>
 
 Role.create!(:position => "Staff", :position_code => "Staff1")
 Role.create!(:position => "Admin", :position_code => "Admin1")
+
+Genres = [
+  {:genre => 'Science Fiction'},
+  {:genre => 'Satire'},
+  {:genre =>'Drama'},
+  {:genre =>'Action and Adventure'},
+  {:genre =>'Romance'},
+  {:genre =>'Mystery'},
+  {:genre =>'Horror'},
+  {:genre =>'Self help'},
+  {:genre =>'Health'},
+  {:genre =>'Guide'},
+  {:genre =>'Travel'},
+  {:genre =>'Children\'s'},
+  {:genre =>'Religion, Spirituality & New Age'},
+  {:genre =>'Science'},
+  {:genre =>'History'},
+  {:genre =>'Math'},
+  {:genre =>'Anthology'},
+  {:genre =>'Poetry'},
+  {:genre =>'Encyclopedias'},
+  {:genre =>'Dictionaries'},
+  {:genre =>'Comics'},
+  {:genre =>'Art'},
+  {:genre =>'Cookbooks'},
+  {:genre =>'Diaries'},
+  {:genre =>'Journals'},
+  {:genre =>'Prayer books'},
+  {:genre =>'Series'},
+  {:genre =>'Trilogy'},
+  {:genre =>'Biographies'},
+  {:genre =>'Autobiographies'},
+  {:genre =>'Fantasy'}
+    ]
+Genres.each do |cat|
+  Interest.create!(cat)
+end 

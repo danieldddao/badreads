@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108195739) do
+ActiveRecord::Schema.define(version: 20161112225944) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20161108195739) do
 
   create_table "interests", force: :cascade do |t|
     t.string   "genre"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_interests_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -59,11 +57,9 @@ ActiveRecord::Schema.define(version: 20161108195739) do
     t.string   "password_digest"
     t.string   "position"
     t.string   "session_token"
-    t.integer  "interest_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["interest_id"], name: "index_users_on_interest_id"
   end
 
 end
