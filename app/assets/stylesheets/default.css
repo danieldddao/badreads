@@ -25,19 +25,16 @@ h1 {
   border-bottom: 2px solid DarkSlateGrey;
 }
 h3 {
-  color: maroon;
-  font-size: 110%;
-  font-style: italic;
-  display: block;
-  width: 100%;
+  border-bottom: 2px solid #d9534f;
 }
+
 h1.title {
   text-align: center;
   padding: 15px;
-  width: 98%;
-  background: MidnightBlue;
+  width: 100%;
+  background: #428bca;
   color: white;
-  border-bottom: 3px solid maroon;
+  border-bottom: 3px solid #d9534f;
   font-size: 3em;
   font-style: normal;
 }
@@ -100,12 +97,19 @@ form label {
 }
 table#profile {
   display: inline-table;
-  margin: 15px;
-  border-collapse: collapse;
-  width: 95%;
+  width: 90%;
   border-bottom: 2px solid MidnightBlue;
 }
 table#editdeletebook {
   display: inline-table;
   width: 30%;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  overflow: auto;
+  overflow-y: scroll;
+  }

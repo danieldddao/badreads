@@ -1,5 +1,6 @@
+%title Delete a Book
 %div{ :style => "text-align: center;" }
-  %h1 Delete a Book
+  %h3 Delete a Book
 
   -if (@current_user && @current_user.position != "User")
     = form_tag deletebook_path do
@@ -10,7 +11,8 @@
       = label :book, :author, 'Enter Book Author:'
       = text_field :book, 'author'
       %br
-      = submit_tag 'Save Changes'
+      %br
+      = submit_tag 'Save Changes', :class => "btn btn-danger"
   -else
     Users cannot delete books!!
   end

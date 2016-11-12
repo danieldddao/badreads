@@ -1,5 +1,6 @@
+%title Add New Book
 %div{ :style => "text-align: center;" }
-  %h1 Add a New Book
+  %h3 Add a New Book
   -if (@current_user && @current_user.position != "User")
     = form_tag books_path do
       %br
@@ -24,7 +25,8 @@
       = label :book, :edition, 'Enter Book Edition:'
       = text_field :book, 'edition'
       %br
-      = submit_tag 'Save Changes'
+      %br
+      = submit_tag 'Save Changes', :class => "btn btn-success"
   -else
     Users cannot login to this page!!
   end

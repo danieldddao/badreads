@@ -7,29 +7,30 @@
   %body
     %h1.title BadReads!
     -if !@current_user
-      %table#signupsignin
-        %tbody
-          %tr
-            %td= button_to 'Home', root_path, :class => "home", :method => :get
-            %td= button_to 'All Books', allbooks_path, :class => "books", :method => :get
-            %td= button_to 'Sign In', login_path, :class => "signin", :method => :get
-            %td= button_to 'Sign Up', new_user_path, :class => "signup", :method => :get
-            %td= button_to 'Events', view_calendar_path, :class => "groups", :method => :get
-    -else
-      Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
       %table
         %tbody
           %tr
-            %td= button_to 'Home', root_path, :class => "home", :method => :get
-            %td= button_to 'All Books', allbooks_path, :class => "books", :method => :get
-            %td= button_to 'View Profile', user_path(@current_user), :class => "profile", :method => :get
-            %td= button_to 'Events', view_calendar_path, :class => "groups", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Home', root_path, :class => "btn btn-danger", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'All Books', allbooks_path, :class => "btn btn-primary", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Sign In', login_path, :class => "btn btn-primary", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Sign Up', new_user_path, :class => "btn btn-primary", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Events', view_calendar_path, :class => "btn btn-primary", :method => :get
+    -else
+      %table
+        %tbody
+          %tr
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Home', root_path, :class => "btn btn-info", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'All Books', allbooks_path, :class => "btn btn-primary", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'My Profile', user_path(@current_user), :class => "btn btn-primary", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Events', view_calendar_path, :class => "btn btn-primary", :method => :get
             -if @current_user.position == "Admin"
-              %td= button_to 'Add Position', new_staff_admin_path, :class => "newstaffadmin", :method => :get
+              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Add Position', new_staff_admin_path, :class => "btn btn-primary", :method => :get
             -if @current_user.position == "Admin" || @current_user.position == "Staff"
-              %td= button_to 'Add Book', new_book_path, :class => "books", :method => :get  
-              %td= button_to 'Delete Book', booksdelform_path, :class => "books", :method => :get  
-            %td= button_to 'Log Out', logout_path, :class => "signout", :method => :delete
+              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Add Book', new_book_path, :class => "btn btn-primary", :method => :get  
+              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Delete Book', booksdelform_path, :class => "btn btn-primary", :method => :get  
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Log Out', logout_path, :class => "btn btn-danger", :method => :delete
+      %br
+      %b Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
     #main
       %br
       %div{ :style => "text-align: center;" }

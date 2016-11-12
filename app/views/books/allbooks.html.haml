@@ -1,14 +1,15 @@
+%title Book Collection
 %div{ :style => "text-align: center;" }
-  %h1 All books in our collection
-  %table#books{ :style => "display: inline-table;" }
+  %h3 All books in our collection
+  %table{ :style => "display: inline-table; width: 100%;", :class => "table table-striped table-bordered" }
     %thead
-      %tr
-        %th ISBN
-        %th Title
-        %th Author
-        %th Publication Year
-        %th Category
-        %th Edition
+      %tr{ :style => "background-color: wheat;"}
+        %th{ :style => "text-align: center;" } ISBN
+        %th{ :style => "text-align: center;" } Title
+        %th{ :style => "text-align: center;" } Author
+        %th{ :style => "text-align: center;" } Publication Year
+        %th{ :style => "text-align: center;" } Category
+        %th{ :style => "text-align: center;" } Edition
         %th
     %tbody
       - @books.each do |book|
