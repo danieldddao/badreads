@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
     has_many :reviews
     has_many :books, :through => :reviews
-
+    
+    has_and_belongs_to_many :interests
+    
     has_secure_password
     before_save {|user| user.email=user.email.downcase}
     before_save :create_session_token
