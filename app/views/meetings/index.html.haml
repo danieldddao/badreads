@@ -1,0 +1,23 @@
+%p#notice= notice
+%h1 Meetings
+%table{:style=>"border: 5px; width: 100%"}
+  %thead
+    %tr
+      %th Name
+      %th Date
+      %th Time
+      %th{:colspan => "3"}
+  %tbody
+    - @meetings.each do |meeting|
+      %tr
+        %td= meeting.name
+        %td= meeting.start_time.mday
+        %td= meeting.approx_time
+        %td= link_to 'Show', meeting
+        %td= link_to 'Edit', edit_meeting_path(meeting)
+        %td= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+
+= link_to 'New Meeting', new_meeting_path
+= button_to 'Calendar View', view_calendar_path, :method => :get
+            

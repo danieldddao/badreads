@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112225944) do
+ActiveRecord::Schema.define(version: 20161113030033) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -32,6 +32,28 @@ ActiveRecord::Schema.define(version: 20161112225944) do
     t.string   "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "interests_meetings", id: false, force: :cascade do |t|
+    t.integer "interest_id", null: false
+    t.integer "meeting_id",  null: false
+    t.index ["interest_id", "meeting_id"], name: "index_interests_meetings_on_interest_id_and_meeting_id"
+    t.index ["meeting_id", "interest_id"], name: "index_interests_meetings_on_meeting_id_and_interest_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string   "name"
+    t.string   "approx_time"
+    t.datetime "start_time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "meetings_interests", id: false, force: :cascade do |t|
+    t.integer "meeting_id"
+    t.integer "interest_id"
+    t.index ["interest_id"], name: "index_meetings_interests_on_interest_id"
+    t.index ["meeting_id"], name: "index_meetings_interests_on_meeting_id"
   end
 
   create_table "reviews", force: :cascade do |t|

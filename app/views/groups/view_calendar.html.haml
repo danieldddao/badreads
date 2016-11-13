@@ -1,7 +1,13 @@
 %title Events
+= button_to 'Create New Meeeting', new_meeting_path, :method => :get
+= button_to 'List View of Meeetings',meetings_path, :method => :get
 %div{ :style => "text-align: center;" }
   %h3 Event Calendar for this month:
   
 %br
 = month_calendar do |date|
   = date.mday
+  
+  
+
+       
