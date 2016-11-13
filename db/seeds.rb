@@ -29,9 +29,6 @@ User.create!(:email => "user2@gmail.com", :first_name => "User", :last_name => "
 User.create!(:email => "user3@gmail.com", :first_name => "User", :last_name => "No.3", :password => "123456", :password_confirmation => "123456", :position => "User")
 User.create!(:email => "user4@gmail.com", :first_name => "User", :last_name => "No.4", :password => "123456", :password_confirmation => "123456", :position => "User")
 
-Role.create!(:position => "Staff", :position_code => "Staff1")
-Role.create!(:position => "Admin", :position_code => "Admin1")
-
 Genres = [
   {:genre => 'Science Fiction'},
   {:genre => 'Satire'},

@@ -18,7 +18,7 @@ Background: books has been added to database
   
 Scenario:  Staff signs up with correct staff position code
   Given I have a role with information: role "Staff", role position "StaffTest1"
-  When I've submitted new user's information, email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff", position code "Staff1"
+  When I've submitted new user's information, email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff", position code "StaffTest1"
   Then I should see "Sign In" page
   And I should see "Sign up successfuly! Welcome to BadReads!" notice
   
@@ -30,7 +30,7 @@ Scenario:  Staff signs up with incorrect staff position code
 
 Scenario:  Admin signs up with correct admin position code
   Given I have a role with information: role "Admin", role position "AdminTest1"
-  When I've submitted new user's information, email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Admin", position code "Admin1"
+  When I've submitted new user's information, email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Admin", position code "AdminTest1"
   Then I should see "Sign In" page
   And I should see "Sign up successfuly! Welcome to BadReads!" notice
   
