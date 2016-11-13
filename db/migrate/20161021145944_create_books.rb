@@ -10,6 +10,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :category
       t.string :edition 
       t.integer :search_count, :default => 0
+      t.string :img, :default => "books/default-book.png"
       t.timestamps
     end
     add_index :books, :isbn, unique:true

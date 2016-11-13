@@ -1,16 +1,15 @@
 %title Home!
 %div{ :style => "text-align: center;" }
-  = form_tag books_search_path, :method => :post do
-    = text_field_tag :search_terms, nil, :size => 35, :class => "search_box", :placeholder => "Search by isbn, title, author,...", :id => 'search_box'
-    = submit_tag 'Search', :class => "button", :id => 'search_button'
-
+  = form_tag books_search_path, :method => :post, :class => "form-inline" do
+    = text_field_tag :search_terms, nil, :size => 30, :class => "form-control", :placeholder => "Search by isbn, title, or author", :id => 'search_box'
+    = submit_tag 'Search', :class => "btn btn-default", :id => 'search_button'
 %br
 %div{ :style => "display: inline-block;" }
-  %table#books
+  %table{ :style => "width: 590px;", :class => "table table-striped table-bordered" }
     %thead
-      %tr
-        %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Searched Books
-    %tbody
+      %tr{ :style => "background-color: wheat;"}
+        %th{ :style => "text-align: center; color: maroon; font-size: 13pt;" } Top 10 Searched Books
+    %tbody{ :style => "text-align: center;"}
       - if @top_10_searched_books != nil
         - if @top_10_searched_books.count == 1
           %tr
@@ -21,11 +20,11 @@
               - if(book.present?)
                 %td= link_to "'#{book.title}' by #{book.author} (#{book.search_count})", book
 %div{ :style => "float: left;" }
-  %table#books
+  %table{ :style => "width: 590px;", :class => "table table-striped table-bordered" }
     %thead
-      %tr
-        %th{ :style => "color: maroon; font-size: 13pt;" } Top 10 Reviewed Books
-    %tbody
+      %tr{ :style => "background-color: wheat;"}
+        %th{ :style => "text-align: center; color: maroon; font-size: 13pt;" } Top 10 Reviewed Books
+    %tbody{ :style => "text-align: center;"}
       - if @top_10_reviewed_books != nil
         - if @top_10_reviewed_books.count == 1
           %tr
@@ -35,5 +34,3 @@
             %tr
               - if (book.present?)
                 %td= link_to "'#{book.title}' by #{book.author}", book
-// %br
-// = link_to 'New Book', new_book_path

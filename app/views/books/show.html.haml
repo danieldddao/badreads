@@ -1,44 +1,134 @@
-%div{ :style => "text-align: center;" }
-    %h2{ :style => "font-size: 160%; color: MidnightBlue" }= @book.title
-    %h2{ :style => "font-size: 110%;" }ISBN: #{@book.isbn}
-    %br
-    %h2{ :style => "font-size: 110%;" }Author:
-    %h3= @book.author
-    %h2{ :style => "font-size: 110%;" }Summary: 
-    %h3= @book.summary
-    %br
-    %h2{ :style => "font-size: 110%;" }Publisher: #{@book.publisher}
-    %h2{ :style => "font-size: 110%;" }Year: #{@book.publication_year}
-    %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
-    %br
+%title #{@book.title}
+%hr
+%div{:class => "container"}
+    %div{:class => "row"}
+        %div{:class => "col-md-12"}
+            %div{:style => 'float:left;height:450px; margin-right:10px;'}
+                =image_tag(@book.img, height: '300', width: '200')
+            %div{:style => "text-align: center;" }
+                %p{ :style => "font-size: 150%; color: MidnightBlue; font-weight: bold;" }= @book.title
+                - if @avg_rating == 0
+                    =image_tag("star_img/0star.png", height: '17', width: '80')
+                - else
+                    =image_tag("star_img/#{@avg_rating}star.png", height: '17', width: '80')
+                %h5 ISBN: #{@book.isbn}
+                %br
+                %h4
+                    Author:
+                    =@book.author
+                %h2{ :style => "font-size: 110%;" }Summary: 
+                = @book.summary
+                %br
+                %h2{ :style => "font-size: 110%;" }Publisher: #{@book.publisher}
+                %h2{ :style => "font-size: 110%;" }Year: #{@book.publication_year}
+                %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
+                %br
+%div{:style => "text-align: center;" }
     -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
         %table#editdeletebook
             %tbody
                 %tr
-                    %td= button_to 'Edit This Book', edit_book_path(@book), :method => :get
-                    %td= button_to 'Delete This Book', book_path(@book), :method => :delete, :data => {:confirm => "Are you sure you want to delete this book, #{@book.title}?"}
-    %br
+                    %td= button_to 'Edit This Book', edit_book_path(@book), :method => :get, :class => "btn btn-warning"
+                    %td= button_to 'Delete This Book', book_path(@book), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure you want to delete this book, #{@book.title}?"}
+    - if @current_user
+        - if @current_user_has_review 
+            // VIEW MY REVIEW
+            %h3{ :style => "font-size: 120%;color: Green;" } 
+                %br
+                You already posted review for this book!
+                %br
+                %br
+                %div{:class => "container"}
+                    %a{href: "#", :data => {:toggle => 'modal', :target => '#myModal'}, :class => "btn btn-default"} My Review
+                %div{:class => "modal fade", :id => "myModal", :role => "dialog"}
+                    %div{:class => "modal-dialog modal-md"}
+                        %div{:class => "modal-content"}
+                            %div{:class => "modal-header"}
+                                = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
+                                My Review :
+                            %div{:class => "modal-body", :style => "display: inline-table; width: 95%; color:Maroon;" }
+                                Rating : 
+                                =image_tag("star_img/#{@current_user_review.star}star.png", height: '17', width: '80')
+                                %br
+                                %div{:style => "display: inline-table; color: Black;" }
+                                    %h2{ :style => "font-size: 100%;" } Comment:
+                                    #{@current_user_review.comment}
+                            %div{:class => "modal-footer", :style => "text-align: center;"}
+                                = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
+        - else
+            // POST NEW REVIEW
+            %h2{ :style => "font-size: 140%; color: Green; font-weight: bold;" } Post New Review :
+            %div{ :style => "text-align: center;" }
+                -unless @review == nil
+                    -if @review.errors.any?
+                        %ul
+                            -@review.errors.full_messages.each do |msg|
+                                %li{ :style => "color: maroon;" } #{msg}
+                = form_tag review_create_path do
+                    %p 
+                        Rating :
+                        %span(class="starRating")
+                            = radio_button nil, nil, "5", :name => "rating", :id => "new_rating5"
+                            = label nil, "5", :for => "new_rating5"
+                            
+                            = radio_button nil, nil, "4", :name => "rating", :id => "new_rating4"
+                            = label nil, "4", :for => "new_rating4"
+                            
+                            = radio_button nil, nil, "3", :name => "rating", :id => "new_rating3"
+                            = label nil, "3", :for => "new_rating3"
+                            
+                            = radio_button nil, nil, "2", :name => "rating", :id => "new_rating2"
+                            = label nil, "2", :for => "new_rating2"
+                            
+                            = radio_button nil, nil, "1", :name => "rating", :id => "new_rating1"
+                            = label nil, "1", :for => "new_rating1"
+                    = text_area_tag 'new_review_comment', nil, size: "60x7", :placeholder => "Enter your Review", :id => "new_review_comment"
+                    %br
+                    = submit_tag 'Submit Review', :class => "btn btn-success"
+    - else
+        %u= link_to "Please Sign-In to post review!", login_path
     %hr
-    %h2{ :style => "font-size: 120%; color: Green" } Post New Review
-    %div{ :style => "text-align: center;" }
-        = form_tag new_book_path do
-            %p 
-                Rating :
-                %span(class="starRating")
-                    = radio_button nil, nil, "5", :name => "rating", :id => "rating5"
-                    = label nil, "5", :for => "rating5"
-                    
-                    = radio_button nil, nil, "4", :name => "rating", :id => "rating4"
-                    = label nil, "4", :for => "rating4"
-                    
-                    = radio_button nil, nil, "3", :name => "rating", :id => "rating3"
-                    = label nil, "3", :for => "rating3"
-                    
-                    = radio_button nil, nil, "2", :name => "rating", :id => "rating2"
-                    = label nil, "2", :for => "rating2"
-                    
-                    = radio_button nil, nil, "1", :name => "rating", :id => "rating1"
-                    = label nil, "1", :for => "rating1"
-            = text_area_tag 'new_review_comment', nil, size: "50x7", :placeholder => "Enter your Review", :id => "new_review_comment"
-            %br
-            = submit_tag 'Submit Review', :class => "submit_button"
+    // TOP REVIEWS
+    %h2{ :style => "font-size: 140%; color: Green;  font-weight: bold;" } Top Reviews :
+    - if @book.reviews.empty?
+        %h2{ :style => "font-size: 90%; color: Maroon;" } There're currently no reviews for this book!
+    - elsif @top_reviews
+        - @top_reviews.each do |review|
+            %div{:class => "panel panel-info center-block", :style => "width : 50%"}
+                %div{:class => "panel-heading"}
+                    By 
+                    %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
+                    On #{Date.parse(review.user.updated_at.to_s)}
+                %div{:class => "panel-body"}
+                    Rating : 
+                    =image_tag("star_img/#{review.star}star.png", height: '17', width: '80')
+                    %br
+                    %div{:style => "display: inline-table; width: 95%; " }
+                        %h2{ :style => "font-size: 100%;" } Comment:
+                        #{review.comment}
+        // VIEW ALL REVIEWS
+        %div{:class => "container"}
+            %a{href: "#", :data => {:toggle => 'modal', :target => '#myModalAllReviews'}, :class => "btn btn-default"} View All Reviews
+        %div{:class => "modal fade", :id => "myModalAllReviews", :role => "dialog"}
+            %div{:class => "modal-dialog modal-md"}
+                %div{:class => "modal-content"}
+                    %h3{ :style => "font-size: 120%;color: Green;" }
+                        %div{:class => "modal-header", :style => "color: Green;"}
+                            = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
+                            All Reviews :
+                    %div{:class => "modal-body", :style => "display: inline-table; color:Maroon;" }
+                        - @book.reviews.each do |review|
+                            %div{:id => "allReview_#{review.id}", :class => "panel panel-info center-block"}
+                                %div{:class => "panel-heading"}
+                                    By 
+                                    %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
+                                    On #{Date.parse(review.user.updated_at.to_s)}
+                                %div{:class => "panel-body", :style => "color: Black;"}
+                                    Rating : 
+                                    =image_tag("star_img/#{review.star}star.png", height: '17', width: '80')
+                                %div{:style => "display: inline-table; width: 95%; color: Black;" }
+                                    %h2{ :style => "font-size: 100%;" } Comment:
+                                    #{review.comment}
+                    %div{:class => "modal-footer", :style => "text-align: center;"}
+                        = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
+

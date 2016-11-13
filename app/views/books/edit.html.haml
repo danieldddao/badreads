@@ -1,43 +1,51 @@
 %title Edit Book!
+%h3 Edit Book
 %div{ :style => "text-align: center;" }
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } TITLE: '#{@book.title}'
         = text_field :new_title, nil, :size => '30', :placeholder => "Enter New Title"
         %br
-        = submit_tag "Update Book's Title"
+        %br
+        = submit_tag "Update Book's Title", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } ISBN: '#{@book.isbn}'
         = text_field :new_isbn, nil, :size => '30', :placeholder => "Enter New ISBN"
         %br
-        = submit_tag "Update Book's ISBN"
+        %br
+        = submit_tag "Update Book's ISBN", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } AUTHOR: '#{@book.author}'
         = text_field :new_author, nil, :size => '30', :placeholder => "Enter New Author"
         %br
-        = submit_tag "Update Book's Author"
+        %br
+        = submit_tag "Update Book's Author", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } SUMMARY: '#{@book.summary}'
-        = text_field :new_summary, nil, :size => '30', :placeholder => "Enter New Summary"
+        = text_area_tag :new_summary, nil, size: "150x7", :placeholder => "Enter New Summary", :id => "new_summary_"
         %br
-        = submit_tag "Update Book's Summary"
+        %br
+        = submit_tag "Update Book's Summary", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } PUBLISHER: '#{@book.publisher}'
         = text_field :new_publisher, nil, :size => '30', :placeholder => "Enter New Publisher"
         %br
-        = submit_tag "Update Book's Publisher"
+        %br
+        = submit_tag "Update Book's Publisher", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } PUBLICATION YEAR: '#{@book.publication_year}'
         = text_field :new_publication_year, nil, :size => '30', :placeholder => "Enter New Publication Year"
         %br
-        = submit_tag "Update Book's Publication Year"
+        %br
+        = submit_tag "Update Book's Publication Year", :class => "btn btn-info"
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } EDITION: '#{@book.edition}'
         = text_field :new_edition, nil, :size => '30', :placeholder => "Enter New Edition"
         %br
-        = submit_tag "Update Book's Edition"
+        %br
+        = submit_tag "Update Book's Edition", :class => "btn btn-info"

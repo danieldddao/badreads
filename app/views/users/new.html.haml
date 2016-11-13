@@ -1,5 +1,5 @@
 %title Sign Up!
-%h1{ :style => "text-align: center;" } Sign Up
+%h3{ :style => "text-align: center;" } Sign Up
       
 %div{ :style => "text-align: center;" }
   -unless @user ==nil
@@ -28,8 +28,8 @@
     = label :user, :position, 'Position'
     = select :user, :position, ['User','Staff', 'Admin'], {}, :onChange => "positionChange(this);", :id => "role_position"
 
-    = text_field nil, 'position_code', :placeholder => "Enter your Position Code", :id => "position_code"
+    = text_field nil, 'position_code', :size => "21", :placeholder => "Enter your Position Code", :id => "position_code"
 
     %br
     %br
-    = submit_tag 'Create my account', :class => "submit_button"
+    = submit_tag 'Create my account', :class => "btn btn-success"

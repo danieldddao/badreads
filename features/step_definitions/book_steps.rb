@@ -100,6 +100,10 @@ When(/^I follow "([^"]*)"$/) do |arg1|
   click_on arg1
 end
 
+Then(/^I should see "([^"]*)"$/) do |arg1|
+    expect(page).to have_content(arg1)
+ end
+
 Then(/^I should not see "([^"]*)"$/) do |arg1|
    result=false
    all("tr").each do |tr|
@@ -115,4 +119,10 @@ end
 When(/^I update "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in 'new_' + arg1.downcase + '_', :with => title
   click_on "Update Book's " + arg1
+end
+
+## Review book ##
+Given(/^I've posted a review for the book's isbn "([^"]*)" with rating "([^"]*)" and comment "([^"]*)"$/) do |arg1, arg2, arg3|
+    book = Book.find_by_isbn(arg1)
+    Review.create!(:star => arg2, :comment => arg3, :book_id => book.id, :user_id => 1)
 end

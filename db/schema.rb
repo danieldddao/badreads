@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20161112225944) do
     t.string   "category"
     t.string   "edition"
     t.integer  "search_count",                default: 0
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.string   "img",                         default: "books/default-book.png"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
   end
 

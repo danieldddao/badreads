@@ -1,29 +1,30 @@
 %title My Profile!
-%h1{ :style => "text-align: center;" } My Profile
+%h3{ :style => "text-align: center; border-bottom: 2px solid #d9534f;" } My Profile
 
 %div{ :style => "text-align: center;" }
     %table#profile
         %thead
             %tr
-                %th
-                    %h2{ :style => "font-size: 110%;" }Email: 
-                    %h3= @user.email
-                %th
-                    %h2{ :style => "font-size: 110%;" } First Name:
-                    %h3= @user.first_name
-                %th
-                    %h2{ :style => "font-size: 110%;" } Last Name:
-                    %h3= @user.last_name
-                %th
-                    %h2{ :style => "font-size: 110%;" } Position Level:
-                    %h3= @user.position
-    %h2{ :style => "font-size: 110%;" } Update Password:
+                %th{ :style => "text-align: center;" }
+                    %h4 Email: 
+                    %h5= @user.email
+                %th{ :style => "text-align: center;" }
+                    %h4 First Name:
+                    %h5= @user.first_name
+                %th{ :style => "text-align: center;" }
+                    %h4 Last Name:
+                    %h5= @user.last_name
+                %th{ :style => "text-align: center;" }
+                    %h4 Position Level:
+                    %h5= @user.position
+    %br
+    %br
+    %h4 Change Password:
     -unless @user ==nil
         -if @user.errors.any?
             %ul
             -@user.errors.full_messages.each do |msg|
                 %li{ :style => "color: maroon;" } #{msg}
-    %br
     = form_tag user_path(@current_user), :method => :put do
         = label :user, :current_password, 'Current Password'
         = password_field :current_password, nil, :size => '30', :placeholder => "Enter Current Password"
@@ -32,4 +33,5 @@
         = label :user, :password_confirmation, 'New Password Confirmation'
         = password_field :password_confirmation, nil, :size => '30', :placeholder => "Re-enter New Password"
         %br
-        = submit_tag 'Submit New Password', :class => "submit_button"
+        %br
+        = submit_tag 'Submit New Password', :class => "btn btn-danger"

@@ -8,15 +8,6 @@ class BooksController < ApplicationController
   def delete_params
       params.require(:book).permit(:title, :author)
   end
-
-  private def checkBookExist
-    if Book.exists?(params[:id])
-      @book = Book.find(params[:id])
-    else
-      flash[:warning] = "The Book you are looking for is not in the Database!"
-      redirect_to root_path
-    end
-  end
   
   def index
     @top_10_searched_books = top_10_searched_books
@@ -32,6 +23,7 @@ class BooksController < ApplicationController
   
   def show
     checkBookExist
+    check_book_reviews
   end
 
   def create

@@ -1,4 +1,4 @@
-Feature: User views his/her profile
+Feature: Admin/Staff edits book's information
 
 Background: books has been added to database
   
@@ -15,14 +15,16 @@ Background: books has been added to database
   | 9780806539974          | TestBook4 book | TestAuthor3  | 1999             | Cat2     | 2       | 6            |
 
   And I am on the BadReads home page
-  And I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
+  
+Scenario:  Registered Staff can delete book in book's page
+  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff"
+  And I have signed in to my account with email "test@gmail.com", password "123456"
+  When I follow "Test Book1"
+  Then I should see "Delete This Book" button
 
-Scenario:  View Profile Button
-  When I have signed in to my account with email "test@gmail.com", password "123456"
-  Then I should see "My Profile" button
-  And I am on the BadReads home page
-
-Scenario:  View Profile Page
-  When I have signed in to my account with email "test@gmail.com", password "123456"
-  And I click "My Profile"
-  Then I should see "My Profile" page
+Scenario:  Registered Staff delete book in book's page
+  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff"
+  And I have signed in to my account with email "test@gmail.com", password "123456"
+  And I follow "Test Book1"
+  When I click "Delete This Book"
+  Then I should not see "Test Book1" in the book list page
