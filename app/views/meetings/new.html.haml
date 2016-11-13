@@ -1,0 +1,24 @@
+%h1 New Meeting
+= form_tag meetings_path do
+  %br
+  = label :meeting, :name, 'Enter A Name for the Meeting :'
+  = text_field :meeting, 'name'
+  %br
+  = label :meeting, :date, 'Enter the Date for the Meeting :'
+  = date_select :meeting, :start_time, { default: Date.today }
+  %br
+  = label :meeting, :time, 'Enter Time information for the Meeting (Approx or Exact):'
+  = text_field :meeting, 'approx_time'
+  %br
+  %table
+    %thead
+      %tr
+        %th Genre Name
+        %th Select
+    %tbody
+      - @interests.each do |interest_type|
+        %tr
+          %td= interest_type[:genre] 
+          %td= check_box_tag "selected_groups[#{interest_type[:id]}]"
+  = submit_tag 'Save Changes'
+= link_to 'Back', view_calendar_path
