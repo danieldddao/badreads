@@ -15,4 +15,4 @@
     %br
     = submit_tag 'Login to my account', :class => "btn btn-success"
   %br  
-  %u= link_to "Don't have an account. Sign Up!", new_user_path, :class => "btn btn-link"
+  = button_to "Don't have an account. Sign Up!", new_user_path, :class => "btn btn-link", :method => :get
