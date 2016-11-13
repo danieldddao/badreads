@@ -1,6 +1,6 @@
 %p#notice= notice
 %h1 Meetings
-%table
+%table{:style=>"border: 5px; width: 200%"}
   %thead
     %tr
       %th Name
@@ -11,7 +11,7 @@
     - @meetings.each do |meeting|
       %tr
         %td= meeting.name
-        %td= meeting.start_time
+        %td= meeting.start_time.strptime
         %td= meeting.approx_time
         %td= link_to 'Show', meeting
         %td= link_to 'Edit', edit_meeting_path(meeting)
