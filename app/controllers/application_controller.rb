@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
         @book.reviews.each {|review| 
           @avg_rating += review.star
         }
-        @avg_rating = (@avg_rating / @book.reviews.count).round
+        @avg_rating = (@avg_rating.to_f / @book.reviews.count.to_f).round
       end
     end
   end
