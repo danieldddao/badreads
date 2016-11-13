@@ -24,7 +24,7 @@
     %br
     = form_tag book_path(@book), :method => :put do
         %h2{ :style => "font-size: 100%; color: MidnightBlue" } SUMMARY: '#{@book.summary}'
-        = text_area_tag :new_summary, nil, size: "150x7", :placeholder => "Enter New Summary"
+        = text_area_tag :new_summary, nil, size: "150x7", :placeholder => "Enter New Summary", :id => "new_summary_"
         %br
         %br
         = submit_tag "Update Book's Summary", :class => "btn btn-info"

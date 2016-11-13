@@ -19,7 +19,7 @@
       %table
         %tbody
           %tr
-            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Home', root_path, :class => "btn btn-info", :method => :get
+            %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Home', root_path, :class => "btn btn-danger", :method => :get
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'All Books', allbooks_path, :class => "btn btn-primary", :method => :get
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'My Profile', user_path(@current_user), :class => "btn btn-primary", :method => :get
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Events', view_calendar_path, :class => "btn btn-primary", :method => :get
@@ -30,7 +30,8 @@
               %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Delete Book', booksdelform_path, :class => "btn btn-primary", :method => :get  
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Log Out', logout_path, :class => "btn btn-danger", :method => :delete
       %br
-      %b Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
+      %div{ :style => "text-align: right; padding-right: 5%" }
+        %b Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
     #main
       %br
       %div{ :style => "text-align: center;" }
