@@ -36,8 +36,8 @@ class MeetingsController < ApplicationController
       @choices.each do |key, value|
         if value == "1" then
           @group = Interest.find(key)
-          @group << @meeting
-          @meeting << @group
+          @group.meetings << @meeting
+          @meeting.interests << @group
         end
       end
       flash[:notice] = "Meeting was added to the Calendar"
