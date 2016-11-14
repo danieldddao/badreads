@@ -1,4 +1,5 @@
 %h1 New Meeting
+= link_to 'Back', view_calendar_path
 = form_tag meetings_path do
   %br
   = label :meeting, :name, 'Enter A Name for the Meeting :'
@@ -21,4 +22,4 @@
           %td= interest_type[:genre] 
           %td= check_box_tag "selected_groups[#{interest_type[:id]}]"
   = submit_tag 'Save Changes'
-= link_to 'Back', view_calendar_path
+
