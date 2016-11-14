@@ -1,19 +1,20 @@
 %title Create New Position!
 
-%h1{ :style => "text-align: center;" } Create New Staff or New Admin
+%h3{ :style => "text-align: center;" } Create New Staff or New Admin
 
 %div{ :style => "text-align: center;" }
   -if (@current_user && @current_user.position != "User")
     = form_tag new_staff_admin_create_path do
       = label :role, :position, 'Choose Position'
-      = select :role, :position, ['Staff', 'Admin']
+      %div{:style => "width: 8%; display: inline-table;"}
+        = select :role, :position, ['Staff', 'Admin'], {}, :class => "form-control"
       %br
       %br
       = submit_tag 'Add New Position', :class => "btn btn-success"
   
     %br
     %br
-    %h2 List of created positions that haven't been used yet
+    %h3 List of created positions that haven't been used yet
     %table#books{ :style => "display: inline-table;" }
       %thead
         %tr

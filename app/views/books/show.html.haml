@@ -82,7 +82,7 @@
                             
                             = radio_button nil, nil, "1", :name => "rating", :id => "new_rating1"
                             = label nil, "1", :for => "new_rating1"
-                    = text_area_tag 'new_review_comment', nil, size: "60x7", :placeholder => "Enter your Review", :id => "new_review_comment"
+                    = text_area_tag 'new_review_comment', nil, size: "100x7", :placeholder => "Enter your Review", :id => "new_review_comment"
                     %br
                     = submit_tag 'Submit Review', :class => "btn btn-success"
     - else
@@ -100,8 +100,8 @@
                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                     On #{Date.parse(review.user.updated_at.to_s)}
                 %div{:class => "panel-body"}
-                    Rating : 
-                    =image_tag("star_img/#{review.star}star.png", height: '17', width: '80')
+                    %h2{ :style => "font-size: 100%;" }Rating : 
+                    =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                     %br
                     %div{:style => "display: inline-table; width: 95%; " }
                         %h2{ :style => "font-size: 100%;" } Comment:
@@ -124,8 +124,8 @@
                                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                                     On #{Date.parse(review.user.updated_at.to_s)}
                                 %div{:class => "panel-body", :style => "color: Black;"}
-                                    Rating : 
-                                    =image_tag("star_img/#{review.star}star.png", height: '17', width: '80')
+                                    %h2{ :style => "font-size: 100%;" } Rating : 
+                                    =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                                 %div{:style => "display: inline-table; width: 95%; color: Black;" }
                                     %h2{ :style => "font-size: 100%;" } Comment:
                                     #{review.comment}

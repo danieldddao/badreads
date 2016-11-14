@@ -65,7 +65,7 @@ table#books tr {
   padding: 4px;
 }
 #notice.message {
-  color: maroon;
+  color: #d9534f;
   font-weight: bold;
   font-size: 12pt;
 }
