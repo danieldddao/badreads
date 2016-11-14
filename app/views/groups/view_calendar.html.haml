@@ -5,9 +5,9 @@
   %h3 Event Calendar for this month:
   
 %br
-= month_calendar do |date|
+= month_calendar events: @meetings do |date, meetings|
   = date.mday
-  
-  
+  -meetings.each do |meeting|
+    = meeting.name
 
        
