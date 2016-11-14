@@ -11,6 +11,7 @@ class BooksController < ApplicationController
   
   def index
     @top_10_searched_books = top_10_searched_books
+    @top_10_reviewed_books = top_10_reviewed_books
   end
   
   def new
@@ -65,6 +66,10 @@ class BooksController < ApplicationController
       @books = Book.all.order('search_count DESC').limit(10)
   end
   
+  def top_10_reviewed_books
+      #Display top ten reviewed books
+      @books = Book.all.order('reviews_count DESC').limit(10)
+  end  
   def delform
       #Display form to delete a book
   end

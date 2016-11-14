@@ -9,7 +9,8 @@ class ReviewsController < ApplicationController
       if !@current_user_has_review
         @review = @book.reviews.new(:comment => params[:new_review_comment], :star => params[:rating])
         @current_user.reviews << @review
-        if @review.save
+        @book.reviews_count = @book.reviews.count
+        if @review.save && @book.save
           flash[:notice] = "Your Review for '#{@book.title}' successfully submitted!"
           redirect_to book_path(@book)
         else
