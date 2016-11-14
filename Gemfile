@@ -70,6 +70,6 @@ gem "erb2haml", :group => :development
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "simple_calendar", "~> 2.0"
 
-gem 'google-api-client', :require => 'google/api_client'
+#gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
