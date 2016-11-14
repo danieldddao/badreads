@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+  before_action :set_meeting, only: [:destroy]
   #ONLY HAML ACTIONS IMPLEMENTED !! PARTIALS AT SPRINT 3
   def meeting_params
     params.require(:meeting).permit(:name, :approx_time, :start_time)
@@ -10,21 +10,12 @@ class MeetingsController < ApplicationController
     @meetings = Meeting.all
   end
 
-  # GET /meetings/1
-  # GET /meetings/1.json
-  def show
-  end
-
   # GET /meetings/new
   def new
     @meeting = Meeting.new
     @interests = Interest.all
   end
 
-  # GET /meetings/1/edit
-  def edit
-    # TO BE COMPLETED
-  end
 
   # POST /meetings
   def create
@@ -45,14 +36,13 @@ class MeetingsController < ApplicationController
     redirect_to view_calendar_path
   end
 
-  # PATCH/PUT /meetings/1
-  def update
-    # TO BE COMPLETED
-  end
 
   # DELETE /meetings/1
   def destroy
-    # TO BE Completed
+    @meeting = Meeting.find(params[:id])
+    @meeting.destroy
+    @meeting = Meeting.all
+    redirect_to view_calendar_path
   end
 
   private
@@ -60,4 +50,5 @@ class MeetingsController < ApplicationController
     def set_meeting
       @meeting = Meeting.find(params[:id])
     end
+
 end
