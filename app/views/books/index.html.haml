@@ -33,4 +33,4 @@
           - @top_10_reviewed_books.each do |book|
             %tr
               - if (book.present?)
-                %td= link_to "'#{book.title}' by #{book.author}", book
+                %td= link_to "'#{book.title}' by #{book.author} (#{book.reviews_count})", book
