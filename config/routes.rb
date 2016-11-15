@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   #Common Interest Group Routes:
   match '/view_calendar', to: 'groups#view_calendar', via: :get
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  #Google Call Back:
+  get 'auth/:provider/callback', to: 'groups#view_calendar'
 end
