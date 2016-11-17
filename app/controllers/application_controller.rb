@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
       @avg_rating = 0
       if @current_user && !@book.reviews.empty?
         @book.reviews.each {|review| 
-          if review.user.id == @current_user.id
+          if review.user_id == @current_user.id
             @current_user_has_review = true 
             @current_user_review = review
           end

@@ -7,3 +7,12 @@ user1 :
     password_digest: 123456
     position: User
     session_token: 123456
+
+user1 :   
+    id: 2 
+    email: testuser2@gmail.com
+    first_name: testfirstname2
+    last_name: testlastname2
+    password_digest: 123456
+    position: Staff
+    session_token: 123456

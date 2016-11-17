@@ -96,7 +96,9 @@ When(/^I have visited the Details about "(.*?)" page$/) do |title|
    visit books_path
    click_on "#{title}"
  end
+ 
 When(/^I follow "([^"]*)"$/) do |arg1|
+  visit allbooks_path
   click_on arg1
 end
 
