@@ -925,40 +925,6 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/helpers/groups_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/helpers/meetings_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/home/ubuntu/workspace/kunal/badreads/spec/models/book_spec.rb": [
         1,
         1,
@@ -994,35 +960,6 @@
         3,
         null,
         null,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/models/interest_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/app/models/interest.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/models/meeting_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/app/models/meeting.rb": [
-        1,
-        1,
         null
       ],
       "/home/ubuntu/workspace/kunal/badreads/spec/models/review_spec.rb": [
@@ -1232,83 +1169,6 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/views/meetings/edit.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/views/meetings/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/views/meetings/new.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/kunal/badreads/spec/views/meetings/show.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
       "/home/ubuntu/workspace/kunal/badreads/app/models/user.rb": [
         1,
         1,
@@ -1334,8 +1194,23 @@
         null,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/kunal/badreads/app/models/meeting.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/kunal/badreads/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/kunal/badreads/app/models/interest.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1479405182
+    "timestamp": 1479405486
   }
 }
