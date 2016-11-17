@@ -23,137 +23,35 @@ RSpec.describe MeetingsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Meeting. As you add validations to Meeting, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # MeetingsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
-  describe "GET #index" do
-    it "assigns all meetings as @meetings" do
-      meeting = Meeting.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(assigns(:meetings)).to eq([meeting])
-    end
+  describe 'List All meetings' do
+        fixtures :meetings
+        fixtures :interests
+        it 'should render the index view' do
+            get :index
+            expect(response).to render_template("index")
+        end
   end
-
-  describe "GET #show" do
-    it "assigns the requested meeting as @meeting" do
-      meeting = Meeting.create! valid_attributes
-      get :show, params: {id: meeting.to_param}, session: valid_session
-      expect(assigns(:meeting)).to eq(meeting)
-    end
-  end
-
-  describe "GET #new" do
-    it "assigns a new meeting as @meeting" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:meeting)).to be_a_new(Meeting)
-    end
-  end
-
-  describe "GET #edit" do
-    it "assigns the requested meeting as @meeting" do
-      meeting = Meeting.create! valid_attributes
-      get :edit, params: {id: meeting.to_param}, session: valid_session
-      expect(assigns(:meeting)).to eq(meeting)
-    end
-  end
-
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Meeting" do
-        expect {
-          post :create, params: {meeting: valid_attributes}, session: valid_session
-        }.to change(Meeting, :count).by(1)
-      end
-
-      it "assigns a newly created meeting as @meeting" do
-        post :create, params: {meeting: valid_attributes}, session: valid_session
-        expect(assigns(:meeting)).to be_a(Meeting)
-        expect(assigns(:meeting)).to be_persisted
-      end
-
-      it "redirects to the created meeting" do
-        post :create, params: {meeting: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Meeting.last)
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns a newly created but unsaved meeting as @meeting" do
-        post :create, params: {meeting: invalid_attributes}, session: valid_session
-        expect(assigns(:meeting)).to be_a_new(Meeting)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, params: {meeting: invalid_attributes}, session: valid_session
-        expect(response).to render_template("new")
-      end
-    end
-  end
-
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested meeting" do
-        meeting = Meeting.create! valid_attributes
-        put :update, params: {id: meeting.to_param, meeting: new_attributes}, session: valid_session
-        meeting.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "assigns the requested meeting as @meeting" do
-        meeting = Meeting.create! valid_attributes
-        put :update, params: {id: meeting.to_param, meeting: valid_attributes}, session: valid_session
-        expect(assigns(:meeting)).to eq(meeting)
-      end
-
-      it "redirects to the meeting" do
-        meeting = Meeting.create! valid_attributes
-        put :update, params: {id: meeting.to_param, meeting: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(meeting)
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns the meeting as @meeting" do
-        meeting = Meeting.create! valid_attributes
-        put :update, params: {id: meeting.to_param, meeting: invalid_attributes}, session: valid_session
-        expect(assigns(:meeting)).to eq(meeting)
-      end
-
-      it "re-renders the 'edit' template" do
-        meeting = Meeting.create! valid_attributes
-        put :update, params: {id: meeting.to_param, meeting: invalid_attributes}, session: valid_session
-        expect(response).to render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE #destroy" do
-    it "destroys the requested meeting" do
-      meeting = Meeting.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: meeting.to_param}, session: valid_session
-      }.to change(Meeting, :count).by(-1)
-    end
-
-    it "redirects to the meetings list" do
-      meeting = Meeting.create! valid_attributes
-      delete :destroy, params: {id: meeting.to_param}, session: valid_session
-      expect(response).to redirect_to(meetings_url)
-    end
+  
+  describe 'Add new meetings' do
+        fixtures :meetings
+        fixtures :interests
+        it 'should render the new meetings view' do
+            get :new
+            expect(response).to render_template("new")
+        end
+        
+        it 'should render calendar after create' do
+            
+          post :create, params: {"meeting" => {"name"=>"Potter Fans of Iowa", "start_time(1i)"=>"2016", "start_time(2i)"=>"11", "start_time(3i)"=>"26", "approx_time"=>"Around 5"}, "selected_groups"=>{"1"=>"1", "2"=>"1", "3"=>"1"} }
+          expect(flash[:notice]).to eq("Meeting was added to the Calendar")
+          expect(response).to redirect_to(view_calendar_path)
+        end
+        
+        it 'should fail if no associations' do
+          post :create, params: {"meeting" => {"name"=>"Potter Fans of Iowa", "start_time(1i)"=>"2016", "start_time(2i)"=>"11", "start_time(3i)"=>"26", "approx_time"=>"Around 5"}, "selected_groups"=>{} }
+          expect(flash[:notice]).to eq("No Interest Groups Were Selected")
+          expect(response).to redirect_to(view_calendar_path)
+        end
   end
 
 end
