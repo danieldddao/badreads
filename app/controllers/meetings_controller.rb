@@ -42,6 +42,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
     @meeting.destroy
     @meeting = Meeting.all
+    flash[:notice] = "Meeting was deleted"
     redirect_to view_calendar_path
   end
 
