@@ -1,0 +1,16 @@
+#spec/ﬁxtures/interests.yml
+interest1 :   
+    id: 1   
+    genre: Fiction
+    
+interest2 :   
+    id: 2   
+    genre: Fantasy
+
+interest3 :   
+    id: 3   
+    genre: Mystery
+    
+interest4 :   
+    id: 4   
+    genre: Horror

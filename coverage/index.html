@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-17T17:11:04+00:00">2016-11-17T17:11:04+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-17T17:53:02+00:00">2016-11-17T17:53:02+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">86.67%</span></span>
+    (<span class="covered_percent"><span class="green">92.63%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.34
+         1.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>56</b> files in total.
-    <b>585</b> relevant lines. 
-    <span class="green"><b>507</b> lines covered</span> and
-    <span class="red"><b>78</b> lines missed </span>
+    <b>529</b> relevant lines. 
+    <span class="green"><b>490</b> lines covered</span> and
+    <span class="red"><b>39</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#bd516daced96b3a61a6657cb4b1beca5f8ff49b4" class="src_link" title="app/controllers/meetings_controller.rb">app/controllers/meetings_controller.rb</a></td>
-        <td class="red strong">41.38 %</td>
+        <td class="yellow strong">82.76 %</td>
         <td>54</td>
         <td>29</td>
-        <td>12</td>
-        <td>17</td>
-        <td>0.4</td>
+        <td>24</td>
+        <td>5</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -403,21 +403,21 @@
       <tr>
         <td class="strong"><a href="#d062164f4f01914c75b7d1e5dcf80cab4c9beea1" class="src_link" title="spec/controllers/groups_controller_spec.rb">spec/controllers/groups_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>6</td>
-        <td>6</td>
+        <td>12</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#812867de82240d0612e188174bb308aed2016cd9" class="src_link" title="spec/controllers/meetings_controller_spec.rb">spec/controllers/meetings_controller_spec.rb</a></td>
-        <td class="red strong">66.25 %</td>
-        <td>159</td>
-        <td>80</td>
-        <td>53</td>
-        <td>27</td>
-        <td>0.8</td>
+        <td class="green strong">100.0 %</td>
+        <td>57</td>
+        <td>22</td>
+        <td>22</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -2189,11 +2189,11 @@
         <div class="source_table" id="bd516daced96b3a61a6657cb4b1beca5f8ff49b4">
   <div class="header">
     <h3>app/controllers/meetings_controller.rb</h3>
-    <h4><span class="red">41.38 %</span> covered</h4>
+    <h4><span class="yellow">82.76 %</span> covered</h4>
     <div>
       <b>29</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <span class="green"><b>24</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -2224,8 +2224,8 @@
           <code class="ruby">  def meeting_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
           <code class="ruby">    params.require(:meeting).permit(:name, :approx_time, :start_time)</code>
         </li>
@@ -2254,8 +2254,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">    @meetings = Meeting.all</code>
         </li>
@@ -2326,20 +2326,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">    @choices = params[&quot;selected_groups&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
           
           <code class="ruby">    if @choices == nil then</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;No Interest Groups Were Selected&quot;</code>
         </li>
@@ -2350,38 +2350,38 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
           <code class="ruby">      @meeting = Meeting.create!(meeting_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
-          
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
           <code class="ruby">      @choices.each do |key, value|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
+        <li class="covered" data-hits="3" data-linenumber="28">
+          <span class="hits">3</span>
           
           <code class="ruby">        if value == &quot;1&quot; then</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
-          
+        <li class="covered" data-hits="3" data-linenumber="29">
+          <span class="hits">3</span>
           
           <code class="ruby">          @group = Interest.find(key)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
+        <li class="covered" data-hits="3" data-linenumber="30">
+          <span class="hits">3</span>
           
           <code class="ruby">          @group.meetings &lt;&lt; @meeting</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
+        <li class="covered" data-hits="3" data-linenumber="31">
+          <span class="hits">3</span>
           
           <code class="ruby">          @meeting.interests &lt;&lt; @group</code>
         </li>
@@ -2398,8 +2398,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;Meeting was added to the Calendar&quot;</code>
         </li>
@@ -2410,8 +2410,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="2" data-linenumber="36">
+          <span class="hits">2</span>
           
           <code class="ruby">    redirect_to view_calendar_path</code>
         </li>
@@ -5461,8 +5461,8 @@
     <h3>spec/controllers/groups_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5494,43 +5494,49 @@
           <code class="ruby">    describe &#39;Calendar View&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    </code>
+          <code class="ruby">        fixtures :meetings</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &#39;should render the calendar view&#39; do</code>
+          <code class="ruby">        fixtures :interests</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">            post :view_calendar</code>
+          <code class="ruby">        it &#39;should render the calendar view&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to render_template(&quot;view_calendar&quot;)</code>
+          <code class="ruby">            get :view_calendar</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response).to render_template(&quot;view_calendar&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
@@ -5543,11 +5549,11 @@
         <div class="source_table" id="812867de82240d0612e188174bb308aed2016cd9">
   <div class="header">
     <h3>spec/controllers/meetings_controller_spec.rb</h3>
-    <h4><span class="red">66.25 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>80</b> relevant lines. 
-      <span class="green"><b>53</b> lines covered</span> and
-      <span class="red"><b>27</b> lines missed.</span>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -5707,802 +5713,190 @@
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">  let(:valid_attributes) {</code>
+          <code class="ruby">  describe &#39;List All meetings&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="27">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          <code class="ruby">    skip(&quot;Add a hash of attributes valid for your model&quot;)</code>
+          <code class="ruby">        fixtures :meetings</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  }</code>
+          <code class="ruby">        fixtures :interests</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        it &#39;should render the index view&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  let(:invalid_attributes) {</code>
+          <code class="ruby">            get :index</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
-          <code class="ruby">    skip(&quot;Add a hash of attributes invalid for your model&quot;)</code>
+          <code class="ruby">            expect(response).to render_template(&quot;index&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">  }</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">  # This should return the minimal set of values that should be in the session</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # in order to pass any filters (e.g. authentication) defined in</code>
+          <code class="ruby">  describe &#39;Add new meetings&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # MeetingsController. Be sure to keep this updated too.</code>
+          <code class="ruby">        fixtures :meetings</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          <code class="ruby">  let(:valid_session) { {} }</code>
+          <code class="ruby">        fixtures :interests</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        it &#39;should render the new meetings view&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;GET #index&quot; do</code>
+          <code class="ruby">            get :new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;assigns all meetings as @meetings&quot; do</code>
+          <code class="ruby">            expect(response).to render_template(&quot;new&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">      meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
-          
-          <code class="ruby">      get :index, params: {}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
-          
-          <code class="ruby">      expect(assigns(:meetings)).to eq([meeting])</code>
+          <code class="ruby">        it &#39;should render calendar after create&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">            </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">          post :create, params: {&quot;meeting&quot; =&gt; {&quot;name&quot;=&gt;&quot;Potter Fans of Iowa&quot;, &quot;start_time(1i)&quot;=&gt;&quot;2016&quot;, &quot;start_time(2i)&quot;=&gt;&quot;11&quot;, &quot;start_time(3i)&quot;=&gt;&quot;26&quot;, &quot;approx_time&quot;=&gt;&quot;Around 5&quot;}, &quot;selected_groups&quot;=&gt;{&quot;1&quot;=&gt;&quot;1&quot;, &quot;2&quot;=&gt;&quot;1&quot;, &quot;3&quot;=&gt;&quot;1&quot;} }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">          expect(flash[:notice]).to eq(&quot;Meeting was added to the Calendar&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;GET #show&quot; do</code>
+          <code class="ruby">          expect(response).to redirect_to(view_calendar_path)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;assigns the requested meeting as @meeting&quot; do</code>
+          <code class="ruby">        it &#39;should fail if no associations&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">      meeting = Meeting.create! valid_attributes</code>
+          <code class="ruby">          post :create, params: {&quot;meeting&quot; =&gt; {&quot;name&quot;=&gt;&quot;Potter Fans of Iowa&quot;, &quot;start_time(1i)&quot;=&gt;&quot;2016&quot;, &quot;start_time(2i)&quot;=&gt;&quot;11&quot;, &quot;start_time(3i)&quot;=&gt;&quot;26&quot;, &quot;approx_time&quot;=&gt;&quot;Around 5&quot;}, &quot;selected_groups&quot;=&gt;{} }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      get :show, params: {id: meeting.to_param}, session: valid_session</code>
+          <code class="ruby">          expect(flash[:notice]).to eq(&quot;No Interest Groups Were Selected&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(assigns(:meeting)).to eq(meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">          expect(response).to redirect_to(view_calendar_path)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;GET #new&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;assigns a new meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :new, params: {}, session: valid_session</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(assigns(:meeting)).to be_a_new(Meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;GET #edit&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;assigns the requested meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="65">
-          
-          
-          <code class="ruby">      get :edit, params: {id: meeting.to_param}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="66">
-          
-          
-          <code class="ruby">      expect(assigns(:meeting)).to eq(meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;POST #create&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &quot;with valid params&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="72">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;creates a new Meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="73">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect {</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          post :create, params: {meeting: valid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">        }.to change(Meeting, :count).by(1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;assigns a newly created meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        post :create, params: {meeting: valid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
-          
-          <code class="ruby">        expect(assigns(:meeting)).to be_a(Meeting)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="81">
-          
-          
-          <code class="ruby">        expect(assigns(:meeting)).to be_persisted</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;redirects to the created meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        post :create, params: {meeting: valid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="86">
-          
-          
-          <code class="ruby">        expect(response).to redirect_to(Meeting.last)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="88">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="90">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &quot;with invalid params&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;assigns a newly created but unsaved meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        post :create, params: {meeting: invalid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">        expect(assigns(:meeting)).to be_a_new(Meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;re-renders the &#39;new&#39; template&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="97">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        post :create, params: {meeting: invalid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">        expect(response).to render_template(&quot;new&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="103">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;PUT #update&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="104">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &quot;with valid params&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      let(:new_attributes) {</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="106">
-          
-          
-          <code class="ruby">        skip(&quot;Add a hash of attributes valid for your model&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">      }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="109">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;updates the requested meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="111">
-          
-          
-          <code class="ruby">        put :update, params: {id: meeting.to_param, meeting: new_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="112">
-          
-          
-          <code class="ruby">        meeting.reload</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="113">
-          
-          
-          <code class="ruby">        skip(&quot;Add assertions for updated state&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="116">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;assigns the requested meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="117">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="118">
-          
-          
-          <code class="ruby">        put :update, params: {id: meeting.to_param, meeting: valid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="119">
-          
-          
-          <code class="ruby">        expect(assigns(:meeting)).to eq(meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="121">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="122">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;redirects to the meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="124">
-          
-          
-          <code class="ruby">        put :update, params: {id: meeting.to_param, meeting: valid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="125">
-          
-          
-          <code class="ruby">        expect(response).to redirect_to(meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="126">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="127">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="129">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &quot;with invalid params&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="130">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;assigns the meeting as @meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="131">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="132">
-          
-          
-          <code class="ruby">        put :update, params: {id: meeting.to_param, meeting: invalid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="133">
-          
-          
-          <code class="ruby">        expect(assigns(:meeting)).to eq(meeting)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="134">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="135">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="136">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;re-renders the &#39;edit&#39; template&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="137">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="138">
-          
-          
-          <code class="ruby">        put :update, params: {id: meeting.to_param, meeting: invalid_attributes}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="139">
-          
-          
-          <code class="ruby">        expect(response).to render_template(&quot;edit&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="140">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="141">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="142">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="143">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="144">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;DELETE #destroy&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="145">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;destroys the requested meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="146">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="147">
-          
-          
-          <code class="ruby">      expect {</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="148">
-          
-          
-          <code class="ruby">        delete :destroy, params: {id: meeting.to_param}, session: valid_session</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="149">
-          
-          
-          <code class="ruby">      }.to change(Meeting, :count).by(-1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="150">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="151">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="152">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;redirects to the meetings list&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="153">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      meeting = Meeting.create! valid_attributes</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="154">
-          
-          
-          <code class="ruby">      delete :destroy, params: {id: meeting.to_param}, session: valid_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="155">
-          
-          
-          <code class="ruby">      expect(response).to redirect_to(meetings_url)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="156">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="157">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="158">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">end</code>

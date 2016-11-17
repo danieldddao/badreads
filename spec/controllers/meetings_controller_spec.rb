@@ -24,7 +24,8 @@ RSpec.describe MeetingsController, type: :controller do
   # Meeting. As you add validations to Meeting, be sure to
   # adjust the attributes here as well.
   describe 'List All meetings' do
-    
+        fixtures :meetings
+        fixtures :interests
         it 'should render the index view' do
             get :index
             expect(response).to render_template("index")
@@ -32,17 +33,24 @@ RSpec.describe MeetingsController, type: :controller do
   end
   
   describe 'Add new meetings' do
-    
+        fixtures :meetings
+        fixtures :interests
         it 'should render the new meetings view' do
             get :new
             expect(response).to render_template("new")
         end
         
-        it 'create should call the model method' do
+        it 'should render calendar after create' do
             
-          post :create, params: {:meetings => }
-          expect(flash[:notice]).to eq("Sign up successfuly! Welcome to BadReads!")
-          expect(response).to redirect_to(login_path)
+          post :create, params: {"meeting" => {"name"=>"Potter Fans of Iowa", "start_time(1i)"=>"2016", "start_time(2i)"=>"11", "start_time(3i)"=>"26", "approx_time"=>"Around 5"}, "selected_groups"=>{"1"=>"1", "2"=>"1", "3"=>"1"} }
+          expect(flash[:notice]).to eq("Meeting was added to the Calendar")
+          expect(response).to redirect_to(view_calendar_path)
+        end
+        
+        it 'should fail if no associations' do
+          post :create, params: {"meeting" => {"name"=>"Potter Fans of Iowa", "start_time(1i)"=>"2016", "start_time(2i)"=>"11", "start_time(3i)"=>"26", "approx_time"=>"Around 5"}, "selected_groups"=>{} }
+          expect(flash[:notice]).to eq("No Interest Groups Were Selected")
+          expect(response).to redirect_to(view_calendar_path)
         end
   end
 
