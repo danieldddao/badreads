@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe UsersController do
-  
   describe 'showing users' do
     it 'should show requesting user profile' do
       controller.instance_variable_set(:@current_user, User.new(:id => 1)) 
