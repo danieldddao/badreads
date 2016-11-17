@@ -53,5 +53,16 @@ RSpec.describe MeetingsController, type: :controller do
           expect(response).to redirect_to(view_calendar_path)
         end
   end
-
+  describe 'Add new meetings' do
+        fixtures :meetings
+        fixtures :interests
+        
+        it 'should delet the meeting passed in params' do
+            
+          post :create, params: 
+          expect(flash[:notice]).to eq("Meeting was added to the Calendar")
+          expect(response).to redirect_to(view_calendar_path)
+        end
+        
+  end
 end
