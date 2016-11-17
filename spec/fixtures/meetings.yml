@@ -1,0 +1,28 @@
+#spec/ﬁxtures/meetings.yml
+meeting1 :   
+    id: 1
+    name: Potter Fans
+    approx_time: around 5
+    start_time: 2016-11-20
+    
+    
+meeting2 :   
+    id: 2
+    name: LOTR FANS
+    approx_time: Morning
+    start_time: 2016-11-21
+    
+
+meetingt3 :   
+    id: 3
+    name: Christie Fans
+    approx_time: Noon
+    start_time: 2016-11-30
+    
+    
+meeting4 :   
+    id: 4
+    name: Jeffery Archer Fans
+    approx_time: Midnight Read
+    start_time: 2016-12-01
+    

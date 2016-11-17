@@ -66,6 +66,7 @@ Genres.each do |cat|
   Interest.create!(cat)
 end 
 
+
 # Reviews for book id 2
 Review.create!(:star => 5, :comment => "Loved this whole series!!!", :book_id => 2, :user_id => 3)
 Review.create!(:star => 4, :comment => "Each book in this series just gets better and better. Beautiful writing. Loved reading this", :book_id => 2, :user_id => 4)
