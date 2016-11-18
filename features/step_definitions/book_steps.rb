@@ -1,6 +1,7 @@
 ## Background Conditions ##
 Given /the following books have been added to badreads:/ do |books_table|
     books_table.hashes.each do |book|
+        
             @books = Book.create!(book)
     end
 end
@@ -127,4 +128,10 @@ end
 Given(/^I've posted a review for the book's isbn "([^"]*)" with rating "([^"]*)" and comment "([^"]*)"$/) do |arg1, arg2, arg3|
     book = Book.find_by_isbn(arg1)
     Review.create!(:star => arg2, :comment => arg3, :book_id => book.id, :user_id => 1)
+end
+
+Then (/^I should see "([^"]*)" before "([^"]*)"$/) do |one, sec|
+  first = page.body.index(one)
+  second = page.body.index(sec)
+  first.should < second
 end
