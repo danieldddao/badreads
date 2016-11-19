@@ -50,27 +50,23 @@ class UsersController < ApplicationController
     # else
     #   render 'show'
     # end
-    
     @user = User.find_by_id(params[:id])
-    if @user
-       @user.update(user_params1)
+    if @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password])
        flash[:notice] = "Password successfuly changed"
-       @user.save
        print @user.password
        print @user.id
-       @user.save
-       redirect_to book_path
+       redirect_to root_path
      else
        flash[:warning] = "Password Change not successfull"
-       redirect_to book_path
+       redirect_to root_path
      end
   end
   
 end
 
 
-private 
+# private 
 
-  def user_params1
-    params.require(:user).permit(:password)
-  end 
+#   def user_params1
+#     params.require(:user).permit(:password)
+#   end 
