@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post '/books/:id/review_create', to: 'reviews#create', :as => 'review_create'
 
   #User Routes:
-  resources :users, only: [:show, :new, :create, :update]
+  resources :users, only: [:show, :new, :create, :update ,:edit]
   
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post

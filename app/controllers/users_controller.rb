@@ -37,6 +37,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  def edit
+  
+  end
+  
   
   def update
     # @user = User.find_by_id(@current_user.id)
@@ -46,6 +50,27 @@ class UsersController < ApplicationController
     # else
     #   render 'show'
     # end
+    
+    @user = User.find_by_id(params[:id])
+    if @user
+       @user.update(user_params1)
+       flash[:notice] = "Password successfuly changed"
+       @user.save
+       print @user.password
+       print @user.id
+       @user.save
+       redirect_to book_path
+     else
+       flash[:warning] = "Password Change not successfull"
+       redirect_to book_path
+     end
   end
   
 end
+
+
+private 
+
+  def user_params1
+    params.require(:user).permit(:password)
+  end 
