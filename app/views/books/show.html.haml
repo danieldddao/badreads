@@ -22,7 +22,7 @@
                 %h2{ :style => "font-size: 110%;" }Publisher: #{@book.publisher}
                 %h2{ :style => "font-size: 110%;" }Year: #{@book.publication_year}
                 %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
-                %br
+                %td= link_to image_tag("http://www.niftybuttons.com/amazon/amazon-button1.png"), "https://www.amazon.com/s/?tag=isbnsearcho0f-20&link_code=wsw&_encoding=UTF-8&search-alias=aps&field-keywords=#{@book.isbn}&Submit.x=15&Submit.y=10", :target => "_blank"
 %div{:style => "text-align: center;" }
     -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
         %table#editdeletebook

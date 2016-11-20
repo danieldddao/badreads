@@ -18,20 +18,4 @@
                     %h4 Position Level:
                     %h5= @user.position
     %br
-    %br
-    %h4 Change Password:
-    -unless @user ==nil
-        -if @user.errors.any?
-            %ul
-            -@user.errors.full_messages.each do |msg|
-                %li{ :style => "color: maroon;" } #{msg}
-    = form_tag user_path(@current_user), :method => :put do
-        = label :user, :current_password, 'Current Password'
-        = password_field :current_password, nil, :size => '30', :placeholder => "Enter Current Password"
-        = label :user, :password, 'New Password'
-        = password_field :password, nil, :size => '30', :placeholder => "Enter New Password"
-        = label :user, :password_confirmation, 'New Password Confirmation'
-        = password_field :password_confirmation, nil, :size => '30', :placeholder => "Re-enter New Password"
-        %br
-        %br
-        = submit_tag 'Submit New Password', :class => "btn btn-danger"
+        = link_to 'Change Password', edit_user_path(@current_user), class: "btn btn-default btn-warning"
