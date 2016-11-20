@@ -1,4 +1,5 @@
-<div class = "row">
+<title>Update Password</title>
+<div class = "row", style = "text-align: center;" >
     <div class = "well col-md-8 col-md-offset-2"> 
         <%= form_for @current_user do |f| %>
              <%= f.label :current_password %>
@@ -7,9 +8,9 @@
             <%= f.label :new_password %>
             <%= f.password_field :new_password %>
             
-             <%= f.label :password %>
+            <%= f.label :password %>
             <%= f.password_field :password %>
-            
+            <br><br>
             <%= f.submit( class: "btn btn-success") %>
         <% end %>      
     </div>
