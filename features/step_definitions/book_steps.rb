@@ -135,3 +135,13 @@ Then (/^I should see "([^"]*)" before "([^"]*)"$/) do |one, sec|
   second = page.body.index(sec)
   first.should < second
 end
+
+Given(/^the following reviews have been added to Badreads:$/) do |table|
+    table.hashes.each do |review|
+        Review.create!(review)
+    end
+end
+
+Then(/^I should see average rating of "([^"]*)"$/) do |arg1|
+    expect(page).to have_css("img[src*='#{arg1}star']")
+end
