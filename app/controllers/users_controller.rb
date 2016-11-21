@@ -43,13 +43,11 @@ class UsersController < ApplicationController
   
   
   def update
-    @user = User.find_by_id(params[:id])
     npwd=params[:user][:new_password]
     rnpwd=params[:user][:password]
     user = User.find_by_id(params[:id])
-    print @user.password
-    if (npwd == rnpwd) && user.authenticate(params[:user][:current_password])
-     @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password])
+    if (npwd == rnpwd) && user && user.authenticate(params[:user][:current_password])
+     user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password])
      flash[:notice] = "Password successfuly changed"
      redirect_to root_path
     else

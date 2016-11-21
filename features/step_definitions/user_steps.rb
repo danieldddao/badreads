@@ -85,3 +85,10 @@ When(/^I've submitted new user's information, email "([^"]*)", first_name "([^"]
   click_on "Create my account"
 end
 
+When(/^I update my password with new password "([^"]*)" and using current password "([^"]*)"$/) do |arg1, arg2|
+  visit edit_user_path(1)
+  fill_in 'user_current_password', :with => arg2
+  fill_in 'user_new_password', :with => arg1
+  fill_in 'user_password', :with => arg1
+  click_on "Update User"
+end
