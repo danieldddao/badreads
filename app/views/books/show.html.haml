@@ -1,5 +1,10 @@
 %title #{@book.title}
 %hr
+-unless @follow == nil
+    -if @follow.errors.any?
+        %ul
+            -@follow.errors.full_messages.each do |msg|
+                %li{ :style => "color: maroon;" } #{msg}
 %div{:class => "container"}
     %div{:class => "row"}
         %div{:class => "col-md-12"}
@@ -100,6 +105,8 @@
                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                     On #{Date.parse(review.user.updated_at.to_s)}
                 %div{:class => "panel-body"}
+                    -if @current_user && @current_user.id != review.user.id
+                        =button_to 'Follow This User', new_following_user_path(review.user.id, @book.id), :class => "btn btn-danger"
                     %h2{ :style => "font-size: 100%;" }Rating : 
                     =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                     %br
@@ -124,6 +131,8 @@
                                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                                     On #{Date.parse(review.user.updated_at.to_s)}
                                 %div{:class => "panel-body", :style => "color: Black;"}
+                                    -if @current_user && @current_user.id != review.user.id
+                                        =button_to 'Follow This User', new_following_user_path(review.user.id, @book.id), :class => "btn btn-danger"
                                     %h2{ :style => "font-size: 100%;" } Rating : 
                                     =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                                 %div{:style => "display: inline-table; width: 95%; color: Black;" }
@@ -131,4 +140,3 @@
                                     #{review.comment}
                     %div{:class => "modal-footer", :style => "text-align: center;"}
                         = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
-
