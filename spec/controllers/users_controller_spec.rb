@@ -50,6 +50,23 @@ describe UsersController do
   end
   
   describe 'updating users' do
+    it 'should update user with new password' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find_by_id).with("2").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
+      allow(fake_user[0]).to receive(:update_attributes).and_return(true)
+      put :update, params: {:id => 2, :user => {:new_password => "abcdef", :password => "abcdef", :current_password => "123456"}}
+      expect(flash[:notice]).to eq("Password successfuly changed")
+      expect(response).to redirect_to(root_path)
+    end
+    it 'should show error for incorrect password' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find_by_id).with("2").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(false)
+      put :update, params: {:id => 2, :user => {:new_password => "abcdef", :password => "abcdef", :current_password => "123456"}}
+      expect(flash[:warning]).to eq("Password Change not successfull")
+      expect(response).to redirect_to(root_path)
+    end
   end
   
   describe 'destroying users' do

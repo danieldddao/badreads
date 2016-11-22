@@ -1,4 +1,4 @@
-Feature: Average Rating for a book
+Feature: User updates password for his/her account
 
 Background: books has been added to database
   
@@ -13,20 +13,17 @@ Background: books has been added to database
   | 9780806539972          | TestBook7      | TestAuthor6  | 1980             | Cat3     | 3       | 3            |
   | 9780806539973          | TestBook8      | TestAuthor7  | 1999             | Cat4     | 2       | 4            |
   | 9780806539974          | TestBook4 book | TestAuthor3  | 1999             | Cat2     | 2       | 6            |
-  
-  And I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
 
-  And the following reviews have been added to Badreads:
-  | star       | comment        | book_id      | user_id |
-  | 5          | Test Comment   | 1            | 1       |
-  | 3          | Comment        | 1            | 1       |
-  | 3          | Test Comment   | 1            | 1       |
-  | 1          | Comment        | 1            | 1       |
-
-Scenario:  Average rating for reviewed book
-  When I follow "Test Book1"
-  Then I should see average rating of "3"
+  And I am on the BadReads home page
   
-Scenario:  Average rating for non-reviewed book
-  When I follow "Test Book3"
-  Then I should see average rating of "0"
+Scenario:  Update password
+  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
+  And I have signed in to my account with email "test@gmail.com", password "123456"
+  When I update my password with new password "111111" and using current password "123456"
+  Then I should see "Password successfuly changed" notice   
+
+Scenario:  Can't update password for incorrect info
+  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
+  And I have signed in to my account with email "test@gmail.com", password "123456"
+  When I update my password with new password "111111" and using current password "1234567"
+  Then I should see "Password Change not successfull" notice 
