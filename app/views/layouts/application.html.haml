@@ -31,6 +31,19 @@
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Log Out', logout_path, :class => "btn btn-danger", :method => :delete
       %br
       %div{ :style => "text-align: right; padding-right: 5%" }
+        %table{ :style => "float: right;"}
+          %tbody
+            %tr
+              %td{ :style => "padding:0 5px 0 5px;"}
+                = button_to user_show_following_path(@current_user), :class => "btn btn-link", :method => :get do
+                  Following
+                  %span(class="badge") #{@current_user.followings.count}
+              %td{ :style => "padding:0 5px 0 5px;"}
+                = button_to user_show_followers_path(@current_user), :class => "btn btn-link", :method => :get do
+                  Followers
+                  %span(class="badge") #{@current_user.followers.count}
+        %br
+        %br
         %b Welcome #{@current_user.first_name} #{@current_user.last_name}! (Email: #{@current_user.email})
     #main
       %br

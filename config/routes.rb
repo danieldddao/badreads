@@ -32,8 +32,10 @@ Rails.application.routes.draw do
   #Google Call Back:
   get 'auth/:provider/callback', to: 'groups#view_calendar'
   
-   #Follows Routes:
-  # get '/users/:id/following', to: 'follows#create', :as => 'following_user'
+  #Follows Routes:
   post '/users/:user_id/:book_id/new_following', to: 'follows#create', :as => 'new_following_user'
+  delete '/users/:user_id/:book_id/delete_following', to: 'follows#destroy', :as => 'delete_following_user'
+  get '/users/:id/showFollowing', to: 'follows#showFollowing', :as => 'user_show_following'
+  get '/users/:id/showFollowers', to: 'follows#showFollowers', :as => 'user_show_followers'
 
 end
