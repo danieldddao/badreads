@@ -43,7 +43,6 @@ class UsersController < ApplicationController
   
   
   def update
-<<<<<<< HEAD
     @user = User.find_by_id(params[:id])
     npwd=params[:user][:new_password]
     rnpwd=params[:user][:password]
@@ -60,34 +59,10 @@ class UsersController < ApplicationController
     end
 
   end
-  
-end
-=======
-    # @user = User.find_by_id(@current_user.id)
-    # if @user.update_attributes(:password => params[:password], :password_confirmation => params[:password_confirmation])
-    #   flash[:notice] = "Password changed successfuly!"
-    #   redirect_to user_path(@current_user)
-    # else
-    #   render 'show'
-    # end
-    @user = User.find_by_id(params[:id])
-    if @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password])
-       flash[:notice] = "Password successfuly changed"
-       print @user.password
-       print @user.id
-       redirect_to root_path
-     else
-       flash[:warning] = "Password Change not successfull"
-       redirect_to root_path
-     end
+  def emailref
+    pass_referral=params[:send_referral]
+    UserMailer.new_referral(pass_referral,@current_user.email).deliver
+    redirect_to user_path(@current_user)
   end
   
 end
-
-
-# private 
-
-#   def user_params1
-#     params.require(:user).permit(:password)
-#   end 
->>>>>>> 1bb7fae51c6ac2f366c3eed353a01f96dab99ded
