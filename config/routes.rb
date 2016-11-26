@@ -17,8 +17,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create, :update ,:edit] do
     collection do
       post 'emailref'
+      post 'emailpwd'
+      get 'emailpwd'
     end
   end
+  match '/reset' , to: 'users#reset' , via: :get
   
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post

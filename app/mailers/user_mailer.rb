@@ -6,9 +6,9 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.new_referral.subject
   #
   def new_referral(ref,sent_by)
-    mail(to: ref, subject: 'Referral to join BadReads Applicattion by '+ sent_by)do |format|
-    format.html { render layout: 'new_referral' }
-    format.text { render layout: 'new_referral' }
+    mail(to: ref, subject: 'Referral to join BadReads Applicattion' , body: " Click on the link http://badreads.herokuapp.com/ to join. A referral to join the application BadReads has been sent by "+ sent_by )
   end
+  def reset_password(new_pwd,sent_to)
+    mail(to: sent_to, subject: 'BadReads Reset Password'+ new_pwd , body: 'Your new password is '+ new_pwd)
   end
 end
