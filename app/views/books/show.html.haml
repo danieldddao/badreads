@@ -110,9 +110,9 @@
                 %div{:class => "panel-body"}
                     -if @current_user && @current_user.id != review.user.id
                         -if !Follow.has_current_user_followed_this_user(@current_user, review.user)
-                            =button_to 'Follow', new_following_user_path(review.user.id, @book.id), :class => "btn btn-success"
+                            =button_to 'Follow', new_following_user_path(review.user.id, @book.id), :class => "btn btn-success", :id => "follow_#{review.user.id}"
                         -else
-                            =button_to 'Unfollow', delete_following_user_path(review.user.id, @book.id), :class => "btn btn-danger", :method => :delete
+                            =button_to 'Unfollow', delete_following_user_path(review.user.id, @book.id), :class => "btn btn-danger", :method => :delete, :id => "unfollow_#{review.user.id}"
                     %h2{ :style => "font-size: 100%;" }Rating : 
                     =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                     %br
