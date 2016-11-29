@@ -1,0 +1,49 @@
+%title Users followed by #{@current_user.email}!
+%h3{ :style => "text-align: center; border-bottom: 2px solid #d9534f;" } All Users followed by you
+- if @current_user.followings.empty?
+    %h2{ :style => "font-size: 90%; color: Maroon;" } You're currently not following anyone!
+- else
+    - @current_user.followings.each do |following|
+        %div{:class => "panel panel-info center-block", :style => "width : 50%; text-align: center;"}
+            %div{:class => "panel-heading"}
+                You're following 
+                %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
+                since #{Date.parse(following.created_at.to_s)}
+            %div{:class => "panel-body"}
+                %b First Name : #{following.followedUser.first_name}
+                %br
+                %b Last Name : #{following.followedUser.last_name}
+                %br
+                %br
+                %table{ :style => "display: inline-block;" }
+                    %tbody
+                        %tr
+                            %td
+                                %a{href: "#", :data => {:toggle => 'modal', :target => "#myModalAllReviews#{following.followedUser.id}"}, :class => "btn btn-default"} View Reviews
+                                %div{:class => "modal fade", :id => "myModalAllReviews#{following.followedUser.id}", :role => "dialog"}
+                                    %div{:class => "modal-dialog modal-md"}
+                                        %div{:class => "modal-content"}
+                                            %h3{ :style => "font-size: 120%;color: Green;" }
+                                                %div{:class => "modal-header", :style => "color: Green;"}
+                                                    = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
+                                                    All Reviews by 
+                                                    %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
+                                            %div{:class => "modal-body", :style => "display: inline-table; color:Maroon; width: 95%" }
+                                                - if following.followedUser.reviews.count > 0
+                                                    - following.followedUser.reviews.each do |review|
+                                                        %div{:id => "allReview_#{review.id}", :class => "panel panel-info center-block"}
+                                                            %div{:class => "panel-heading"}
+                                                                %b=button_to "#{review.book.title} by #{review.book.author}", book_path(review.book.id), :class => "btn btn-link", :method => :get
+                                                            %div{:class => "panel-body", :style => "color: Black;"}
+                                                                Posted on #{Date.parse(review.user.updated_at.to_s)}
+                                                                %h2{ :style => "font-size: 100%;" } Rating : 
+                                                                =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
+                                                            %div{:style => "display: inline-table; width: 95%; color: Black;" }
+                                                                %h2{ :style => "font-size: 100%;" } Comment:
+                                                                #{review.comment}
+                                                - else
+                                                    %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
+                                                    hasn't posted any reviews
+                                            %div{:class => "modal-footer", :style => "text-align: center;"}
+                                                = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
+                            %td{ :style => "padding:0 5px 0 5px;"}=button_to 'Unfollow', delete_following_user_path(following.followedUser.id, 0), :class => "btn btn-danger", :method => :delete

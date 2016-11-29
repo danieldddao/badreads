@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114022135) do
+ActiveRecord::Schema.define(version: 20161122003923) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20161114022135) do
     t.datetime "updated_at",                                                     null: false
     t.integer  "reviews_count",               default: 0
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followedUser_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["followedUser_id"], name: "index_follows_on_followedUser_id"
+    t.index ["follower_id", "followedUser_id"], name: "index_follows_on_follower_id_and_followedUser_id", unique: true
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
   create_table "interests", force: :cascade do |t|

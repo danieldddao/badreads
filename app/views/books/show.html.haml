@@ -1,5 +1,10 @@
 %title #{@book.title}
 %hr
+-unless @follow == nil
+    -if @follow.errors.any?
+        %ul
+            -@follow.errors.full_messages.each do |msg|
+                %li{ :style => "color: maroon;" } #{msg}
 %div{:class => "container"}
     %div{:class => "row"}
         %div{:class => "col-md-12"}
@@ -23,6 +28,8 @@
                 %h2{ :style => "font-size: 110%;" }Year: #{@book.publication_year}
                 %h2{ :style => "font-size: 110%;" }Edition: #{@book.edition}
                 %td= link_to image_tag("http://www.niftybuttons.com/amazon/amazon-button1.png"), "https://www.amazon.com/s/?tag=isbnsearcho0f-20&link_code=wsw&_encoding=UTF-8&search-alias=aps&field-keywords=#{@book.isbn}&Submit.x=15&Submit.y=10", :target => "_blank"
+                %br
+                %br
 %div{:style => "text-align: center;" }
     -if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
         %table#editdeletebook
@@ -40,6 +47,8 @@
                 %br
                 %div{:class => "container"}
                     %a{href: "#", :data => {:toggle => 'modal', :target => '#myModal'}, :class => "btn btn-default"} My Review
+                    %br
+                    %br
                 %div{:class => "modal fade", :id => "myModal", :role => "dialog"}
                     %div{:class => "modal-dialog modal-md"}
                         %div{:class => "modal-content"}
@@ -87,7 +96,6 @@
                     = submit_tag 'Submit Review', :class => "btn btn-success"
     - else
         %u= link_to "Please Sign-In to post review!", login_path
-    %hr
     // TOP REVIEWS
     %h2{ :style => "font-size: 140%; color: Green;  font-weight: bold;" } Top Reviews :
     - if @book.reviews.empty?
@@ -100,6 +108,11 @@
                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                     On #{Date.parse(review.user.updated_at.to_s)}
                 %div{:class => "panel-body"}
+                    -if @current_user && @current_user.id != review.user.id
+                        -if !Follow.has_current_user_followed_this_user(@current_user, review.user)
+                            =button_to 'Follow', new_following_user_path(review.user.id, @book.id), :class => "btn btn-success", :id => "follow_#{review.user.id}"
+                        -else
+                            =button_to 'Unfollow', delete_following_user_path(review.user.id, @book.id), :class => "btn btn-danger", :method => :delete, :id => "unfollow_#{review.user.id}"
                     %h2{ :style => "font-size: 100%;" }Rating : 
                     =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                     %br
@@ -116,7 +129,7 @@
                         %div{:class => "modal-header", :style => "color: Green;"}
                             = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
                             All Reviews :
-                    %div{:class => "modal-body", :style => "display: inline-table; color:Maroon;" }
+                    %div{:class => "modal-body", :style => "display: inline-table; color:Maroon; width: 100%" }
                         - @book.reviews.each do |review|
                             %div{:id => "allReview_#{review.id}", :class => "panel panel-info center-block"}
                                 %div{:class => "panel-heading"}
@@ -124,6 +137,11 @@
                                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                                     On #{Date.parse(review.user.updated_at.to_s)}
                                 %div{:class => "panel-body", :style => "color: Black;"}
+                                    -if @current_user && @current_user.id != review.user.id
+                                        -if !Follow.has_current_user_followed_this_user(@current_user, review.user)
+                                            =button_to 'Follow', new_following_user_path(review.user.id, @book.id), :class => "btn btn-success"
+                                        -else
+                                            =button_to 'Unfollow', delete_following_user_path(review.user.id, @book.id), :class => "btn btn-danger", :method => :delete
                                     %h2{ :style => "font-size: 100%;" } Rating : 
                                     =image_tag("star_img/#{review.star}star.png", height: '19', width: '90')
                                 %div{:style => "display: inline-table; width: 95%; color: Black;" }
@@ -131,4 +149,3 @@
                                     #{review.comment}
                     %div{:class => "modal-footer", :style => "text-align: center;"}
                         = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
-

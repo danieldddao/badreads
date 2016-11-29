@@ -16,10 +16,12 @@ Rails.application.routes.draw do
   #User Routes:
   resources :users, only: [:show, :new, :create, :update ,:edit]
   
+  #Login and logout Routes:
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
   
+  #New Role Routes:
   match '/new_staff_admin', to: 'roles#new', via: :get
   match '/new_staff_admin_create', to: 'roles#create', via: :post
   
@@ -29,4 +31,11 @@ Rails.application.routes.draw do
   
   #Google Call Back:
   get 'auth/:provider/callback', to: 'groups#view_calendar'
+  
+  #Follows Routes:
+  post '/users/:user_id/:book_id/new_following', to: 'follows#create', :as => 'new_following_user'
+  delete '/users/:user_id/:book_id/delete_following', to: 'follows#destroy', :as => 'delete_following_user'
+  get '/users/:id/showFollowing', to: 'follows#showFollowing', :as => 'user_show_following'
+  get '/users/:id/showFollowers', to: 'follows#showFollowers', :as => 'user_show_followers'
+
 end

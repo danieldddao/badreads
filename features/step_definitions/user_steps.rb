@@ -66,7 +66,7 @@ When(/^I choose "([^"]*)" from dropdown menu$/) do |arg1|
 end
 
 Then(/^I should not see "([^"]*)" field$/) do |arg1|
-  puts page.body
+  expect(page).not_to have_content(arg1)
 end
 
 Given(/^I have a role with information: role "([^"]*)", role position "([^"]*)"$/) do |arg1, arg2|
@@ -91,4 +91,15 @@ When(/^I update my password with new password "([^"]*)" and using current passwo
   fill_in 'user_new_password', :with => arg1
   fill_in 'user_password', :with => arg1
   click_on "Update User"
+end
+
+Given(/^"([^"]*)" has followed "([^"]*)"$/) do |arg1, arg2|
+  Follow.create!(:follower_id => User.find_by_email(arg1).id, :followedUser_id => User.find_by_email(arg2).id)
+end
+
+Then(/^I should see information: "([^"]*)", "([^"]*)", "([^"]*)"$/) do |arg1, arg2, arg3|
+  expect(page).to have_content(arg1)
+  expect(page).to have_content(arg2)
+  expect(page).to have_content(arg3)
+  expect(page).to have_content("View Reviews")
 end

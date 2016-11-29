@@ -66,7 +66,6 @@ Genres.each do |cat|
   Interest.create!(cat)
 end 
 
-
 # Reviews for book id 2
 Review.create!(:star => 5, :comment => "Loved this whole series!!!", :book_id => 2, :user_id => 3)
 Review.create!(:star => 4, :comment => "Each book in this series just gets better and better. Beautiful writing. Loved reading this", :book_id => 2, :user_id => 4)
@@ -78,3 +77,11 @@ Review.create!(:star => 4, :comment => "What a wonderful book! The iconic first 
 Review.create!(:star => 5, :comment => "One of my favorite books ever. This is a classic, for all ages!", :book_id => 9, :user_id => 4)
 Review.create!(:star => 5, :comment => "I love this series. I am reading it alot", :book_id => 9, :user_id => 5)
 Review.create!(:star => 5, :comment => "Even better then the movie!", :book_id => 9, :user_id => 6)
+
+#Follow users
+Follow.create!(:follower_id => 1, :followedUser_id => 3)
+Follow.create!(:follower_id => 1, :followedUser_id => 4)
+Follow.create!(:follower_id => 1, :followedUser_id => 5)
+Follow.create!(:follower_id => 2, :followedUser_id => 1)
+Follow.create!(:follower_id => 2, :followedUser_id => 3)
+Follow.create!(:follower_id => 5, :followedUser_id => 1)

@@ -8,7 +8,7 @@ user1 :
     position: User
     session_token: 123456
 
-user1 :   
+user2 :   
     id: 2 
     email: testuser2@gmail.com
     first_name: testfirstname2
