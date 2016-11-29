@@ -30,9 +30,18 @@ Scenario: Registered user can view followers
   When I log in to my account with information: email "follower@gmail.com", password "123456"
   Then I should see "Followers" button
   
-Scenario: Registered user views followers
+Scenario: Registered user views empty followers
   Given I have user account with information: email "follower@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
   And I log in to my account with information: email "follower@gmail.com", password "123456"
   When I click "Followers"
   Then I should see "All Users following you" page
   And I should see "You're currently not followed by anyone!" notice
+  
+Scenario: Registered user views followers
+  Given I have user account with information: email "follower@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
+  And I log in to my account with information: email "follower@gmail.com", password "123456"
+  And "test@gmail.com" has followed "follower@gmail.com"
+  When I click "Followers"
+  Then I should see "All Users following you" page
+  And I should see information: "testfirstname", "testlastname", "Test Comment"
+    

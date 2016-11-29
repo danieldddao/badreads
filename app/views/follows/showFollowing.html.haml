@@ -14,8 +14,6 @@
                 %br
                 %b Last Name : #{following.followedUser.last_name}
                 %br
-                %b Email : #{following.followedUser.email}
-                %br
                 %br
                 %table{ :style => "display: inline-block;" }
                     %tbody
@@ -29,7 +27,7 @@
                                                 %div{:class => "modal-header", :style => "color: Green;"}
                                                     = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
                                                     All Reviews by 
-                                                    %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name} (#{following.followedUser.email})
+                                                    %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
                                             %div{:class => "modal-body", :style => "display: inline-table; color:Maroon; width: 95%" }
                                                 - if following.followedUser.reviews.count > 0
                                                     - following.followedUser.reviews.each do |review|

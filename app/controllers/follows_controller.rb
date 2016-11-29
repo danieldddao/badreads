@@ -3,9 +3,9 @@ class FollowsController < ApplicationController
   
   def create
     if @current_user
-      user = User.find(params[:user_id])
+      user = User.find_by_id(params[:user_id])
       if user
-        if @current_user != user.id
+        if @current_user.id != user.id
           following = @current_user.followings.new(:followedUser_id => user.id);
           begin
             if following.save
@@ -30,9 +30,9 @@ class FollowsController < ApplicationController
   
   def destroy
     if @current_user
-      user = User.find(params[:user_id])
+      user = User.find_by_id(params[:user_id])
       if user
-        if @current_user != user.id
+        if @current_user.id != user.id
           if !@current_user.followings.empty?
             @current_user.followings.each {|following|
               if following.followedUser.id == user.id
