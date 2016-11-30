@@ -77,27 +77,20 @@ describe BooksController do
             end
         end
         it "Should return to homepage" do
-            post :delete, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
+            post :delete, params: {:book => {:isbn => "1234567890003"}}
             expect(response).to redirect_to(root_path)
         end
         it "Should delete the book if found" do
             controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
-            post :delete, params: {:book => {:title => "TestBook4", :author => "TestAuthor1"}}
+            post :delete, params: {:book => {:isbn => "1234567890003"}}
             expect(Book.count).to eq(3)
             expect(response).to redirect_to(root_path)
         end
-        it "Should show message if not found details" do
+        it "Should show message if not found isbn" do
             controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
-            post :delete, params: {:book => {:title => "TestBook4", :author => ""}}
+            post :delete, params: {:book => {:isbn => "1234567890009"}}
             expect(Book.count).to eq(4)
-            expect( flash[:notice]).to eq("Book details didn't match")
-            expect(response).to redirect_to(root_path)
-        end
-        it "Should show message if not found title" do
-            controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
-            post :delete, params: {:book => {:title => "", :author => ""}}
-            expect(Book.count).to eq(4)
-            expect( flash[:notice]).to eq("Book title not in collection")
+            expect( flash[:notice]).to eq("Book is not in collection")
             expect(response).to redirect_to(root_path)
         end
         it "Should destroy the book if found" do

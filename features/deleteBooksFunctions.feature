@@ -20,6 +20,6 @@ Background: Books have been added to database
 Scenario:  Click on the "DELETE" for adding a book
  Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "Staff"
  And I have signed in to my account with email "test@gmail.com", password "123456"
- When I have deleted a book with title "TestBookNo" and author "TestAuthorNo"
+ When I have deleted a book with isbn "9780806539966"
  Then I should see "Book 'TestBookNo' deleted" notice
  And I should not see "TestBookNo" in the book list page
