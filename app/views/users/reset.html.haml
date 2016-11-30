@@ -1,0 +1,8 @@
+%title Reset Password
+
+%h3{ :style => "text-align: center;" } Reset Password
+
+%div{ :style => "text-align: center;" }
+= form_tag emailpwd_users_path do
+    = text_field_tag 'email', nil , placeholder: 'Enter the email id'
+    = submit_tag 'Reset Password', :class => "btn btn-success"
