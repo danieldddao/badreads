@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-29T14:52:46+00:00">2016-11-29T14:52:46+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-30T18:06:35+00:00">2016-11-30T18:06:35+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">98.32%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.63
+         1.59
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>54</b> files in total.
-    <b>733</b> relevant lines. 
-    <span class="green"><b>733</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>57</b> files in total.
+    <b>772</b> relevant lines. 
+    <span class="green"><b>759</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -132,12 +132,12 @@
       
       <tr>
         <td class="strong"><a href="#4b37e697dc704b2f6daacfb77b96bece26854cb4" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>59</td>
-        <td>34</td>
-        <td>34</td>
-        <td>0</td>
-        <td>2.0</td>
+        <td class="red strong">75.0 %</td>
+        <td>77</td>
+        <td>48</td>
+        <td>36</td>
+        <td>12</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -177,6 +177,26 @@
         <td>1</td>
         <td>1</td>
         <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#9dc033e0e0f1a852c768386aefd916eff98cc876" class="src_link" title="app/mailers/application_mailer.rb">app/mailers/application_mailer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#d208acafddb9f861388e7ff43d88f2e7e7583c36" class="src_link" title="app/mailers/user_mailer.rb">app/mailers/user_mailer.rb</a></td>
+        <td class="yellow strong">83.33 %</td>
+        <td>14</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
         <td>1.0</td>
       </tr>
       
@@ -413,9 +433,9 @@
       <tr>
         <td class="strong"><a href="#5d2bb718d2887058e5b50071d4177e628f93fb4f" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>41</td>
-        <td>21</td>
-        <td>21</td>
+        <td>49</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -488,6 +508,16 @@
         <td>54</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#7d6552b557fc3ae25066e41633150944c0f9854e" class="src_link" title="spec/mailers/user_mailer_spec.rb">spec/mailers/user_mailer_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -3429,11 +3459,11 @@
         <div class="source_table" id="4b37e697dc704b2f6daacfb77b96bece26854cb4">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>34</b> relevant lines. 
-      <span class="green"><b>34</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>48</b> relevant lines. 
+      <span class="green"><b>36</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -3785,10 +3815,118 @@
         <li class="never" data-hits="" data-linenumber="58">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def emailref</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
+          
+          <code class="ruby">    pass_referral=params[:send_referral]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="61">
+          
+          
+          <code class="ruby">    UserMailer.new_referral(pass_referral,@current_user.email).deliver</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">    redirect_to user_path(@current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def emailpwd</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">    require &#39;securerandom&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="66">
+          
+          
+          <code class="ruby">    reset_pwd= SecureRandom.hex(6)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
+          
+          <code class="ruby">    email_reset= params[:email]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
+          
+          <code class="ruby">    @user = User.find_by_email(params[:email])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
+          
+          <code class="ruby">    if @user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
+          
+          <code class="ruby">      @user.update_attributes(:password =&gt; reset_pwd, :password_confirmation =&gt; reset_pwd)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">      UserMailer.reset_password(reset_pwd,email_reset).deliver</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">    flash[:notice] = &quot;The new password has been sent to your email-id.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">    redirect_to root_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">end</code>
@@ -3909,6 +4047,150 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="9dc033e0e0f1a852c768386aefd916eff98cc876">
+  <div class="header">
+    <h3>app/mailers/application_mailer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ApplicationMailer &lt; ActionMailer::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  default from: &#39;from@example.com&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  layout &#39;mailer&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="d208acafddb9f861388e7ff43d88f2e7e7583c36">
+  <div class="header">
+    <h3>app/mailers/user_mailer.rb</h3>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class UserMailer &lt; ApplicationMailer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  default from: &quot;badreadsselt@gmail.com&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # Subject can be set in your I18n file at config/locales/en.yml</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  # with the following lookup:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  #   en.user_mailer.new_referral.subject</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new_referral(ref,sent_by)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    mail(to: ref, subject: &#39;Referral to join BadReads Applicattion&#39; , body: &quot; Click on the link http://badreads.herokuapp.com/ to join. A referral to join the application BadReads has been sent by &quot;+ sent_by )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def reset_password(new_pwd,sent_to)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    mail(to: sent_to, subject: &#39;BadReads Reset Password&#39;+ new_pwd , body: &#39;Your new password is &#39;+ new_pwd)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -5891,8 +6173,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5999,103 +6281,103 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :users, only: [:show, :new, :create, :update ,:edit]</code>
+          <code class="ruby">  resources :users, only: [:show, :new, :create, :update ,:edit] do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">    collection do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #Login and logout Routes:</code>
+          <code class="ruby">      post &#39;emailref&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/login&#39;, to: &#39;sessions#new&#39;, via: :get</code>
+          <code class="ruby">      post &#39;emailpwd&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/login_create&#39;, to: &#39;sessions#create&#39;, via: :post</code>
+          <code class="ruby">      get &#39;emailpwd&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="22">
           
-          <code class="ruby">  match &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, via: :delete</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  #New Role Routes:</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/new_staff_admin&#39;, to: &#39;roles#new&#39;, via: :get</code>
+          <code class="ruby">  match &#39;/reset&#39; , to: &#39;users#reset&#39; , via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  match &#39;/new_staff_admin_create&#39;, to: &#39;roles#create&#39;, via: :post</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  #Common Interest Group Routes:</code>
+          <code class="ruby">  #Login and logout Routes:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  match &#39;/login&#39;, to: &#39;sessions#new&#39;, via: :get</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  match &#39;/login_create&#39;, to: &#39;sessions#create&#39;, via: :post</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/view_calendar&#39;, to: &#39;groups#view_calendar&#39;, via: :get</code>
+          <code class="ruby">  match &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, via: :delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  #New Role Routes:</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #Google Call Back:</code>
+          <code class="ruby">  match &#39;/new_staff_admin&#39;, to: &#39;roles#new&#39;, via: :get</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;auth/:provider/callback&#39;, to: &#39;groups#view_calendar&#39;</code>
+          <code class="ruby">  match &#39;/new_staff_admin_create&#39;, to: &#39;roles#create&#39;, via: :post</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -6107,40 +6389,88 @@
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  #Follows Routes:</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="36">
           
-          <code class="ruby">  post &#39;/users/:user_id/:book_id/new_following&#39;, to: &#39;follows#create&#39;, :as =&gt; &#39;new_following_user&#39;</code>
+          
+          <code class="ruby">  #Common Interest Group Routes:</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  delete &#39;/users/:user_id/:book_id/delete_following&#39;, to: &#39;follows#destroy&#39;, :as =&gt; &#39;delete_following_user&#39;</code>
+          <code class="ruby">  match &#39;/view_calendar&#39;, to: &#39;groups#view_calendar&#39;, via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">  get &#39;/users/:id/showFollowing&#39;, to: &#39;follows#showFollowing&#39;, :as =&gt; &#39;user_show_following&#39;</code>
+          
+          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="39">
           
-          <code class="ruby">  get &#39;/users/:id/showFollowers&#39;, to: &#39;follows#showFollowers&#39;, :as =&gt; &#39;user_show_followers&#39;</code>
+          
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby">  #Google Call Back:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;auth/:provider/callback&#39;, to: &#39;groups#view_calendar&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  #Follows Routes:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  post &#39;/users/:user_id/:book_id/new_following&#39;, to: &#39;follows#create&#39;, :as =&gt; &#39;new_following_user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  delete &#39;/users/:user_id/:book_id/delete_following&#39;, to: &#39;follows#destroy&#39;, :as =&gt; &#39;delete_following_user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/:id/showFollowing&#39;, to: &#39;follows#showFollowing&#39;, :as =&gt; &#39;user_show_following&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/:id/showFollowers&#39;, to: &#39;follows#showFollowers&#39;, :as =&gt; &#39;user_show_followers&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>
@@ -8409,6 +8739,138 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="7d6552b557fc3ae25066e41633150944c0f9854e">
+  <div class="header">
+    <h3>spec/mailers/user_mailer_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &quot;rails_helper&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe UserMailer, type: :mailer do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;new_referral&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    let(:mail) { UserMailer.new_referral(&quot;to@example.org&quot;, &quot;Hi&quot;) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;renders the headers&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.subject).to eq(&quot;Referral to join BadReads Applicattion&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.to).to eq([&quot;to@example.org&quot;])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.from).to eq([&quot;badreadsselt@gmail.com&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;renders the body&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.body.encoded).to match(&quot; Click on the link http://badreads.herokuapp.com/ to join. A referral to join the application BadReads has been sent by Hi&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
