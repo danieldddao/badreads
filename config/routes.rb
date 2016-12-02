@@ -14,7 +14,14 @@ Rails.application.routes.draw do
   post '/books/:id/review_create', to: 'reviews#create', :as => 'review_create'
 
   #User Routes:
-  resources :users, only: [:show, :new, :create, :update ,:edit]
+  resources :users, only: [:show, :new, :create, :update ,:edit] do
+    collection do
+      post 'emailref'
+      post 'emailpwd'
+      get 'emailpwd'
+    end
+  end
+  match '/reset' , to: 'users#reset' , via: :get
   
   #Login and logout Routes:
   match '/login', to: 'sessions#new', via: :get
@@ -24,6 +31,7 @@ Rails.application.routes.draw do
   #New Role Routes:
   match '/new_staff_admin', to: 'roles#new', via: :get
   match '/new_staff_admin_create', to: 'roles#create', via: :post
+  
   
   #Common Interest Group Routes:
   match '/view_calendar', to: 'groups#view_calendar', via: :get

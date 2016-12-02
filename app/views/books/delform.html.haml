@@ -5,12 +5,8 @@
   -if (@current_user && @current_user.position != "User")
     = form_tag deletebook_path do
       %br
-      = label :book, :title, 'Enter Book Title:'
-      = text_field :book, 'title'
-      %br
-      = label :book, :author, 'Enter Book Author:'
-      = text_field :book, 'author'
-      %br
+      = label :book, :isbn, 'Enter Book ISBN:'
+      = text_field :book, 'isbn'
       %br
       = submit_tag 'Save Changes', :class => "btn btn-danger"
   -else

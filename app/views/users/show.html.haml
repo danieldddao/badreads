@@ -1,6 +1,8 @@
 %title My Profile!
 %h3{ :style => "text-align: center; border-bottom: 2px solid #d9534f;" } My Profile
 
+
+
 %div{ :style => "text-align: center;" }
     %table#profile
         %thead
@@ -17,5 +19,11 @@
                 %th{ :style => "text-align: center;" }
                     %h4 Position Level:
                     %h5= @user.position
+
+                   
     %br
         = link_to 'Change Password', edit_user_path(@current_user), class: "btn btn-default btn-warning"
+    %br
+= form_tag emailref_users_path do
+    = text_field_tag 'send_referral', nil , placeholder: 'Enter the email id'
+    = submit_tag 'Send Referral', :class => "btn btn-success"

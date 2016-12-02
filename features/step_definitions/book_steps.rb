@@ -36,10 +36,9 @@ Then /^I should see "(.*?)" in book list page$/ do |title|
     end
 
 ## Delete Books ##
-When /^I have deleted a book with title "(.*?)" and author "(.*?)"$/ do |title, author|
+When /^I have deleted a book with isbn "(.*?)"$/ do |isbn|
   visit booksdelform_path
-  fill_in 'book_title', :with => title
-  fill_in 'book_author', :with => author
+  fill_in 'book_isbn', :with => isbn
   click_on 'Save Changes'
 end
 

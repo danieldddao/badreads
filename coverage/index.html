@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-29T14:52:46+00:00">2016-11-29T14:52:46+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-30T18:17:28+00:00">2016-11-30T18:17:28+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">98.31%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.63
+         1.59
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>54</b> files in total.
-    <b>733</b> relevant lines. 
-    <span class="green"><b>733</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>57</b> files in total.
+    <b>769</b> relevant lines. 
+    <span class="green"><b>756</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -63,9 +63,9 @@
       <tr>
         <td class="strong"><a href="#c571248a72d0de367919891ee0f641bc6a618536" class="src_link" title="app/controllers/books_controller.rb">app/controllers/books_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>196</td>
-        <td>107</td>
-        <td>107</td>
+        <td>191</td>
+        <td>104</td>
+        <td>104</td>
         <td>0</td>
         <td>2.3</td>
       </tr>
@@ -132,12 +132,12 @@
       
       <tr>
         <td class="strong"><a href="#4b37e697dc704b2f6daacfb77b96bece26854cb4" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>59</td>
-        <td>34</td>
-        <td>34</td>
-        <td>0</td>
-        <td>2.0</td>
+        <td class="red strong">75.0 %</td>
+        <td>77</td>
+        <td>48</td>
+        <td>36</td>
+        <td>12</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -177,6 +177,26 @@
         <td>1</td>
         <td>1</td>
         <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#9dc033e0e0f1a852c768386aefd916eff98cc876" class="src_link" title="app/mailers/application_mailer.rb">app/mailers/application_mailer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#d208acafddb9f861388e7ff43d88f2e7e7583c36" class="src_link" title="app/mailers/user_mailer.rb">app/mailers/user_mailer.rb</a></td>
+        <td class="yellow strong">83.33 %</td>
+        <td>14</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
         <td>1.0</td>
       </tr>
       
@@ -413,9 +433,9 @@
       <tr>
         <td class="strong"><a href="#5d2bb718d2887058e5b50071d4177e628f93fb4f" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>41</td>
-        <td>21</td>
-        <td>21</td>
+        <td>49</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -488,6 +508,16 @@
         <td>54</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#7d6552b557fc3ae25066e41633150944c0f9854e" class="src_link" title="spec/mailers/user_mailer_spec.rb">spec/mailers/user_mailer_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -644,8 +674,8 @@
           <code class="ruby">  def set_current_user</code>
         </li>
       
-        <li class="covered" data-hits="65" data-linenumber="5">
-          <span class="hits">65</span>
+        <li class="covered" data-hits="64" data-linenumber="5">
+          <span class="hits">64</span>
           
           <code class="ruby">    @current_user ||= session[:session_token ] &amp;&amp; User.find_by_session_token(session[:session_token])</code>
         </li>
@@ -905,8 +935,8 @@
     <h3>app/controllers/books_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>107</b> relevant lines. 
-      <span class="green"><b>107</b> lines covered</span> and
+      <b>104</b> relevant lines. 
+      <span class="green"><b>104</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -962,10 +992,10 @@
           <code class="ruby">  def delete_params</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
-          <code class="ruby">      params.require(:book).permit(:title, :author)</code>
+          <code class="ruby">      params.require(:book).permit(:isbn)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -1382,709 +1412,679 @@
           <code class="ruby">      #Delete a book here</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="79">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="79">
+          <span class="hits">3</span>
           
           <code class="ruby">      if @current_user &amp;&amp; (@current_user.position == &quot;Admin&quot; || @current_user.position == &quot;Staff&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="80">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="80">
+          <span class="hits">2</span>
           
-          <code class="ruby">        @books = Book.find_by_title(delete_params[:title])</code>
+          <code class="ruby">        @books = Book.find_by_isbn(delete_params[:isbn])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="81">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="81">
+          <span class="hits">2</span>
           
           <code class="ruby">        if @books != nil then</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="82">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
           
-          <code class="ruby">            if @books.author == delete_params[:author]</code>
+          <code class="ruby">          Book.destroy(@books.id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">                Book.destroy(@books.id)</code>
+          <code class="ruby">          flash[:notice] = &quot;Book &#39;#{@books.title}&#39; deleted.&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
-          <code class="ruby">                flash[:notice] = &quot;Book &#39;#{@books.title}&#39; deleted.&quot;</code>
+          <code class="ruby">          redirect_to root_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
-          <code class="ruby">                redirect_to root_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby">            else</code>
+          <code class="ruby">            flash[:notice] = &quot;Book is not in collection&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
-          <code class="ruby">                flash[:notice] = &quot;Book details didn&#39;t match&quot;</code>
+          <code class="ruby">            redirect_to root_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="88">
           
-          <code class="ruby">                redirect_to root_path</code>
+          
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">            end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">            flash[:notice] = &quot;Book title not in collection&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
-          
-          <code class="ruby">            redirect_to root_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="93">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
           <code class="ruby">        flash[:warning] = &#39;Cannot delete!!&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">  # Delete a book</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="102">
+        <li class="covered" data-hits="2" data-linenumber="97">
           <span class="hits">2</span>
           
           <code class="ruby">    if @current_user &amp;&amp; (@current_user.position == &quot;Admin&quot; || @current_user.position == &quot;Staff&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
           <code class="ruby">      checkBookExist</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
           <code class="ruby">      @book.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;Book &#39;#{@book.title}&#39; deleted.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="106">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:warning] = &quot;You don&#39;t have rights to delete this book&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="109">
+        <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="never" data-hits="" data-linenumber="108">
           
           
           <code class="ruby">  # Show page for editting books</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="115">
+        <li class="covered" data-hits="2" data-linenumber="110">
           <span class="hits">2</span>
           
           <code class="ruby">    checkBookExist</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="116">
+        <li class="covered" data-hits="2" data-linenumber="111">
           <span class="hits">2</span>
           
           <code class="ruby">    if !@current_user || @current_user.position == &quot;User&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="117">
+        <li class="covered" data-hits="1" data-linenumber="112">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:warning]= &quot;WARN! You don&#39;t have authority to edit book!&quot;  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
+        <li class="covered" data-hits="1" data-linenumber="113">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to book_path(@book)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="114">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="never" data-hits="" data-linenumber="115">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="122">
+        <li class="covered" data-hits="1" data-linenumber="117">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="123">
+        <li class="covered" data-hits="16" data-linenumber="118">
           <span class="hits">16</span>
           
           <code class="ruby">    checkBookExist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="125">
+        <li class="covered" data-hits="16" data-linenumber="120">
           <span class="hits">16</span>
           
           <code class="ruby">    if params[:new_title] == nil</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="126">
+        <li class="covered" data-hits="14" data-linenumber="121">
           <span class="hits">14</span>
           
           <code class="ruby">      if params[:new_isbn] == nil</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="127">
+        <li class="covered" data-hits="11" data-linenumber="122">
           <span class="hits">11</span>
           
           <code class="ruby">        if params[:new_author] == nil</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="128">
+        <li class="covered" data-hits="9" data-linenumber="123">
           <span class="hits">9</span>
           
           <code class="ruby">          if params[:new_summary] == nil</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="129">
+        <li class="covered" data-hits="7" data-linenumber="124">
           <span class="hits">7</span>
           
           <code class="ruby">            if params[:new_publisher] == nil</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="130">
+        <li class="covered" data-hits="5" data-linenumber="125">
           <span class="hits">5</span>
           
           <code class="ruby">              if params[:new_publication_year] == nil</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="131">
+        <li class="covered" data-hits="3" data-linenumber="126">
           <span class="hits">3</span>
           
           <code class="ruby">                if params[:new_edition] == nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="132">
+        <li class="covered" data-hits="1" data-linenumber="127">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:warning] = &quot;Error! Please try again!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="133">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">                else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="134">
+        <li class="covered" data-hits="2" data-linenumber="129">
           <span class="hits">2</span>
           
           <code class="ruby">                  if params[:new_edition][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="135">
+        <li class="covered" data-hits="1" data-linenumber="130">
           <span class="hits">1</span>
           
           <code class="ruby">                    flash[:warning] = &quot;New Edition can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby">                  else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="137">
+        <li class="covered" data-hits="1" data-linenumber="132">
           <span class="hits">1</span>
           
           <code class="ruby">                    @book.update_attributes!(:edition =&gt; params[:new_edition][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="138">
+        <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
           <code class="ruby">                    flash[:notice] = &quot;Edition was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="134">
           
           
           <code class="ruby">                  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="never" data-hits="" data-linenumber="135">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
+        <li class="never" data-hits="" data-linenumber="136">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="142">
+        <li class="covered" data-hits="2" data-linenumber="137">
           <span class="hits">2</span>
           
           <code class="ruby">                if params[:new_publication_year][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="138">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:warning] = &quot;New Publication Year can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="144">
+        <li class="never" data-hits="" data-linenumber="139">
           
           
           <code class="ruby">                else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="145">
+        <li class="covered" data-hits="1" data-linenumber="140">
           <span class="hits">1</span>
           
           <code class="ruby">                  @book.update_attributes!(:publication_year =&gt; params[:new_publication_year][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="146">
+        <li class="covered" data-hits="1" data-linenumber="141">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:notice] = &quot;Publication Year was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="147">
+        <li class="never" data-hits="" data-linenumber="142">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="never" data-hits="" data-linenumber="144">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="150">
+        <li class="covered" data-hits="2" data-linenumber="145">
           <span class="hits">2</span>
           
           <code class="ruby">              if params[:new_publisher][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
+        <li class="covered" data-hits="1" data-linenumber="146">
           <span class="hits">1</span>
           
           <code class="ruby">                flash[:warning] = &quot;New Publisher can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="153">
+        <li class="covered" data-hits="1" data-linenumber="148">
           <span class="hits">1</span>
           
           <code class="ruby">                @book.update_attributes!(:publisher =&gt; params[:new_publisher][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="154">
+        <li class="covered" data-hits="1" data-linenumber="149">
           <span class="hits">1</span>
           
           <code class="ruby">                flash[:notice] = &quot;Publisher was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="155">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="157">
+        <li class="never" data-hits="" data-linenumber="152">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="158">
+        <li class="covered" data-hits="2" data-linenumber="153">
           <span class="hits">2</span>
           
           <code class="ruby">            if params[:new_summary][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="159">
+        <li class="covered" data-hits="1" data-linenumber="154">
           <span class="hits">1</span>
           
           <code class="ruby">              flash[:warning] = &quot;New Summary can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
+        <li class="covered" data-hits="1" data-linenumber="156">
           <span class="hits">1</span>
           
           <code class="ruby">              @book.update_attributes!(:summary =&gt; params[:new_summary][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="162">
+        <li class="covered" data-hits="1" data-linenumber="157">
           <span class="hits">1</span>
           
           <code class="ruby">              flash[:notice] = &quot;Summary was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="163">
+        <li class="never" data-hits="" data-linenumber="158">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="164">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="160">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="166">
+        <li class="covered" data-hits="2" data-linenumber="161">
           <span class="hits">2</span>
           
           <code class="ruby">          if params[:new_author][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="167">
+        <li class="covered" data-hits="1" data-linenumber="162">
           <span class="hits">1</span>
           
           <code class="ruby">            flash[:warning] = &quot;New Author can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="168">
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="169">
+        <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
           <code class="ruby">            @book.update_attributes!(:author =&gt; params[:new_author][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="170">
+        <li class="covered" data-hits="1" data-linenumber="165">
           <span class="hits">1</span>
           
           <code class="ruby">            flash[:notice] = &quot;Author was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="171">
+        <li class="never" data-hits="" data-linenumber="166">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="172">
+        <li class="never" data-hits="" data-linenumber="167">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
+        <li class="never" data-hits="" data-linenumber="168">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="174">
+        <li class="covered" data-hits="3" data-linenumber="169">
           <span class="hits">3</span>
           
           <code class="ruby">        if params[:new_isbn][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="175">
+        <li class="covered" data-hits="1" data-linenumber="170">
           <span class="hits">1</span>
           
           <code class="ruby">          flash[:warning] = &quot;New ISBN can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="176">
+        <li class="never" data-hits="" data-linenumber="171">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="177">
+        <li class="covered" data-hits="2" data-linenumber="172">
           <span class="hits">2</span>
           
           <code class="ruby">          if Book.find_by_isbn(params[:new_isbn][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="178">
+        <li class="covered" data-hits="1" data-linenumber="173">
           <span class="hits">1</span>
           
           <code class="ruby">          flash[:warning] = &quot;ISBN exists in the database&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="179">
+        <li class="never" data-hits="" data-linenumber="174">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="180">
+        <li class="covered" data-hits="1" data-linenumber="175">
           <span class="hits">1</span>
           
           <code class="ruby">            @book.update_attributes!(:isbn =&gt; params[:new_isbn][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="181">
+        <li class="covered" data-hits="1" data-linenumber="176">
           <span class="hits">1</span>
           
           <code class="ruby">            flash[:notice] = &quot;ISBN was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="182">
+        <li class="never" data-hits="" data-linenumber="177">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="183">
+        <li class="never" data-hits="" data-linenumber="178">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="184">
+        <li class="never" data-hits="" data-linenumber="179">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="never" data-hits="" data-linenumber="180">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="186">
+        <li class="covered" data-hits="2" data-linenumber="181">
           <span class="hits">2</span>
           
           <code class="ruby">      if params[:new_title][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="187">
+        <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
           <code class="ruby">        flash[:warning] = &quot;New Title can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="188">
+        <li class="never" data-hits="" data-linenumber="183">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="189">
+        <li class="covered" data-hits="1" data-linenumber="184">
           <span class="hits">1</span>
           
           <code class="ruby">        @book.update_attributes!(:title =&gt; params[:new_title][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="190">
+        <li class="covered" data-hits="1" data-linenumber="185">
           <span class="hits">1</span>
           
           <code class="ruby">        flash[:notice] = &quot;Title was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="191">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="192">
+        <li class="never" data-hits="" data-linenumber="187">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="193">
+        <li class="covered" data-hits="16" data-linenumber="188">
           <span class="hits">16</span>
           
           <code class="ruby">    redirect_to edit_book_path(@book)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="never" data-hits="" data-linenumber="189">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="195">
+        <li class="never" data-hits="" data-linenumber="190">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="196">
+        <li class="never" data-hits="" data-linenumber="191">
           
           
           <code class="ruby">end</code>
@@ -3429,11 +3429,11 @@
         <div class="source_table" id="4b37e697dc704b2f6daacfb77b96bece26854cb4">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>34</b> relevant lines. 
-      <span class="green"><b>34</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>48</b> relevant lines. 
+      <span class="green"><b>36</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -3785,10 +3785,118 @@
         <li class="never" data-hits="" data-linenumber="58">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def emailref</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
+          
+          <code class="ruby">    pass_referral=params[:send_referral]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="61">
+          
+          
+          <code class="ruby">    UserMailer.new_referral(pass_referral,@current_user.email).deliver</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">    redirect_to user_path(@current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def emailpwd</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">    require &#39;securerandom&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="66">
+          
+          
+          <code class="ruby">    reset_pwd= SecureRandom.hex(6)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
+          
+          <code class="ruby">    email_reset= params[:email]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
+          
+          <code class="ruby">    @user = User.find_by_email(params[:email])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
+          
+          <code class="ruby">    if @user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
+          
+          <code class="ruby">      @user.update_attributes(:password =&gt; reset_pwd, :password_confirmation =&gt; reset_pwd)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">      UserMailer.reset_password(reset_pwd,email_reset).deliver</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">    flash[:notice] = &quot;The new password has been sent to your email-id.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">    redirect_to root_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">end</code>
@@ -3909,6 +4017,150 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="9dc033e0e0f1a852c768386aefd916eff98cc876">
+  <div class="header">
+    <h3>app/mailers/application_mailer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ApplicationMailer &lt; ActionMailer::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  default from: &#39;from@example.com&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  layout &#39;mailer&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="d208acafddb9f861388e7ff43d88f2e7e7583c36">
+  <div class="header">
+    <h3>app/mailers/user_mailer.rb</h3>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class UserMailer &lt; ApplicationMailer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  default from: &quot;badreadsselt@gmail.com&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # Subject can be set in your I18n file at config/locales/en.yml</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  # with the following lookup:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  #   en.user_mailer.new_referral.subject</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new_referral(ref,sent_by)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    mail(to: ref, subject: &#39;Referral to join BadReads Applicattion&#39; , body: &quot; Click on the link http://badreads.herokuapp.com/ to join. A referral to join the application BadReads has been sent by &quot;+ sent_by )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def reset_password(new_pwd,sent_to)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    mail(to: sent_to, subject: &#39;BadReads Reset Password&#39;+ new_pwd , body: &#39;Your new password is &#39;+ new_pwd)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -5891,8 +6143,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5999,103 +6251,103 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :users, only: [:show, :new, :create, :update ,:edit]</code>
+          <code class="ruby">  resources :users, only: [:show, :new, :create, :update ,:edit] do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">    collection do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #Login and logout Routes:</code>
+          <code class="ruby">      post &#39;emailref&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/login&#39;, to: &#39;sessions#new&#39;, via: :get</code>
+          <code class="ruby">      post &#39;emailpwd&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/login_create&#39;, to: &#39;sessions#create&#39;, via: :post</code>
+          <code class="ruby">      get &#39;emailpwd&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="22">
           
-          <code class="ruby">  match &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, via: :delete</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  #New Role Routes:</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/new_staff_admin&#39;, to: &#39;roles#new&#39;, via: :get</code>
+          <code class="ruby">  match &#39;/reset&#39; , to: &#39;users#reset&#39; , via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  match &#39;/new_staff_admin_create&#39;, to: &#39;roles#create&#39;, via: :post</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  #Common Interest Group Routes:</code>
+          <code class="ruby">  #Login and logout Routes:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  match &#39;/login&#39;, to: &#39;sessions#new&#39;, via: :get</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  match &#39;/login_create&#39;, to: &#39;sessions#create&#39;, via: :post</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/view_calendar&#39;, to: &#39;groups#view_calendar&#39;, via: :get</code>
+          <code class="ruby">  match &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, via: :delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  #New Role Routes:</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #Google Call Back:</code>
+          <code class="ruby">  match &#39;/new_staff_admin&#39;, to: &#39;roles#new&#39;, via: :get</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;auth/:provider/callback&#39;, to: &#39;groups#view_calendar&#39;</code>
+          <code class="ruby">  match &#39;/new_staff_admin_create&#39;, to: &#39;roles#create&#39;, via: :post</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -6107,40 +6359,88 @@
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  #Follows Routes:</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="36">
           
-          <code class="ruby">  post &#39;/users/:user_id/:book_id/new_following&#39;, to: &#39;follows#create&#39;, :as =&gt; &#39;new_following_user&#39;</code>
+          
+          <code class="ruby">  #Common Interest Group Routes:</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  delete &#39;/users/:user_id/:book_id/delete_following&#39;, to: &#39;follows#destroy&#39;, :as =&gt; &#39;delete_following_user&#39;</code>
+          <code class="ruby">  match &#39;/view_calendar&#39;, to: &#39;groups#view_calendar&#39;, via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">  get &#39;/users/:id/showFollowing&#39;, to: &#39;follows#showFollowing&#39;, :as =&gt; &#39;user_show_following&#39;</code>
+          
+          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="39">
           
-          <code class="ruby">  get &#39;/users/:id/showFollowers&#39;, to: &#39;follows#showFollowers&#39;, :as =&gt; &#39;user_show_followers&#39;</code>
+          
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby">  #Google Call Back:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;auth/:provider/callback&#39;, to: &#39;groups#view_calendar&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  #Follows Routes:</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  post &#39;/users/:user_id/:book_id/new_following&#39;, to: &#39;follows#create&#39;, :as =&gt; &#39;new_following_user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  delete &#39;/users/:user_id/:book_id/delete_following&#39;, to: &#39;follows#destroy&#39;, :as =&gt; &#39;delete_following_user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/:id/showFollowing&#39;, to: &#39;follows#showFollowing&#39;, :as =&gt; &#39;user_show_following&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/:id/showFollowers&#39;, to: &#39;follows#showFollowers&#39;, :as =&gt; &#39;user_show_followers&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>
@@ -8409,6 +8709,138 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="7d6552b557fc3ae25066e41633150944c0f9854e">
+  <div class="header">
+    <h3>spec/mailers/user_mailer_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &quot;rails_helper&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe UserMailer, type: :mailer do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;new_referral&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    let(:mail) { UserMailer.new_referral(&quot;to@example.org&quot;, &quot;Hi&quot;) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;renders the headers&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.subject).to eq(&quot;Referral to join BadReads Applicattion&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.to).to eq([&quot;to@example.org&quot;])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.from).to eq([&quot;badreadsselt@gmail.com&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;renders the body&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(mail.body.encoded).to match(&quot; Click on the link http://badreads.herokuapp.com/ to join. A referral to join the application BadReads has been sent by Hi&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>

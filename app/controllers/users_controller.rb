@@ -55,5 +55,23 @@ class UsersController < ApplicationController
      redirect_to root_path
     end
   end
+
+  def emailref
+    pass_referral=params[:send_referral]
+    UserMailer.new_referral(pass_referral,@current_user.email).deliver
+    redirect_to user_path(@current_user)
+  end
+  def emailpwd
+    require 'securerandom'
+    reset_pwd= SecureRandom.hex(6)
+    email_reset= params[:email]
+    @user = User.find_by_email(params[:email])
+    if @user
+      @user.update_attributes(:password => reset_pwd, :password_confirmation => reset_pwd)
+      UserMailer.reset_password(reset_pwd,email_reset).deliver
+    end
+    flash[:notice] = "The new password has been sent to your email-id."
+    redirect_to root_path
+  end
   
 end

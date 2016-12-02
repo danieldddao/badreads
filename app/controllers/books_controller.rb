@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   end
   
   def delete_params
-      params.require(:book).permit(:title, :author)
+      params.require(:book).permit(:isbn)
   end
   
   def index
@@ -77,18 +77,13 @@ class BooksController < ApplicationController
   def delete
       #Delete a book here
       if @current_user && (@current_user.position == "Admin" || @current_user.position == "Staff")
-        @books = Book.find_by_title(delete_params[:title])
+        @books = Book.find_by_isbn(delete_params[:isbn])
         if @books != nil then
-            if @books.author == delete_params[:author]
-                Book.destroy(@books.id)
-                flash[:notice] = "Book '#{@books.title}' deleted."
-                redirect_to root_path
-            else
-                flash[:notice] = "Book details didn't match"
-                redirect_to root_path
-            end
+          Book.destroy(@books.id)
+          flash[:notice] = "Book '#{@books.title}' deleted."
+          redirect_to root_path
         else
-            flash[:notice] = "Book title not in collection"
+            flash[:notice] = "Book is not in collection"
             redirect_to root_path
         end
       else
