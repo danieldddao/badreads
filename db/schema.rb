@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20161122003923) do
     t.string   "password_digest"
     t.string   "position"
     t.string   "session_token"
+    t.boolean  "prime"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["email"], name: "index_users_on_email", unique: true

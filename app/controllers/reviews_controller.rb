@@ -11,6 +11,13 @@ class ReviewsController < ApplicationController
         @current_user.reviews << @review
         if @review.save
           flash[:notice] = "Your Review for '#{@book.title}' successfully submitted!"
+          puts "-------------------------"
+          puts @current_user.reviews.count
+          @count_review = @current_user.reviews.count
+          if @count_review > 10
+            @current_user.prime = true
+            @current_user.save
+          end  
           redirect_to book_path(@book)
         else
           render 'books/show'
