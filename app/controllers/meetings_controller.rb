@@ -15,7 +15,14 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
     @interests = Interest.all
   end
-
+  
+  # GET /meetings/:id
+  
+  def show
+    choice = params[:meeting_id] 
+    @meeting = Meeting.find(choice)
+    @interests = @meeting.interests.all
+  end
 
   # POST /meetings
   def create
@@ -28,7 +35,7 @@ class MeetingsController < ApplicationController
         if value == "1" then
           @group = Interest.find(key)
           @group.meetings << @meeting
-          @meeting.interests << @group
+          #@meeting.interests << @group
         end
       end
       flash[:notice] = "Meeting was added to the Calendar"

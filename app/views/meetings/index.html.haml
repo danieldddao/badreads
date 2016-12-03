@@ -8,12 +8,13 @@
       %th Name
       %th Date
       %th Time
-      %th{:colspan => "1"}
+      %th{:colspan => "2"}
   %tbody
     - @meetings.each do |meeting|
       %tr
         %td= meeting.name
         %td= meeting.start_time.mday
         %td= meeting.approx_time
+        %td= link_to 'Interests', meetings_view_path(:meeting_id => meeting.id)
         %td= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' }
 %br

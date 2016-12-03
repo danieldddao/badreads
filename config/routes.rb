@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :meetings
+  match '/meetings/view', to: 'meetings#show', via: :get
   root 'books#index'
   
   #Book Routes:

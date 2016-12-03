@@ -1,0 +1,17 @@
+%p#notice= notice
+= link_to 'New Meeting', new_meeting_path
+= button_to 'Calendar View', view_calendar_path, :method => :get
+%h1= @meeting.name
+%table{:style=>"border: 5px; width: 100%"}
+  %thead
+    %tr
+      %th Interet Groups
+  %tbody
+    - begin
+      - @interests.each do |interest_name|
+        %tr
+          %td= interest_name.genre
+    - rescue
+      %tr
+        %td= @interests.genre
+%br
