@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :meetings
   match '/meetings/view', to: 'meetings#show', via: :get
+  match '/meetings/search', to: 'meetings#search', via: :post
   root 'books#index'
   
   #Book Routes:

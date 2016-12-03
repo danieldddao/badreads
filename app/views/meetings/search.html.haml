@@ -1,0 +1,34 @@
+%p#notice= notice
+= link_to 'New Meeting', new_meeting_path
+= button_to 'Calendar View', view_calendar_path, :method => :get
+%br
+%h1 Search Results
+-begin
+  - @result.each do |key, value|
+    %table{:style=>"border: 5px; width: 100%"}
+      %caption #{key}
+      %thead
+        %tr
+          %th Name
+          %th Date
+          %th Time
+          %th{:colspan => "2"}
+      %tbody
+        - begin
+          - value.each do |meeting|
+            %tr
+              %td= meeting.name
+              %td= meeting.start_time.mday
+              %td= meeting.approx_time
+              %td= link_to 'Interests', meetings_view_path(:meeting_id => meeting.id)
+              %td= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' }
+        - rescue
+          %tr
+            %td= value.name
+            %td= value.start_time.mday
+            %td= value.approx_time
+            %td= link_to 'Interests', meetings_view_path(:meeting_id => value.id)
+            %td= link_to 'Destroy', value, method: :delete, data: { confirm: 'Are you sure?' }
+- rescue
+  = "SORRY, NO RESULTS FOUND :-("
+%br

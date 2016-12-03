@@ -1,6 +1,22 @@
 %p#notice= notice
 = link_to 'New Meeting', new_meeting_path
 = button_to 'Calendar View', view_calendar_path, :method => :get
+%br
+%h3 Search by Interest Groups
+%br
+= form_tag meetings_search_path do
+  %table#search_choices
+    %thead
+      %tr
+        %th Genre Name
+        %th Select
+    %tbody
+      - @interests.each do |interest_type|
+        %tr
+          %td= interest_type[:genre] 
+          %td= check_box_tag "selected_groups[#{interest_type[:id]}]"
+  = submit_tag 'Search'
+
 %h1 Meetings
 %table{:style=>"border: 5px; width: 100%"}
   %thead

@@ -1,21 +1,45 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:destroy]
+  
   #ONLY HAML ACTIONS IMPLEMENTED !! PARTIALS AT SPRINT 3
+  
   def meeting_params
     params.require(:meeting).permit(:name, :approx_time, :start_time)
   end
   
   # GET /meetings
+  
   def index
     @meetings = Meeting.all
+    @interests = Interest.all
   end
 
   # GET /meetings/new
+  
   def new
     @meeting = Meeting.new
     @interests = Interest.all
   end
   
+  # POST /meetings/search
+  
+  def search
+    @choices = params["selected_groups"]
+    @result = Hash.new
+    if @choices == nil then
+      flash[:notice] = "No Interest Groups Were Selected"
+      redirect_to meetings_path
+    else
+      @choices.each do |key, value|
+        if value == "1" then
+          @group = Interest.find(key)
+          if !(@group.meetings.empty?) then
+            @result[@group.genre] = @group.meetings.all
+          end
+        end
+      end
+    end
+  end
   # GET /meetings/:id
   
   def show
@@ -25,6 +49,7 @@ class MeetingsController < ApplicationController
   end
 
   # POST /meetings
+  
   def create
     @choices = params["selected_groups"]
     if @choices == nil then

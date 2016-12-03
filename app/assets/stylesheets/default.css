@@ -58,7 +58,11 @@ table#books th, table#books td {
 table#books tr {
   border: solid;
 }
-
+#search_choices{
+  display: block;
+  height: 100px;
+  overflow-y: scroll;
+}
 #notice #warning {
   background: rosybrown;
   margin: 1em 0;
