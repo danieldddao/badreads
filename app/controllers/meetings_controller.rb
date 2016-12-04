@@ -18,8 +18,13 @@ class MeetingsController < ApplicationController
   # GET /meetings/new
   
   def new
-    @meeting = Meeting.new
-    @interests = Interest.all
+    if @current_user
+      @meeting = Meeting.new
+      @interests = Interest.all
+    else
+      redirect_to login_path
+    end
+    
   end
   
   # POST /meetings/search
