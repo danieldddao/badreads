@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122003923) do
+ActiveRecord::Schema.define(version: 20161204023653) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(version: 20161122003923) do
     t.integer "interest_id"
     t.index ["interest_id"], name: "index_meetings_interests_on_interest_id"
     t.index ["meeting_id"], name: "index_meetings_interests_on_meeting_id"
+  end
+
+  create_table "meetings_users", id: false, force: :cascade do |t|
+    t.integer "meeting_id", null: false
+    t.integer "user_id",    null: false
+    t.index ["meeting_id", "user_id"], name: "index_meetings_users_on_meeting_id_and_user_id"
+    t.index ["user_id", "meeting_id"], name: "index_meetings_users_on_user_id_and_meeting_id"
   end
 
   create_table "reviews", force: :cascade do |t|

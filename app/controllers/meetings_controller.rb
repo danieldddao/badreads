@@ -12,6 +12,7 @@ class MeetingsController < ApplicationController
   def index
     @meetings = Meeting.all
     @interests = Interest.all
+    @current_user = User.find_by_session_token(session[:session_token])
   end
 
   # GET /meetings/new
@@ -68,6 +69,14 @@ class MeetingsController < ApplicationController
     redirect_to view_calendar_path
   end
 
+  # get /meetings/add
+  
+  def add
+    choice_user = User.find(params[:user])
+    choice_meeting = Meeting.find(params[:meeting])
+    choice_user.meetings << choice_meeting
+    redirect_to view_calendar_path
+  end
 
   # DELETE /meetings/1
   def destroy

@@ -24,13 +24,17 @@
       %th Name
       %th Date
       %th Time
-      %th{:colspan => "2"}
+      %th{:colspan => "3"}
   %tbody
     - @meetings.each do |meeting|
       %tr
         %td= meeting.name
         %td= meeting.start_time.mday
         %td= meeting.approx_time
+        - if @current_user then
+          %td= link_to 'Join', meetings_add_path(:meeting => meeting.id, :user => @current_user.id)
+        - else
+          %td= link_to 'Login to Join', meetings_path
         %td= link_to 'Interests', meetings_view_path(:meeting_id => meeting.id)
         %td= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' }
 %br
