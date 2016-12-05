@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+    after_create :set_prime
+
+    
     has_many :reviews, dependent: :destroy
     has_many :books, :through => :reviews
     has_and_belongs_to_many :interests
@@ -17,9 +20,17 @@ class User < ActiveRecord::Base
     validates :password, presence: true, length: {minimum: 6}
     validates :password_confirmation, presence: true
 
+    def set_prime
+    puts "inside set prime"     
+    self.prime = false
+    end
+
     private
     def create_session_token
         self.session_token = SecureRandom.urlsafe_base64
     end
+    
+
+
     
 end

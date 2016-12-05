@@ -7,8 +7,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password_digest
       t.string :position
       t.string :session_token
-      t.boolean :prime
-
+      t.boolean:prime 
+      
       t.timestamps
     end
     add_index :users, :email, unique:true

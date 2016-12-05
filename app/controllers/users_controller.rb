@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
+    puts "--------------------------"
+    # @user.prime =false
+    # @user.save
     if !current_user?(params[:id])       
       flash[:warning]= 'Can only show proﬁle of logged-in user'     
     end  
