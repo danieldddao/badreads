@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-06T02:08:19+00:00">2016-12-06T02:08:19+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-06T03:44:07+00:00">2016-12-06T03:44:07+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.28%</span></span>
+    (<span class="covered_percent"><span class="green">96.29%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>57</b> files in total.
-    <b>806</b> relevant lines. 
-    <span class="green"><b>776</b> lines covered</span> and
+    <b>808</b> relevant lines. 
+    <span class="green"><b>778</b> lines covered</span> and
     <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,9 +63,9 @@
       <tr>
         <td class="strong"><a href="#c571248a72d0de367919891ee0f641bc6a618536" class="src_link" title="app/controllers/books_controller.rb">app/controllers/books_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>202</td>
-        <td>109</td>
-        <td>109</td>
+        <td>203</td>
+        <td>110</td>
+        <td>110</td>
         <td>0</td>
         <td>2.4</td>
       </tr>
@@ -213,11 +213,11 @@
       <tr>
         <td class="strong"><a href="#52c6a80dc7a01fd220ef1c8953573c2e11838354" class="src_link" title="app/models/book.rb">app/models/book.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>14</td>
-        <td>14</td>
+        <td>19</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -935,8 +935,8 @@
     <h3>app/controllers/books_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>109</b> relevant lines. 
-      <span class="green"><b>109</b> lines covered</span> and
+      <b>110</b> relevant lines. 
+      <span class="green"><b>110</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -968,8 +968,8 @@
           <code class="ruby">  def book_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
           <code class="ruby">    params.require(:book).permit(:isbn, :title, :author, :publisher, :summary, :publication_year, :category, :edition, :img)</code>
         </li>
@@ -1139,1018 +1139,1024 @@
         <li class="covered" data-hits="2" data-linenumber="33">
           <span class="hits">2</span>
           
-          <code class="ruby">    if @book.save</code>
+          <code class="ruby">    @book.img = &quot;books/default-book.png&quot; if !book_params[:img] || book_params[:img].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="34">
+          <span class="hits">2</span>
           
-          <code class="ruby">      flash[:notice] = &quot;#{@book.title} was successfully added.&quot;</code>
+          <code class="ruby">    if @book.save</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
+          <code class="ruby">      flash[:notice] = &quot;#{@book.title} was successfully added.&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
           <code class="ruby">      render &#39;new&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
           <code class="ruby">  def search</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">    #Search for book based on form submission, render results page</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">    #Find by ISBN:</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="44">
+        <li class="covered" data-hits="4" data-linenumber="45">
           <span class="hits">4</span>
           
           <code class="ruby">    @books_isbn = Book.find_by_isbn(params[:search_terms])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="45">
+        <li class="covered" data-hits="4" data-linenumber="46">
           <span class="hits">4</span>
           
           <code class="ruby">    if !(@books_isbn)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="46">
+        <li class="covered" data-hits="3" data-linenumber="47">
           <span class="hits">3</span>
           
           <code class="ruby">        @books_isbn = &quot;No Books found!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">        Book.update_search_count(@books_isbn)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">    #Find by Title:</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="51">
+        <li class="covered" data-hits="4" data-linenumber="52">
           <span class="hits">4</span>
           
           <code class="ruby">    @books_title = Book.find_by_title(params[:search_terms])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="52">
+        <li class="covered" data-hits="4" data-linenumber="53">
           <span class="hits">4</span>
           
           <code class="ruby">    if !(@books_title)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="53">
+        <li class="covered" data-hits="3" data-linenumber="54">
           <span class="hits">3</span>
           
           <code class="ruby">        @books_title = &quot;No Books found!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
           <code class="ruby">        Book.update_search_count(@books_title)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">    #Find by Author:</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="58">
+        <li class="covered" data-hits="4" data-linenumber="59">
           <span class="hits">4</span>
           
           <code class="ruby">    @books_author = Book.find_by_author(params[:search_terms])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="59">
+        <li class="covered" data-hits="4" data-linenumber="60">
           <span class="hits">4</span>
           
           <code class="ruby">    if !(@books_author)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="60">
+        <li class="covered" data-hits="3" data-linenumber="61">
           <span class="hits">3</span>
           
           <code class="ruby">        @books_author = &quot;No Books found!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
           <code class="ruby">        Book.update_search_count(@books_author)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def top_10_searched_books</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">      #Display top ten searched books</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
           <code class="ruby">      @books = Book.all.order(&#39;search_count DESC&#39;).limit(10)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
           <code class="ruby">  def top_10_reviewed_books</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">      #Display top ten reviewed books</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
           <code class="ruby">      @books = Book.all.order(&#39;reviews_count DESC&#39;).limit(10)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  end  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">  def delform</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">      #Display form to delete a book</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="79">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">  def delete</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">      #Delete a book here</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="81">
+        <li class="covered" data-hits="3" data-linenumber="82">
           <span class="hits">3</span>
           
           <code class="ruby">      if @current_user &amp;&amp; (@current_user.position == &quot;Admin&quot; || @current_user.position == &quot;Staff&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="82">
+        <li class="covered" data-hits="2" data-linenumber="83">
           <span class="hits">2</span>
           
           <code class="ruby">        @books = Book.find_by_isbn(delete_params[:isbn])</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="83">
+        <li class="covered" data-hits="2" data-linenumber="84">
           <span class="hits">2</span>
           
           <code class="ruby">        if @books != nil then</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="85">
           <span class="hits">1</span>
           
           <code class="ruby">          Book.destroy(@books.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
           <code class="ruby">          flash[:notice] = &quot;Book &#39;#{@books.title}&#39; deleted.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
           <code class="ruby">          redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">        else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
-          
-          <code class="ruby">            flash[:notice] = &quot;Book is not in collection&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">            redirect_to root_path</code>
+          <code class="ruby">            flash[:notice] = &quot;Book is not in collection&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">            redirect_to root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="92">
           
-          <code class="ruby">        flash[:warning] = &#39;Cannot delete!!&#39;</code>
+          
+          <code class="ruby">      else</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
-          <code class="ruby">        redirect_to root_path</code>
+          <code class="ruby">        flash[:warning] = &#39;Cannot delete!!&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        redirect_to root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
           <code class="ruby">  # Delete a book</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="99">
+        <li class="covered" data-hits="2" data-linenumber="100">
           <span class="hits">2</span>
           
           <code class="ruby">    if @current_user &amp;&amp; (@current_user.position == &quot;Admin&quot; || @current_user.position == &quot;Staff&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">      checkBookExist</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
           <code class="ruby">      @book.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="102">
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;Book &#39;#{@book.title}&#39; deleted.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      flash[:warning] = &quot;You don&#39;t have rights to delete this book&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to root_path</code>
+          <code class="ruby">      flash[:warning] = &quot;You don&#39;t have rights to delete this book&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="covered" data-hits="1" data-linenumber="107">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      redirect_to root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="109">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
           <code class="ruby">  # Show page for editting books</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="111">
+        <li class="covered" data-hits="1" data-linenumber="112">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="112">
+        <li class="covered" data-hits="2" data-linenumber="113">
           <span class="hits">2</span>
           
           <code class="ruby">    checkBookExist</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="113">
+        <li class="covered" data-hits="2" data-linenumber="114">
           <span class="hits">2</span>
           
           <code class="ruby">    if !@current_user || @current_user.position == &quot;User&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:warning]= &quot;WARN! You don&#39;t have authority to edit book!&quot;  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="115">
+        <li class="covered" data-hits="1" data-linenumber="116">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to book_path(@book)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="117">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="118">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
+        <li class="covered" data-hits="1" data-linenumber="120">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="120">
+        <li class="covered" data-hits="18" data-linenumber="121">
           <span class="hits">18</span>
           
           <code class="ruby">    checkBookExist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="never" data-hits="" data-linenumber="122">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="122">
+        <li class="covered" data-hits="18" data-linenumber="123">
           <span class="hits">18</span>
           
           <code class="ruby">    if params[:new_title] == nil</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="123">
+        <li class="covered" data-hits="16" data-linenumber="124">
           <span class="hits">16</span>
           
           <code class="ruby">      if params[:new_isbn] == nil</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="124">
+        <li class="covered" data-hits="13" data-linenumber="125">
           <span class="hits">13</span>
           
           <code class="ruby">        if params[:new_author] == nil</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="125">
+        <li class="covered" data-hits="11" data-linenumber="126">
           <span class="hits">11</span>
           
           <code class="ruby">          if params[:new_summary] == nil</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="126">
+        <li class="covered" data-hits="9" data-linenumber="127">
           <span class="hits">9</span>
           
           <code class="ruby">            if params[:new_publisher] == nil</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="127">
+        <li class="covered" data-hits="7" data-linenumber="128">
           <span class="hits">7</span>
           
           <code class="ruby">              if params[:new_publication_year] == nil</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="128">
+        <li class="covered" data-hits="5" data-linenumber="129">
           <span class="hits">5</span>
           
           <code class="ruby">                if params[:new_edition] == nil</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="129">
+        <li class="covered" data-hits="3" data-linenumber="130">
           <span class="hits">3</span>
           
           <code class="ruby">                  if params[:new_img] == nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="130">
+        <li class="covered" data-hits="1" data-linenumber="131">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:warning] = &quot;Error! Please try again!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">                  else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="132">
+        <li class="covered" data-hits="2" data-linenumber="133">
           <span class="hits">2</span>
           
           <code class="ruby">                    if params[:new_img][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="133">
+        <li class="covered" data-hits="1" data-linenumber="134">
           <span class="hits">1</span>
           
           <code class="ruby">                      flash[:warning] = &quot;New Image URL can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="134">
+        <li class="never" data-hits="" data-linenumber="135">
           
           
           <code class="ruby">                    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="135">
+        <li class="covered" data-hits="1" data-linenumber="136">
           <span class="hits">1</span>
           
           <code class="ruby">                      @book.update_attributes!(:img =&gt; params[:new_img][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="136">
+        <li class="covered" data-hits="1" data-linenumber="137">
           <span class="hits">1</span>
           
           <code class="ruby">                      flash[:notice] = &quot;Image URL was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
+        <li class="never" data-hits="" data-linenumber="138">
           
           
           <code class="ruby">                    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="138">
+        <li class="never" data-hits="" data-linenumber="139">
           
           
           <code class="ruby">                  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="140">
           
           
           <code class="ruby">                else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="140">
+        <li class="covered" data-hits="2" data-linenumber="141">
           <span class="hits">2</span>
           
           <code class="ruby">                  if params[:new_edition][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="141">
+        <li class="covered" data-hits="1" data-linenumber="142">
           <span class="hits">1</span>
           
           <code class="ruby">                    flash[:warning] = &quot;New Edition can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="142">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby">                  else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="144">
           <span class="hits">1</span>
           
           <code class="ruby">                    @book.update_attributes!(:edition =&gt; params[:new_edition][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="144">
+        <li class="covered" data-hits="1" data-linenumber="145">
           <span class="hits">1</span>
           
           <code class="ruby">                    flash[:notice] = &quot;Edition was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="146">
           
           
           <code class="ruby">                  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="146">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="147">
+        <li class="never" data-hits="" data-linenumber="148">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="148">
+        <li class="covered" data-hits="2" data-linenumber="149">
           <span class="hits">2</span>
           
           <code class="ruby">                if params[:new_publication_year][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="149">
+        <li class="covered" data-hits="1" data-linenumber="150">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:warning] = &quot;New Publication Year can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">                else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
+        <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
           <code class="ruby">                  @book.update_attributes!(:publication_year =&gt; params[:new_publication_year][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="152">
+        <li class="covered" data-hits="1" data-linenumber="153">
           <span class="hits">1</span>
           
           <code class="ruby">                  flash[:notice] = &quot;Publication Year was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="153">
+        <li class="never" data-hits="" data-linenumber="154">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="155">
+        <li class="never" data-hits="" data-linenumber="156">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="156">
+        <li class="covered" data-hits="2" data-linenumber="157">
           <span class="hits">2</span>
           
           <code class="ruby">              if params[:new_publisher][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="157">
+        <li class="covered" data-hits="1" data-linenumber="158">
           <span class="hits">1</span>
           
           <code class="ruby">                flash[:warning] = &quot;New Publisher can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="159">
+        <li class="covered" data-hits="1" data-linenumber="160">
           <span class="hits">1</span>
           
           <code class="ruby">                @book.update_attributes!(:publisher =&gt; params[:new_publisher][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="160">
+        <li class="covered" data-hits="1" data-linenumber="161">
           <span class="hits">1</span>
           
           <code class="ruby">                flash[:notice] = &quot;Publisher was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="161">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="162">
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="163">
+        <li class="never" data-hits="" data-linenumber="164">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="164">
+        <li class="covered" data-hits="2" data-linenumber="165">
           <span class="hits">2</span>
           
           <code class="ruby">            if params[:new_summary][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="165">
+        <li class="covered" data-hits="1" data-linenumber="166">
           <span class="hits">1</span>
           
           <code class="ruby">              flash[:warning] = &quot;New Summary can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="166">
+        <li class="never" data-hits="" data-linenumber="167">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="167">
+        <li class="covered" data-hits="1" data-linenumber="168">
           <span class="hits">1</span>
           
           <code class="ruby">              @book.update_attributes!(:summary =&gt; params[:new_summary][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="169">
           <span class="hits">1</span>
           
           <code class="ruby">              flash[:notice] = &quot;Summary was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="169">
+        <li class="never" data-hits="" data-linenumber="170">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="170">
+        <li class="never" data-hits="" data-linenumber="171">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="171">
+        <li class="never" data-hits="" data-linenumber="172">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="172">
+        <li class="covered" data-hits="2" data-linenumber="173">
           <span class="hits">2</span>
           
           <code class="ruby">          if params[:new_author][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="173">
+        <li class="covered" data-hits="1" data-linenumber="174">
           <span class="hits">1</span>
           
           <code class="ruby">            flash[:warning] = &quot;New Author can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="175">
           
           
           <code class="ruby">          else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="175">
-          <span class="hits">1</span>
-          
-          <code class="ruby">            @book.update_attributes!(:author =&gt; params[:new_author][0])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="176">
           <span class="hits">1</span>
           
-          <code class="ruby">            flash[:notice] = &quot;Author was successfully updated.&quot;</code>
+          <code class="ruby">            @book.update_attributes!(:author =&gt; params[:new_author][0])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="covered" data-hits="1" data-linenumber="177">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          end</code>
+          <code class="ruby">            flash[:notice] = &quot;Author was successfully updated.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="178">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="179">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="180">
+          
+          
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="180">
+        <li class="covered" data-hits="3" data-linenumber="181">
           <span class="hits">3</span>
           
           <code class="ruby">        if params[:new_isbn][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="181">
+        <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
           <code class="ruby">          flash[:warning] = &quot;New ISBN can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="182">
+        <li class="never" data-hits="" data-linenumber="183">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="183">
+        <li class="covered" data-hits="2" data-linenumber="184">
           <span class="hits">2</span>
           
           <code class="ruby">          if Book.find_by_isbn(params[:new_isbn][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="184">
+        <li class="covered" data-hits="1" data-linenumber="185">
           <span class="hits">1</span>
           
           <code class="ruby">          flash[:warning] = &quot;ISBN exists in the database&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="186">
+        <li class="covered" data-hits="1" data-linenumber="187">
           <span class="hits">1</span>
           
           <code class="ruby">            @book.update_attributes!(:isbn =&gt; params[:new_isbn][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="187">
+        <li class="covered" data-hits="1" data-linenumber="188">
           <span class="hits">1</span>
           
           <code class="ruby">            flash[:notice] = &quot;ISBN was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="188">
+        <li class="never" data-hits="" data-linenumber="189">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="189">
+        <li class="never" data-hits="" data-linenumber="190">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="190">
+        <li class="never" data-hits="" data-linenumber="191">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="191">
+        <li class="never" data-hits="" data-linenumber="192">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="192">
+        <li class="covered" data-hits="2" data-linenumber="193">
           <span class="hits">2</span>
           
           <code class="ruby">      if params[:new_title][0].empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="193">
+        <li class="covered" data-hits="1" data-linenumber="194">
           <span class="hits">1</span>
           
           <code class="ruby">        flash[:warning] = &quot;New Title can&#39;t be empty&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="never" data-hits="" data-linenumber="195">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="195">
+        <li class="covered" data-hits="1" data-linenumber="196">
           <span class="hits">1</span>
           
           <code class="ruby">        @book.update_attributes!(:title =&gt; params[:new_title][0])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="196">
+        <li class="covered" data-hits="1" data-linenumber="197">
           <span class="hits">1</span>
           
           <code class="ruby">        flash[:notice] = &quot;Title was successfully updated.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="never" data-hits="" data-linenumber="198">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="never" data-hits="" data-linenumber="199">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="199">
+        <li class="covered" data-hits="18" data-linenumber="200">
           <span class="hits">18</span>
           
           <code class="ruby">    redirect_to edit_book_path(@book)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="201">
+        <li class="never" data-hits="" data-linenumber="202">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="never" data-hits="" data-linenumber="203">
           
           
           <code class="ruby">end</code>
@@ -4553,8 +4559,8 @@
     <h3>app/models/book.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4607,64 +4613,70 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    validates :publication_year, presence: true, length: {maximum: 4}</code>
+          <code class="ruby">    VALID_YEAR = /\A(1|2)[0-9]{3}\z/i</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    validates :category, presence: true</code>
+          <code class="ruby">    validates :publication_year, presence: true, length: {maximum: 4}, format: {with: VALID_YEAR}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
+          <code class="ruby">    validates :category, presence: true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
           <code class="ruby">    validates :edition, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    def self.update_search_count(book_object)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
+        <li class="covered" data-hits="3" data-linenumber="14">
           <span class="hits">3</span>
           
           <code class="ruby">      x = book_object.search_count</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="14">
+        <li class="covered" data-hits="3" data-linenumber="15">
           <span class="hits">3</span>
           
           <code class="ruby">      x = x + 1</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="15">
+        <li class="covered" data-hits="3" data-linenumber="16">
           <span class="hits">3</span>
           
           <code class="ruby">      book_object.search_count = x</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="16">
+        <li class="covered" data-hits="3" data-linenumber="17">
           <span class="hits">3</span>
           
           <code class="ruby">      book_object.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>

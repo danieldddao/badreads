@@ -5,7 +5,8 @@ class Book < ActiveRecord::Base
     validates :isbn, presence: true, length: {minimum:10, maximum: 13}
     validates :title, presence: true
     validates :author, presence: true
-    validates :publication_year, presence: true, length: {maximum: 4}
+    VALID_YEAR = /\A(1|2)[0-9]{3}\z/i
+    validates :publication_year, presence: true, length: {maximum: 4}, format: {with: VALID_YEAR}
     validates :category, presence: true
     validates :edition, presence: true
     

@@ -30,6 +30,7 @@ class BooksController < ApplicationController
   def create
     #create new book entry
     @book = Book.new(book_params)
+    @book.img = "books/default-book.png" if !book_params[:img] || book_params[:img].empty?
     if @book.save
       flash[:notice] = "#{@book.title} was successfully added."
       redirect_to root_path

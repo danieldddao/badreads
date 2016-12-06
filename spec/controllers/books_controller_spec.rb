@@ -43,7 +43,7 @@ describe BooksController do
     end
     describe "Create a book in the database" do
         it "Should call method create template" do
-            post :create, params: {:book => {:isbn => '9780806539966', :title => 'Wizard: The Life and Times of Nikola Tesla : Biography of a Genius', :author => 'Seifer, Marc J.', :publisher => 'Citadel Pr', :summary => 'The story of one of the most prolific, independent, and iconoclastic inventors of this century . . . fascinating', :publication_year => '2016', :category => 'Science & Technology', :edition => 'Reprint', :search_count => 10}}
+            post :create, params: {:book => {:isbn => "9780806539966", :title => 'Wizard: The Life and Times of Nikola Tesla : Biography of a Genius', :author => 'Seifer, Marc J.', :publisher => 'Citadel Pr', :summary => 'The story of one of the most prolific, independent, and iconoclastic inventors of this century . . . fascinating', :publication_year => "2016", :category => 'Science & Technology', :edition => 'Reprint', :search_count => 10}}
             expect(response).to redirect_to(root_path)
         end
         it "Should render template for incorrect book information" do
@@ -185,7 +185,7 @@ describe BooksController do
             expect(response).to redirect_to(edit_book_path)
         end
         it "Should update Publication Year" do
-            put :update, params: {:id => 1, :new_publication_year=> ["New Publication Year"]}
+            put :update, params: {:id => 1, :new_publication_year=> ["1990"]}
             expect(flash[:notice]).to eq("Publication Year was successfully updated.")
             expect(response).to redirect_to(edit_book_path)
         end
