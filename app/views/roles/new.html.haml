@@ -3,7 +3,7 @@
 %h3{ :style => "text-align: center;" } Create New Staff or New Admin
 
 %div{ :style => "text-align: center;" }
-  -if (@current_user && @current_user.position != "User")
+  -if (@current_user && @current_user.position == "Admin")
     = form_tag new_staff_admin_create_path do
       = label :role, :position, 'Choose Position'
       %div{:style => "width: 8%; display: inline-table;"}
@@ -27,5 +27,4 @@
             %td= role.position_code
             
   -else
-    Users cannot login to this page!!
-  end
+    You can't access this page!!

@@ -2,10 +2,10 @@ class Book < ActiveRecord::Base
     has_many :reviews
     has_many :users, :through => :reviews
     
-    validates :isbn, presence: true
+    validates :isbn, presence: true, length: {minimum:10, maximum: 13}
     validates :title, presence: true
     validates :author, presence: true
-    validates :publication_year, presence: true
+    validates :publication_year, presence: true, length: {maximum: 4}
     validates :category, presence: true
     validates :edition, presence: true
     
@@ -15,5 +15,4 @@ class Book < ActiveRecord::Base
       book_object.search_count = x
       book_object.save
     end
-
 end

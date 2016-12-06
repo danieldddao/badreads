@@ -2,6 +2,12 @@
 %div{ :style => "text-align: center;" }
   %h3 Add a New Book
   -if (@current_user && @current_user.position != "User")
+    -unless @book == nil
+      -if @book.errors.any?
+        %ul
+        -@book.errors.full_messages.each do |msg|
+          %li{ :style => "color: maroon;" } #{msg}
+    %br
     = form_tag books_path do
       %br
       = label :book, :isbn, 'Enter Book ISBN:'
@@ -16,7 +22,10 @@
       = label :book, :publisher, 'Enter Book Publisher:'
       = text_field :book, 'publisher'
       %br
-      = label :book, :publication_year, 'Released On: '
+      = label :book, :summary, 'Summary: '
+      = text_field :book, 'summary'
+      %br
+      = label :book, :publication_year, 'Publication Year: '
       = number_field :book, 'publication_year'
       %br
       = label :book, :category, 'Enter Book Category:'
@@ -24,6 +33,9 @@
       %br
       = label :book, :edition, 'Enter Book Edition:'
       = text_field :book, 'edition'
+      %br
+      = label :book, :img, 'Enter Book Image URL:'
+      = text_field :book, 'img'
       %br
       %br
       = submit_tag 'Save Changes', :class => "btn btn-success"

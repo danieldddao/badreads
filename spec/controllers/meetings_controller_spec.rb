@@ -35,11 +35,15 @@ RSpec.describe MeetingsController, type: :controller do
   describe 'Add new meetings' do
         fixtures :meetings
         fixtures :interests
-        it 'should render the new meetings view' do
+        it 'should render the new meetings view for registered user' do
+            controller.instance_variable_set(:@current_user, User.new(:id => 1, :position => "Staff")) 
             get :new
             expect(response).to render_template("new")
         end
-        
+        it 'should return to login to unregisted user' do
+            get :new
+            expect(response).to redirect_to(login_path)
+        end
         it 'should render calendar after create' do
             
           post :create, params: {"meeting" => {"name"=>"Potter Fans of Iowa", "start_time(1i)"=>"2016", "start_time(2i)"=>"11", "start_time(3i)"=>"26", "approx_time"=>"Around 5"}, "selected_groups"=>{"1"=>"1", "2"=>"1", "3"=>"1"} }

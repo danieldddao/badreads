@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_current_user
     
   def book_params
-    params.require(:book).permit(:isbn, :title, :author, :publisher, :summary, :publication_year, :category, :edition, :search_count)
+    params.require(:book).permit(:isbn, :title, :author, :publisher, :summary, :publication_year, :category, :edition, :img)
   end
   
   def delete_params
@@ -29,11 +29,13 @@ class BooksController < ApplicationController
 
   def create
     #create new book entry
-    @books = Book.create!(book_params)
-    @books.search_count = 0
-    @books.save
-    flash[:notice] = "#{@books.title} was successfully added."
-    redirect_to root_path
+    @book = Book.new(book_params)
+    if @book.save
+      flash[:notice] = "#{@book.title} was successfully added."
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
   
   def search
@@ -124,7 +126,16 @@ class BooksController < ApplicationController
             if params[:new_publisher] == nil
               if params[:new_publication_year] == nil
                 if params[:new_edition] == nil
+                  if params[:new_img] == nil
                   flash[:warning] = "Error! Please try again!"
+                  else
+                    if params[:new_img][0].empty?
+                      flash[:warning] = "New Image URL can't be empty"
+                    else
+                      @book.update_attributes!(:img => params[:new_img][0])
+                      flash[:notice] = "Image URL was successfully updated."
+                    end
+                  end
                 else
                   if params[:new_edition][0].empty?
                     flash[:warning] = "New Edition can't be empty"
