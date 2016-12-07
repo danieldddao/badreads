@@ -52,6 +52,7 @@ class MeetingsController < ApplicationController
     choice = params[:meeting_id] 
     @meeting = Meeting.find(choice)
     @interests = @meeting.interests.all
+    @users = @meeting.users.all
   end
 
   # POST /meetings

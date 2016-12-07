@@ -15,3 +15,20 @@
       %tr
         %td= @interests.genre
 %br
+%h1 Do you know anyone? 
+%table{:style=>"border: 5px; width: 100%"}
+  %thead
+    %tr
+      %th Users
+  %tbody
+    - begin
+      - begin
+        - @users.each do |user_name|
+          %tr
+            %td= user_name.first_name + " " + user_name.last_name 
+      - rescue
+        %tr
+          %td= @users.first_name + " " + @users.last_name 
+    - rescue
+      %td= "Oops! No other participants, Be the First To Join!"
+%br

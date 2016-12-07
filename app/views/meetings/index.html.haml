@@ -32,7 +32,7 @@
         %td= meeting.start_time.mday
         %td= meeting.approx_time
         - if @current_user then
-          %td= link_to 'Join', meetings_add_path(:meeting => meeting.id, :user => @current_user.id)
+          %td= link_to 'Join', meetings_add_path(:meeting => meeting.id, :user => @current_user.id), method: :post
         - else
           %td= link_to 'Login to Join', login_path
         %td= link_to 'Interests', meetings_view_path(:meeting_id => meeting.id)
