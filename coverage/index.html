@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-06T03:44:07+00:00">2016-12-06T03:44:07+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-07T00:02:52+00:00">2016-12-07T00:02:52+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.29%</span></span>
+    (<span class="covered_percent"><span class="green">96.31%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.56
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>57</b> files in total.
-    <b>808</b> relevant lines. 
-    <span class="green"><b>778</b> lines covered</span> and
+    <b>814</b> relevant lines. 
+    <span class="green"><b>784</b> lines covered</span> and
     <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>7.7</td>
+        <td>7.6</td>
       </tr>
       
       <tr>
@@ -132,10 +132,10 @@
       
       <tr>
         <td class="strong"><a href="#4b37e697dc704b2f6daacfb77b96bece26854cb4" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="red strong">75.0 %</td>
-        <td>77</td>
-        <td>48</td>
-        <td>36</td>
+        <td class="red strong">75.51 %</td>
+        <td>78</td>
+        <td>49</td>
+        <td>37</td>
         <td>12</td>
         <td>1.5</td>
       </tr>
@@ -503,9 +503,9 @@
       <tr>
         <td class="strong"><a href="#287e9eb1cbf20aac129dbe0b7e5ec1c45c301298" class="src_link" title="spec/controllers/users_controller_spec.rb">spec/controllers/users_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>75</td>
-        <td>54</td>
-        <td>54</td>
+        <td>80</td>
+        <td>59</td>
+        <td>59</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -878,14 +878,14 @@
           <code class="ruby">      if !@book.reviews.empty?</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="39">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="39">
+          <span class="hits">5</span>
           
           <code class="ruby">        @book.reviews.each {|review| </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="40">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="40">
+          <span class="hits">5</span>
           
           <code class="ruby">          @avg_rating += review.star</code>
         </li>
@@ -896,8 +896,8 @@
           <code class="ruby">        }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="42">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="42">
+          <span class="hits">5</span>
           
           <code class="ruby">        @avg_rating = (@avg_rating.to_f / @book.reviews.count.to_f).round</code>
         </li>
@@ -3777,10 +3777,10 @@
         <div class="source_table" id="4b37e697dc704b2f6daacfb77b96bece26854cb4">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="red">75.0 %</span> covered</h4>
+    <h4><span class="red">75.51 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
+      <b>49</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
       <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
@@ -4079,7 +4079,7 @@
         <li class="covered" data-hits="2" data-linenumber="49">
           <span class="hits">2</span>
           
-          <code class="ruby">    if (npwd == rnpwd) &amp;&amp; user &amp;&amp; user.authenticate(params[:user][:current_password])</code>
+          <code class="ruby">    if (npwd == rnpwd) &amp;&amp; user &amp;&amp; @current_user &amp;&amp; @current_user.id == user.id &amp;&amp; user.authenticate(params[:user][:current_password])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
@@ -4091,160 +4091,166 @@
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">     flash[:notice] = &quot;Password successfuly changed&quot;</code>
+          <code class="ruby">     session[:session_token] = user.session_token</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
-          <code class="ruby">     redirect_to root_path</code>
+          <code class="ruby">     flash[:notice] = &quot;Password successfully changed&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">     redirect_to user_path(@current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">     flash[:warning] = &quot;Password Change not successfull&quot;</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
-          <code class="ruby">     redirect_to root_path</code>
+          <code class="ruby">     flash[:warning] = &quot;Password Change not successful, Please try again!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">     redirect_to edit_user_path(@current_user)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
           <code class="ruby">  def emailref</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">    pass_referral=params[:send_referral]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="62">
           
           
           <code class="ruby">    UserMailer.new_referral(pass_referral,@current_user.email).deliver</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">    redirect_to user_path(@current_user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
           <code class="ruby">  def emailpwd</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">    require &#39;securerandom&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="67">
           
           
           <code class="ruby">    reset_pwd= SecureRandom.hex(6)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="68">
           
           
           <code class="ruby">    email_reset= params[:email]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="68">
+        <li class="missed" data-hits="0" data-linenumber="69">
           
           
           <code class="ruby">    @user = User.find_by_email(params[:email])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="69">
+        <li class="missed" data-hits="0" data-linenumber="70">
           
           
           <code class="ruby">    if @user</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
+        <li class="missed" data-hits="0" data-linenumber="71">
           
           
           <code class="ruby">      @user.update_attributes(:password =&gt; reset_pwd, :password_confirmation =&gt; reset_pwd)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
           <code class="ruby">      UserMailer.reset_password(reset_pwd,email_reset).deliver</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="74">
           
           
           <code class="ruby">    flash[:notice] = &quot;The new password has been sent to your email-id.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="74">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
           <code class="ruby">    redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">end</code>
@@ -8657,8 +8663,8 @@
     <h3>spec/controllers/users_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>54</b> relevant lines. 
-      <span class="green"><b>54</b> lines covered</span> and
+      <b>59</b> relevant lines. 
+      <span class="green"><b>59</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8987,130 +8993,160 @@
         <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
-          <code class="ruby">      fake_user = [double(&quot;User&quot;)]</code>
+          <code class="ruby">      controller.instance_variable_set(:@current_user, User.new(:id =&gt; 1)) </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(User).to receive(:find_by_id).with(&quot;2&quot;).and_return(fake_user[0])</code>
+          <code class="ruby">      fake_user = [double(&quot;User&quot;)]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(fake_user[0]).to receive(:authenticate).with(&quot;123456&quot;).and_return(true)</code>
+          <code class="ruby">      allow(User).to receive(:find_by_id).with(&quot;2&quot;).and_return(fake_user[0])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow(fake_user[0]).to receive(:update_attributes).and_return(true)</code>
+          <code class="ruby">      allow(fake_user[0]).to receive(:id).and_return(1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
-          <code class="ruby">      put :update, params: {:id =&gt; 2, :user =&gt; {:new_password =&gt; &quot;abcdef&quot;, :password =&gt; &quot;abcdef&quot;, :current_password =&gt; &quot;123456&quot;}}</code>
+          <code class="ruby">      allow(fake_user[0]).to receive(:authenticate).with(&quot;123456&quot;).and_return(true)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Password successfuly changed&quot;)</code>
+          <code class="ruby">      allow(fake_user[0]).to receive(:update_attributes).and_return(true)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(response).to redirect_to(root_path)</code>
+          <code class="ruby">      allow(fake_user[0]).to receive(:session_token).and_return(&quot;session token&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;should show error for incorrect password&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      fake_user = [double(&quot;User&quot;)]</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      allow(User).to receive(:find_by_id).with(&quot;2&quot;).and_return(fake_user[0])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      allow(fake_user[0]).to receive(:authenticate).with(&quot;123456&quot;).and_return(false)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
           <code class="ruby">      put :update, params: {:id =&gt; 2, :user =&gt; {:new_password =&gt; &quot;abcdef&quot;, :password =&gt; &quot;abcdef&quot;, :current_password =&gt; &quot;123456&quot;}}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(flash[:warning]).to eq(&quot;Password Change not successfull&quot;)</code>
+          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Password successfully changed&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(response).to redirect_to(root_path)</code>
+          <code class="ruby">      expect(response).to redirect_to(user_path(1))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    it &#39;should show error for incorrect password&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
           
+          <code class="ruby">      controller.instance_variable_set(:@current_user, User.new(:id =&gt; 1)) </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
           
-          <code class="ruby">  </code>
+          <code class="ruby">      fake_user = [double(&quot;User&quot;)]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(User).to receive(:find_by_id).with(&quot;2&quot;).and_return(fake_user[0])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:id).and_return(2)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:authenticate).with(&quot;123456&quot;).and_return(false)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      put :update, params: {:id =&gt; 2, :user =&gt; {:new_password =&gt; &quot;abcdef&quot;, :password =&gt; &quot;abcdef&quot;, :current_password =&gt; &quot;123456&quot;}}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;destroying users&#39; do</code>
+          <code class="ruby">      expect(flash[:warning]).to eq(&quot;Password Change not successful, Please try again!&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      expect(response).to redirect_to(edit_user_path(1))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;destroying users&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">end</code>
