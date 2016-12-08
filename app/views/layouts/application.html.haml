@@ -27,7 +27,8 @@
               %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Add Position', new_staff_admin_path, :class => "btn btn-primary", :method => :get
             -if @current_user.position == "Admin" || @current_user.position == "Staff"
               %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Add Book', new_book_path, :class => "btn btn-primary", :method => :get  
-              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Delete Book', booksdelform_path, :class => "btn btn-primary", :method => :get  
+              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Delete Book', booksdelform_path, :class => "btn btn-primary", :method => :get
+              %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Ban Control', "/hold", :class => "btn btn-primary", :method => :get  
             %td{ :style => "padding:0 5px 0 5px;"}= button_to 'Log Out', logout_path, :class => "btn btn-danger", :method => :delete
       %br
       %div{ :style => "text-align: right; padding-right: 5%" }

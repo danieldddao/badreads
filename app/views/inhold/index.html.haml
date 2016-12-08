@@ -1,0 +1,27 @@
+%title Users Hold page!
+%div{ :style => "text-align: center;" }
+%br
+%h3 Hold Control page
+%div{ :style => "display: inline-block;" }
+  %table{:style =>  "width: 1100px", :class => "table table-striped table-bordered" }
+    //%tbody
+    %thead
+      %tr{ :style => "background-color: wheat;"}
+        %td{ :bgcolor => "#FFCC00"} First Name
+        %td{:bgcolor => "#FFCC00"} Last Name
+        %td{:bgcolor => "#FFCC00"} email
+        %td{:bgcolor => "#FFCC00"} Position
+        %td{:bgcolor => "#FFCC00"} in Hold?
+        %td{:bgcolor => "#FFCC00"} change
+    %tr
+    -if (@current_user && @current_user.position != "User")
+      - @users = User.all
+      - @users.each do |user|
+        %tr
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.email
+        %td= user.position
+        %td= user.in_hold
+        %td= link_to 'change', inhold_change_path(email: user.email), :method => :get , class: 'btn btn-mini btn-danger'
+    

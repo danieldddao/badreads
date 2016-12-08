@@ -1,0 +1,2 @@
+module InholdHelper
+end

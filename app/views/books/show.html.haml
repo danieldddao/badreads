@@ -37,7 +37,8 @@
                 %tr
                     %td= button_to 'Edit This Book', edit_book_path(@book), :method => :get, :class => "btn btn-warning"
                     %td= button_to 'Delete This Book', book_path(@book), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure you want to delete this book, #{@book.title}?"}
-    - if @current_user
+    - puts @current_user.email                
+    - if @current_user && !@current_user.in_hold?
         - if @current_user_has_review 
             // VIEW MY REVIEW
             %h3{ :style => "font-size: 120%;color: Green;" } 
@@ -95,7 +96,10 @@
                     %br
                     = submit_tag 'Submit Review', :class => "btn btn-success"
     - else
-        %u= link_to "Please Sign-In to post review!", login_path
+        - if @current_user.in_hold?
+            %h2{ :style => "font-size: 100%; font-weight: bold; color: Red" }You are banned from making comments!!
+        - else
+            %u= link_to "Please Sign-In to post review!", login_path
     // TOP REVIEWS
     %h2{ :style => "font-size: 140%; color: Green;  font-weight: bold;" } Top Reviews :
     - if @book.reviews.empty?

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  #Holds Routes:
+  get 'inhold_change' => 'inhold#change'
+  match '/hold', to: 'inhold#index', via: :get
+
   resources :meetings
   match '/meetings/view', to: 'meetings#show', via: :get
   match '/meetings/search', to: 'meetings#search', via: :post

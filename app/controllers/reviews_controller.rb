@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     check_book_reviews
     
     if @current_user
-      if !@current_user_has_review
+      if !@current_user_has_review 
         @review = @book.reviews.new(:comment => params[:new_review_comment], :star => params[:rating])
         @current_user.reviews << @review
         if @review.save
