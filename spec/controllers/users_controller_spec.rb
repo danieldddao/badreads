@@ -51,21 +51,26 @@ describe UsersController do
   
   describe 'updating users' do
     it 'should update user with new password' do
+      controller.instance_variable_set(:@current_user, User.new(:id => 1)) 
       fake_user = [double("User")]
       allow(User).to receive(:find_by_id).with("2").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:id).and_return(1)
       allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
       allow(fake_user[0]).to receive(:update_attributes).and_return(true)
+      allow(fake_user[0]).to receive(:session_token).and_return("session token")
       put :update, params: {:id => 2, :user => {:new_password => "abcdef", :password => "abcdef", :current_password => "123456"}}
-      expect(flash[:notice]).to eq("Password successfuly changed")
-      expect(response).to redirect_to(root_path)
+      expect(flash[:notice]).to eq("Password successfully changed")
+      expect(response).to redirect_to(user_path(1))
     end
     it 'should show error for incorrect password' do
+      controller.instance_variable_set(:@current_user, User.new(:id => 1)) 
       fake_user = [double("User")]
       allow(User).to receive(:find_by_id).with("2").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:id).and_return(2)
       allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(false)
       put :update, params: {:id => 2, :user => {:new_password => "abcdef", :password => "abcdef", :current_password => "123456"}}
-      expect(flash[:warning]).to eq("Password Change not successfull")
-      expect(response).to redirect_to(root_path)
+      expect(flash[:warning]).to eq("Password Change not successful, Please try again!")
+      expect(response).to redirect_to(edit_user_path(1))
     end
   end
   

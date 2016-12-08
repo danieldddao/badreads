@@ -37,8 +37,8 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  def edit
   
+  def edit
   end
   
   
@@ -46,13 +46,14 @@ class UsersController < ApplicationController
     npwd=params[:user][:new_password]
     rnpwd=params[:user][:password]
     user = User.find_by_id(params[:id])
-    if (npwd == rnpwd) && user && user.authenticate(params[:user][:current_password])
+    if (npwd == rnpwd) && user && @current_user && @current_user.id == user.id && user.authenticate(params[:user][:current_password])
      user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password])
-     flash[:notice] = "Password successfuly changed"
-     redirect_to root_path
+     session[:session_token] = user.session_token
+     flash[:notice] = "Password successfully changed"
+     redirect_to user_path(@current_user)
     else
-     flash[:warning] = "Password Change not successfull"
-     redirect_to root_path
+     flash[:warning] = "Password Change not successful, Please try again!"
+     redirect_to edit_user_path(@current_user)
     end
   end
 

@@ -49,3 +49,10 @@
         %br
         %br
         = submit_tag "Update Book's Edition", :class => "btn btn-info"
+    %br
+    = form_tag book_path(@book), :method => :put do
+        %h2{ :style => "font-size: 100%; color: MidnightBlue" } Image URL: '#{@book.img}'
+        = text_field :new_img, nil, :size => '30', :placeholder => "Enter New Image URL"
+        %br
+        %br
+        = submit_tag "Update Book's Image URL", :class => "btn btn-info"

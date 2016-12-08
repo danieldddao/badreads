@@ -43,8 +43,12 @@ describe BooksController do
     end
     describe "Create a book in the database" do
         it "Should call method create template" do
-            post :create, params: {:book => {:isbn => '9780806539966', :title => 'Wizard: The Life and Times of Nikola Tesla : Biography of a Genius', :author => 'Seifer, Marc J.', :publisher => 'Citadel Pr', :summary => 'The story of one of the most prolific, independent, and iconoclastic inventors of this century . . . fascinating', :publication_year => '2016', :category => 'Science & Technology', :edition => 'Reprint', :search_count => 10}}
+            post :create, params: {:book => {:isbn => "9780806539966", :title => 'Wizard: The Life and Times of Nikola Tesla : Biography of a Genius', :author => 'Seifer, Marc J.', :publisher => 'Citadel Pr', :summary => 'The story of one of the most prolific, independent, and iconoclastic inventors of this century . . . fascinating', :publication_year => "2016", :category => 'Science & Technology', :edition => 'Reprint', :search_count => 10}}
             expect(response).to redirect_to(root_path)
+        end
+        it "Should render template for incorrect book information" do
+            post :create, params: {:book => {:isbn => '978', :title => 'Wizard: The Life and Times of Nikola Tesla : Biography of a Genius', :author => 'Seifer, Marc J.', :publisher => 'Citadel Pr', :summary => 'The story of one of the most prolific, independent, and iconoclastic inventors of this century . . . fascinating', :publication_year => '2016', :category => 'Science & Technology', :edition => 'Reprint', :search_count => 10}}
+            expect(response).to render_template("new")
         end
     end
     describe "Search for a book in database" do
@@ -141,7 +145,7 @@ describe BooksController do
             expect(response).to redirect_to(edit_book_path)
         end
         it "Should update isbn" do
-            put :update, params: {:id => 1, :new_isbn => ["New ISBN"]}
+            put :update, params: {:id => 1, :new_isbn => ["12345678910"]}
             expect(flash[:notice]).to eq("ISBN was successfully updated.")
             expect(response).to redirect_to(edit_book_path)
         end
@@ -181,11 +185,11 @@ describe BooksController do
             expect(response).to redirect_to(edit_book_path)
         end
         it "Should update Publication Year" do
-            put :update, params: {:id => 1, :new_publication_year=> ["New Publication Year"]}
+            put :update, params: {:id => 1, :new_publication_year=> ["1990"]}
             expect(flash[:notice]).to eq("Publication Year was successfully updated.")
             expect(response).to redirect_to(edit_book_path)
         end
-         it "Should show error for empty Edition" do
+        it "Should show error for empty Edition" do
             put :update, params: {:id => 1, :new_edition => [""]}
             expect(flash[:warning]).to eq("New Edition can't be empty")
             expect(response).to redirect_to(edit_book_path)
@@ -195,7 +199,17 @@ describe BooksController do
             expect(flash[:notice]).to eq("Edition was successfully updated.")
             expect(response).to redirect_to(edit_book_path)
         end
-         it "Should show error for no updating information" do
+        it "Should show error for empty IMG" do
+            put :update, params: {:id => 1, :new_img => [""]}
+            expect(flash[:warning]).to eq("New Image URL can't be empty")
+            expect(response).to redirect_to(edit_book_path)
+        end
+        it "Should update IMG" do
+            put :update, params: {:id => 1, :new_img => ["New IMG"]}
+            expect(flash[:notice]).to eq("Image URL was successfully updated.")
+            expect(response).to redirect_to(edit_book_path)
+        end
+        it "Should show error for no updating information" do
             put :update, params: {:id => 1}
             expect(flash[:warning]).to eq("Error! Please try again!")
             expect(response).to redirect_to(edit_book_path)

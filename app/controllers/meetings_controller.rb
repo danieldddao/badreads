@@ -18,13 +18,8 @@ class MeetingsController < ApplicationController
   # GET /meetings/new
   
   def new
-    if @current_user
       @meeting = Meeting.new
       @interests = Interest.all
-    else
-      redirect_to login_path
-    end
-    
   end
   
   # POST /meetings/search
@@ -52,6 +47,7 @@ class MeetingsController < ApplicationController
     choice = params[:meeting_id] 
     @meeting = Meeting.find(choice)
     @interests = @meeting.interests.all
+    @users = @meeting.users.all
   end
 
   # POST /meetings

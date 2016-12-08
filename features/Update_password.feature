@@ -20,10 +20,10 @@ Scenario:  Update password
   Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
   And I have signed in to my account with email "test@gmail.com", password "123456"
   When I update my password with new password "111111" and using current password "123456"
-  Then I should see "Password successfuly changed" notice   
+  Then I should see "Password successfully changed" notice   
 
 Scenario:  Can't update password for incorrect info
   Given I have user account with information: email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
   And I have signed in to my account with email "test@gmail.com", password "123456"
   When I update my password with new password "111111" and using current password "1234567"
-  Then I should see "Password Change not successfull" notice 
+  Then I should see "Password Change not successful, Please try again!" notice 
