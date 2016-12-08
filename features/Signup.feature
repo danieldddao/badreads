@@ -24,7 +24,7 @@ Scenario:  Signup for new account with correct information
   When I click "Sign Up"
   And I've submitted new user's information, email "test@gmail.com", first_name "testfirstname", last_name "testlastname", password "123456", password_confirmation "123456", position "User"
   Then I should see "Sign In" page
-  And I should see "Sign up successfuly! Welcome to BadReads!" notice
+  And I should see "Sign up successfuly! Please confirm your email address" notice
 
 Scenario:  Signup for new account with wrong email format
   When I click "Sign Up"
