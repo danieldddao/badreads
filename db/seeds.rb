@@ -22,12 +22,12 @@ end
 Role.create!(:position => "Staff", :position_code => "Staff1")
 Role.create!(:position => "Admin", :position_code => "Admin1")
 
-User.create!(:email => "admin@gmail.com", :first_name => "Default", :last_name => "Admin", :password => "123456", :password_confirmation => "123456", :position => "Admin")
-User.create!(:email => "staff@gmail.com", :first_name => "Default", :last_name => "Staff", :password => "123456", :password_confirmation => "123456", :position => "Staff")
-User.create!(:email => "user1@gmail.com", :first_name => "User", :last_name => "No.1", :password => "123456", :password_confirmation => "123456", :position => "User")
-User.create!(:email => "user2@gmail.com", :first_name => "User", :last_name => "No.2", :password => "123456", :password_confirmation => "123456", :position => "User")
-User.create!(:email => "user3@gmail.com", :first_name => "User", :last_name => "No.3", :password => "123456", :password_confirmation => "123456", :position => "User")
-User.create!(:email => "user4@gmail.com", :first_name => "User", :last_name => "No.4", :password => "123456", :password_confirmation => "123456", :position => "User")
+User.create!(:email => "admin@gmail.com", :first_name => "Default", :last_name => "Admin", :password => "123456", :password_confirmation => "123456", :position => "Admin", :email_confirmed => true, :confirm_token => "")
+User.create!(:email => "staff@gmail.com", :first_name => "Default", :last_name => "Staff", :password => "123456", :password_confirmation => "123456", :position => "Staff", :email_confirmed => true, :confirm_token => "")
+User.create!(:email => "user1@gmail.com", :first_name => "User", :last_name => "No.1", :password => "123456", :password_confirmation => "123456", :position => "User", :email_confirmed => true, :confirm_token => "")
+User.create!(:email => "user2@gmail.com", :first_name => "User", :last_name => "No.2", :password => "123456", :password_confirmation => "123456", :position => "User", :email_confirmed => true, :confirm_token => "")
+User.create!(:email => "user3@gmail.com", :first_name => "User", :last_name => "No.3", :password => "123456", :password_confirmation => "123456", :position => "User", :email_confirmed => true, :confirm_token => "")
+User.create!(:email => "user4@gmail.com", :first_name => "User", :last_name => "No.4", :password => "123456", :password_confirmation => "123456", :position => "User", :email_confirmed => true, :confirm_token => "")
 
 Genres = [
   {:genre => 'Science Fiction'},

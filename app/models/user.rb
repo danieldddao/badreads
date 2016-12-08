@@ -29,10 +29,9 @@ class User < ActiveRecord::Base
           self.confirm_token = SecureRandom.urlsafe_base64.to_s
       end
     end
-    def email_activate
-      self.email_confirmed = true
-      self.confirm_token = nil
-      save!(:validate => false)
+    def self.email_activate(user, password)
+      user.update_attributes(:email_confirmed => true, :confirm_token => "", :password => password, :password_confirmation => password)
+      puts user.errors.messages
     end
     
 end

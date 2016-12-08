@@ -22,10 +22,12 @@ Rails.application.routes.draw do
       post 'emailref'
       post 'emailpwd'
       get 'emailpwd'
-      get :confirm_email
-      
+      # get :confirm_email
     end
   end
+  get '/users/:id/:confirm_token/confirm_email', to: 'users#confirm_email', :as => 'confirm_user_email'
+  post '/users/:id/:confirm_token/confirm_email', to: 'users#confirm_email_check', :as => 'confirm_user_email_check'
+
   match '/reset' , to: 'users#reset' , via: :get
   
   #Login and logout Routes:

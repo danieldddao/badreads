@@ -11,8 +11,9 @@ class UserMailer < ApplicationMailer
   def reset_password(new_pwd,sent_to)
     mail(to: sent_to, subject: 'BadReads Reset Password'+ new_pwd , body: 'Your new password is '+ new_pwd)
   end
-  def registration_confirmation(user)
+  def registration_confirmation(user, request)
+    UserMailer.default_url_options[:host] = request.host_with_port
     @user = user
-    mail(to: user.email, subject: "Registration Confirmation", body: " Thanks for registering! To confirm your registration click the following URL :"+ confirm_email_user_url(@user.confirm_token) )
+    mail(to: user.email, subject: "Registration Confirmation", body: " Thanks for registering! To confirm your registration click the following URL :" + confirm_user_email_url(user.id, user.confirm_token) )
   end
 end
