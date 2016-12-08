@@ -9,6 +9,7 @@ describe SessionsController do
       allow(User).to receive(:find_by_email).with("testuser1@gmail.com").and_return(fake_user[0])
       allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
       allow(fake_user[0]).to receive(:session_token).and_return("token")
+      allow(fake_user[0]).to receive(:email_confirmed).and_return(true)
       
       post :create, params: {:session => {:email => "testuser1@gmail.com", :password => "123456"}}
       expect(response).to redirect_to(books_path)

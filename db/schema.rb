@@ -100,6 +100,8 @@ ActiveRecord::Schema.define(version: 20161207201943) do
     t.string   "session_token"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
     t.boolean  "in_hold",         default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end

@@ -1,0 +1,12 @@
+%title Account Activation!
+%h3{ :style => "text-align: center;" } Enter your password to activate your account
+      
+%div{ :style => "text-align: center;" }
+  = form_tag confirm_user_email_check_path do
+
+    = label :user, :password, 'Password'
+    = password_field :user, 'password', :size => '30', :placeholder => "Enter your Password"
+    
+    %br
+    %br
+    = submit_tag "Activate My Account", :class => "btn btn-success"

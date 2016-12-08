@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     end
     
     if @user.save
-      flash[:notice] = "Sign up successfuly! Welcome to BadReads!"
+      UserMailer.registration_confirmation(@user, request).deliver
+      flash[:notice] = "Sign up successfuly! Please confirm your email address."
       redirect_to login_path
     else
       render 'new'
@@ -75,4 +76,27 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   
+  def confirm_email
+  end
+
+  def confirm_email_check
+    user = User.find(params[:id])
+    if user && user.authenticate(params[:user][:password]) && user.confirm_token == params[:confirm_token]
+      User.email_activate(user, params[:user][:password])
+      flash[:notice] = "Welcome to the Badreads App! Your email has been confirmed. Please sign in to continue."
+      redirect_to login_path 
+    else
+      if user.email_confirmed == true
+        flash[:notice] = "You already activated your account! You can login now!"
+        redirect_to login_path 
+      elsif !user.authenticate(params[:user][:password])
+        flash[:warning] = "Sorry! Password is not correct!"
+        redirect_to confirm_user_email_path
+      else
+        flash[:warning] = "Sorry! URL is not correct! Can't activate your account!"
+        redirect_to root_path
+      end
+    end
+  end
+ 
 end

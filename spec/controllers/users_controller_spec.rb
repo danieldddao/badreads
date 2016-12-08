@@ -20,7 +20,7 @@ describe UsersController do
     context 'New User' do
       it 'should create new user and redirect to signin page' do
         post :create, params: {:user => {:first_name => "testfirstname", :last_name =>"testlastname", :email => "testemail@gmail.com", :password => "123456", :password_confirmation => "123456", :position => "User"}}
-        expect(flash[:notice]).to eq("Sign up successfuly! Welcome to BadReads!")
+        expect(flash[:notice]).to eq("Sign up successfuly! Please confirm your email address.")
         expect(response).to redirect_to(login_path)
       end
       it 'should render template for incorrect information format' do
@@ -43,7 +43,7 @@ describe UsersController do
         expect(Role.count).to eq(2)
         post :create, params: {:position_code => "Admin1", :user => {:first_name => "testfirstname", :last_name =>"testlastname", :email => "testemail@gmail.com", :password => "123456", :password_confirmation => "123456", :position => "Admin"}}
         expect(Role.count).to eq(1)
-        expect(flash[:notice]).to eq("Sign up successfuly! Welcome to BadReads!")
+        expect(flash[:notice]).to eq("Sign up successfuly! Please confirm your email address.")
         expect(response).to redirect_to(login_path)
       end
     end
