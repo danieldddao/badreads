@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       post 'emailref'
       post 'emailpwd'
       get 'emailpwd'
+      get :confirm_email
+      
     end
   end
   match '/reset' , to: 'users#reset' , via: :get

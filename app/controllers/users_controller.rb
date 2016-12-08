@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     end
     
     if @user.save
-      flash[:notice] = "Sign up successfuly! Welcome to BadReads!"
+      UserMailer.registration_confirmation(@user).deliver
+      flash[:notice] = "Sign up successfuly! Please confirm your email address."
       redirect_to login_path
     else
       render 'new'
@@ -74,4 +75,16 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   
+ def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    print "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
+   # if user
+      user.email_activate
+      flash[:notice] = "Welcome to the Badreads App! Your email has been confirmed. Please sign in to continue."
+      redirect_to root_path 
+   # else
+    #  flash[:warning] = "Sorry. User does not exist"
+     # redirect_to root_path
+   # end
+ end
 end

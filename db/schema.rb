@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204023653) do
+ActiveRecord::Schema.define(version: 20161205053209) do
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",             limit: 13
@@ -98,8 +98,10 @@ ActiveRecord::Schema.define(version: 20161204023653) do
     t.string   "password_digest"
     t.string   "position"
     t.string   "session_token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

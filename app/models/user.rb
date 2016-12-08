@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
     has_many :followings, class_name: "Follow", foreign_key: "follower_id"
     has_many :followers, class_name: "Follow", foreign_key: "followedUser_id"
 
+    before_create :confirmation_token
+
     has_secure_password
     before_save {|user| user.email=user.email.downcase}
     before_save :create_session_token
@@ -21,6 +23,16 @@ class User < ActiveRecord::Base
     private
     def create_session_token
         self.session_token = SecureRandom.urlsafe_base64
+    end
+    def confirmation_token
+      if self.confirm_token.blank?
+          self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
+    end
+    def email_activate
+      self.email_confirmed = true
+      self.confirm_token = nil
+      save!(:validate => false)
     end
     
 end

@@ -7,8 +7,12 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       #sign in and redirect to show page
-      session[:session_token] = user.session_token
-      redirect_to books_path
+      if user.email_confirmed
+          sign_in user
+        redirect_back_or user
+        session[:session_token] = user.session_token
+        redirect_to books_path
+      end
     else
       flash.now[:warning] = 'Invalid email/password combination'
       render 'new'
