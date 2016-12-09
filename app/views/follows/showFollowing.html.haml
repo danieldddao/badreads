@@ -1,7 +1,7 @@
 %title Users followed by #{@current_user.email}!
 %h3{ :style => "text-align: center; border-bottom: 2px solid #d9534f;" } All Users followed by you
 - if @current_user.followings.empty?
-    %h2{ :style => "font-size: 90%; color: Maroon;" } You're currently not following anyone!
+    %h2{ :style => "font-size: 90%; color: Maroon; text-align: center;" } You're currently not following anyone!
 - else
     - @current_user.followings.each do |following|
         %div{:class => "panel panel-info center-block", :style => "width : 50%; text-align: center;"}
@@ -9,6 +9,9 @@
                 You're following 
                 %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
                 since #{Date.parse(following.created_at.to_s)}
+                %br
+                - if following.followedUser.reviews.count >= 3
+                    =image_tag("prime.png", height: '35', width: '35')
             %div{:class => "panel-body"}
                 %b First Name : #{following.followedUser.first_name}
                 %br
@@ -28,6 +31,9 @@
                                                     = button_to "x", nil, :class => "close", :data => {:dismiss => "modal"}
                                                     All Reviews by 
                                                     %u{ :style => "font-size: 110%; color: Maroon;" } #{following.followedUser.first_name} #{following.followedUser.last_name}
+                                                    %br
+                                                    - if following.followedUser.reviews.count >= 3
+                                                        =image_tag("prime.png", height: '35', width: '35')
                                             %div{:class => "modal-body", :style => "display: inline-table; color:Maroon; width: 95%" }
                                                 - if following.followedUser.reviews.count > 0
                                                     - following.followedUser.reviews.each do |review|

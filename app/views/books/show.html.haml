@@ -111,6 +111,9 @@
                     By 
                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                     On #{Date.parse(review.user.updated_at.to_s)}
+                    %br
+                    - if review.user.reviews.count >= 3
+                        =image_tag("prime.png", height: '35', width: '35')
                 %div{:class => "panel-body"}
                     -if @current_user && @current_user.id != review.user.id
                         -if !Follow.has_current_user_followed_this_user(@current_user, review.user)
@@ -140,6 +143,9 @@
                                     By 
                                     %u{ :style => "font-size: 110%; color: Maroon;" } #{review.user.first_name} #{review.user.last_name}
                                     On #{Date.parse(review.user.updated_at.to_s)}
+                                    %br
+                                    - if review.user.reviews.count >= 3
+                                        =image_tag("prime.png", height: '35', width: '35')
                                 %div{:class => "panel-body", :style => "color: Black;"}
                                     -if @current_user && @current_user.id != review.user.id
                                         -if !Follow.has_current_user_followed_this_user(@current_user, review.user)
