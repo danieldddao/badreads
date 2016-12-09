@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:destroy]
-  
+  before_action :set_current_user
+
   #ONLY HAML ACTIONS IMPLEMENTED !! PARTIALS AT SPRINT 3
   
   def meeting_params
