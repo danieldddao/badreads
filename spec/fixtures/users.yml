@@ -7,6 +7,7 @@ user1 :
     password_digest: 123456
     position: User
     session_token: 123456
+    in_hold: false
 
 user2 :   
     id: 2 
@@ -16,3 +17,4 @@ user2 :
     password_digest: 123456
     position: Staff
     session_token: 123456
+    in_hold: nil

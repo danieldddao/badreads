@@ -103,3 +103,14 @@ Then(/^I should see information: "([^"]*)", "([^"]*)", "([^"]*)"$/) do |arg1, ar
   expect(page).to have_content(arg3)
   expect(page).to have_content("View Reviews")
 end
+
+Given(/^I have a user with information: email "([^"]*)", first_name "([^"]*)", last_name "([^"]*)", password "([^"]*)", password_confirmation "([^"]*)", position "([^"]*)", in_hold "([^"]*)"$/) do |arg1, arg2, arg3, arg4, arg5, arg6, arg7|
+  User.create!(:email => arg1, :first_name => arg2, :last_name => arg3, :password => arg4, :password_confirmation => arg5, :position => arg6, :email_confirmed => true, :in_hold => arg7)
+end
+
+Given(/^I am on the Banned users page$/) do
+  visit hold_path
+end
+Given(/^click_link "([^"]*)"$/) do |arg1|                                                                                 
+  click_link arg1                                          
+end 

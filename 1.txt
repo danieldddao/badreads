@@ -1,0 +1,54 @@
+.....................................................F.............................................
+
+Failures:
+
+  1) InholdController GET #change change went wrong
+     Failure/Error: get :change, params:  {:email => "s@gmail.com"}
+
+     ActionController::UnknownFormat:
+       InholdController#change is missing a template for this request format and variant.
+
+       request.formats: ["text/html"]
+       request.variant: []
+
+       NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not… nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/abstract_controller/base.rb:188:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/rendering.rb:30:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:126:in `call'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:455:in `call'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/callbacks.rb:90:in `run_callbacks'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/abstract_controller/callbacks.rb:19:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/rescue.rb:20:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/notifications.rb:164:in `block in instrument'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0.1/lib/active_support/notifications.rb:164:in `instrument'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/abstract_controller/base.rb:126:in `process'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionview-5.0.0.1/lib/action_view/rendering.rb:30:in `process'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/metal.rb:190:in `dispatch'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/test_case.rb:532:in `process'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/rails-controller-testing-1.0.1/lib/rails/controller/testing/template_assertions.rb:61:in `process'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/test_case.rb:629:in `process_with_kwargs'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_controller/test_case.rb:381:in `get'
+     # /usr/local/rvm/gems/ruby-2.3.0/gems/rails-controller-testing-1.0.1/lib/rails/controller/testing/integration.rb:12:in `block (2 levels) in <module:Integration>'
+     # ./spec/controllers/inhold_controller_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+Finished in 1.65 seconds (files took 3.74 seconds to load)
+99 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/controllers/inhold_controller_spec.rb:26 # InholdController GET #change change went wrong
+
+Coverage report generated for RSpec to /home/ubuntu/workspace/project/badreads/coverage. 873 / 912 LOC (95.72%) covered.
