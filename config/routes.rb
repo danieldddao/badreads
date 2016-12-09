@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   #Holds Routes:
   get 'inhold_change' => 'inhold#change'
+  get 'inhold_update' => 'inhold#update'
   match '/hold', to: 'inhold#index', via: :get
 
   resources :meetings
