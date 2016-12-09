@@ -69,4 +69,48 @@ RSpec.describe MeetingsController, type: :controller do
         end
         
   end
+  describe 'Search a meeting' do
+        fixtures :meetings
+        fixtures :interests
+        
+        it 'should render the search screen' do
+            
+          post :search, params: { "selected_groups" => [{'1' => '1'}]} 
+          expect(response).to render_template("search")
+        end
+        
+        it 'should validate search params' do
+            
+          post :search, params: { "selected_groups" => []} 
+          expect(flash[:notice]).to eq("No Interest Groups Were Selected")
+          expect(response).to redirect_to(meetings_path)
+        end
+        
+  end
+  
+  describe 'Add a user to  a meeting' do
+        fixtures :meetings
+        fixtures :interests
+        fixtures :users
+        
+        it 'should render view calendar path after creating associations' do
+            
+          get :add, params: { :meeting => '1', :user => '1'} 
+          expect(response).to redirect_to(view_calendar_path)
+        end
+        
+  end
+  
+  describe 'Show interest groups associated with a meeting' do
+        fixtures :meetings
+        fixtures :interests
+        fixtures :users
+        
+        it 'should render the meeting desrciption' do
+            
+          get :show, params: { :meeting_id => '1'} 
+          expect(response).to render_template("show")
+        end
+        
+  end
 end
