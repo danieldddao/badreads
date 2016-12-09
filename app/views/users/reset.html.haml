@@ -3,6 +3,8 @@
 %h3{ :style => "text-align: center;" } Reset Password
 
 %div{ :style => "text-align: center;" }
-= form_tag emailpwd_users_path do
-    = text_field_tag 'email', nil , placeholder: 'Enter the email id'
-    = submit_tag 'Reset Password', :class => "btn btn-success"
+    = form_tag emailpwd_users_path do
+        = text_field_tag 'email', nil , placeholder: 'Enter the email id'
+        %br
+        %br
+        = submit_tag 'Reset Password', :class => "btn btn-success"
