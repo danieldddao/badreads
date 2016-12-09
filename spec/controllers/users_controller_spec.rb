@@ -23,6 +23,15 @@ describe UsersController do
         expect(flash[:notice]).to eq("Sign up successfuly! Please confirm your email address.")
         expect(response).to redirect_to(login_path)
       end
+      it 'should create new user and redirect to signin page in production environment' do
+        fake_request = [double("Request")]
+        fake_env = [double("Environment")]
+        allow(Rails).to receive(:env).and_return(fake_env[0])
+        allow(fake_env[0]).to receive(:production?).and_return(true)
+        post :create, params: {:user => {:first_name => "testfirstname", :last_name =>"testlastname", :email => "testemail@gmail.com", :password => "123456", :password_confirmation => "123456", :position => "User"}}
+        expect(flash[:notice]).to eq("Sign up successfuly! Please confirm your email address.")
+        expect(response).to redirect_to(login_path)
+      end
       it 'should render template for incorrect information format' do
         post :create, params: {:user => {:first_name => "", :last_name =>"testlastname", :email => "testemail@gmail.com", :password => "123456", :password_confirmation => "123456", :position => "User"}}
         expect(response).to render_template("new")

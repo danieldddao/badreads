@@ -38,7 +38,7 @@
                     %td= button_to 'Edit This Book', edit_book_path(@book), :method => :get, :class => "btn btn-warning"
                     %td= button_to 'Delete This Book', book_path(@book), :method => :delete, :class => "btn btn-danger", :data => {:confirm => "Are you sure you want to delete this book, #{@book.title}?"}
     // - puts @current_user.email                
-    - if @current_user && !@current_user.in_hold?
+    - if @current_user
         - if @current_user_has_review 
             // VIEW MY REVIEW
             %h3{ :style => "font-size: 120%;color: Green;" } 
@@ -66,39 +66,39 @@
                             %div{:class => "modal-footer", :style => "text-align: center;"}
                                 = button_to "Close", nil, :class => "btn btn-default", :data => {:dismiss => "modal"}
         - else
-        // POST NEW REVIEW
-        %h2{ :style => "font-size: 140%; color: Green; font-weight: bold;" } Post New Review :
-        %div{ :style => "text-align: center;" }
-            -unless @review == nil
-                -if @review.errors.any?
-                    %ul
-                        -@review.errors.full_messages.each do |msg|
-                            %li{ :style => "color: maroon;" } #{msg}
-            = form_tag review_create_path do
-                %p 
-                    Rating :
-                    %span(class="starRating")
-                        = radio_button nil, nil, "5", :name => "rating", :id => "new_rating5"
-                        = label nil, "5", :for => "new_rating5"
-                        
-                        = radio_button nil, nil, "4", :name => "rating", :id => "new_rating4"
-                        = label nil, "4", :for => "new_rating4"
-                        
-                        = radio_button nil, nil, "3", :name => "rating", :id => "new_rating3"
-                        = label nil, "3", :for => "new_rating3"
-                        
-                        = radio_button nil, nil, "2", :name => "rating", :id => "new_rating2"
-                        = label nil, "2", :for => "new_rating2"
-                        
-                        = radio_button nil, nil, "1", :name => "rating", :id => "new_rating1"
-                        = label nil, "1", :for => "new_rating1"
-                = text_area_tag 'new_review_comment', nil, size: "100x7", :placeholder => "Enter your Review", :id => "new_review_comment"
-                %br
-                = submit_tag 'Submit Review', :class => "btn btn-success"
+            // POST NEW REVIEW
+            - if @current_user.in_hold?
+                %h2{ :style => "font-size: 100%; font-weight: bold; color: Red" }You are banned from making comments!!
+            - else
+                %h2{ :style => "font-size: 140%; color: Green; font-weight: bold;" } Post New Review :
+                %div{ :style => "text-align: center;" }
+                    -unless @review == nil
+                        -if @review.errors.any?
+                            %ul
+                                -@review.errors.full_messages.each do |msg|
+                                    %li{ :style => "color: maroon;" } #{msg}
+                    = form_tag review_create_path do
+                        %p 
+                            Rating :
+                            %span(class="starRating")
+                                = radio_button nil, nil, "5", :name => "rating", :id => "new_rating5"
+                                = label nil, "5", :for => "new_rating5"
+                                
+                                = radio_button nil, nil, "4", :name => "rating", :id => "new_rating4"
+                                = label nil, "4", :for => "new_rating4"
+                                
+                                = radio_button nil, nil, "3", :name => "rating", :id => "new_rating3"
+                                = label nil, "3", :for => "new_rating3"
+                                
+                                = radio_button nil, nil, "2", :name => "rating", :id => "new_rating2"
+                                = label nil, "2", :for => "new_rating2"
+                                
+                                = radio_button nil, nil, "1", :name => "rating", :id => "new_rating1"
+                                = label nil, "1", :for => "new_rating1"
+                        = text_area_tag 'new_review_comment', nil, size: "100x7", :placeholder => "Enter your Review", :id => "new_review_comment"
+                        %br
+                        = submit_tag 'Submit Review', :class => "btn btn-success"
     - else
-    - if @current_user.in_hold?
-        %h2{ :style => "font-size: 100%; font-weight: bold; color: Red" }You are banned from making comments!!
-    - else        
         %u= link_to "Please Sign-In to post review!", login_path
     // TOP REVIEWS
     %h2{ :style => "font-size: 140%; color: Green;  font-weight: bold;" } Top Reviews :

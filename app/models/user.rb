@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
     end
     def self.email_activate(user, password)
       user.update_attributes(:email_confirmed => true, :confirm_token => "", :password => password, :password_confirmation => password)
-      puts user.errors.messages
     end
     
 end
