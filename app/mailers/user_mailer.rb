@@ -12,7 +12,11 @@ class UserMailer < ApplicationMailer
     mail(to: sent_to, subject: 'BadReads Reset Password'+ new_pwd , body: 'Your new password is '+ new_pwd)
   end
   def registration_confirmation(user, request)
-    # UserMailer.default_url_options[:host] = request.host_with_port
+    if Rails.env.production?
+      UserMailer.default_url_options[:host] = "badreads.herokuapp.com"
+    else
+      UserMailer.default_url_options[:host] = request.host_with_port
+    end
     @user = user
     mail(to: user.email, subject: "Registration Confirmation", body: " Thanks for registering! To confirm your registration click the following URL :" + confirm_user_email_url(user.id, user.confirm_token) )
   end

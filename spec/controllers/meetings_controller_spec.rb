@@ -42,7 +42,7 @@ RSpec.describe MeetingsController, type: :controller do
         end
         it 'should return to login to unregisted user' do
             get :new
-            expect(response).to redirect_to(login_path)
+            expect(response).to render_template("new")
         end
         it 'should render calendar after create' do
             
