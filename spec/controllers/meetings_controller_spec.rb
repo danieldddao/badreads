@@ -74,13 +74,20 @@ RSpec.describe MeetingsController, type: :controller do
         fixtures :interests
         
         it 'should render the search screen' do
-            
-          post :search, params: { "selected_groups" => [{'1' => '1'}]} 
+          fake_group = [double("Group")]
+          fake_meeting = [double("Meeting")]
+          allow(Interest).to receive(:find).with("1").and_return(fake_group[0])
+          allow(fake_group[0]).to receive(:meetings).and_return(fake_meeting[0])
+          allow(fake_meeting[0]).to receive(:empty?).and_return(false)
+          allow(fake_group[0]).to receive(:genre).and_return("genre")
+          allow(fake_meeting[0]).to receive(:all).and_return("")
+
+          post :search, params: { "selected_groups" => {"1" => "1"}} 
           expect(response).to render_template("search")
         end
         
         it 'should validate search params' do
-            
+          
           post :search, params: { "selected_groups" => []} 
           expect(flash[:notice]).to eq("No Interest Groups Were Selected")
           expect(response).to redirect_to(meetings_path)

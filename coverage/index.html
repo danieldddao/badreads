@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T13:47:06+00:00">2016-12-09T13:47:06+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T14:25:07+00:00">2016-12-09T14:25:07+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.39%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.56
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>61</b> files in total.
-    <b>991</b> relevant lines. 
-    <span class="green"><b>985</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed </span>
+    <b>1012</b> relevant lines. 
+    <span class="green"><b>1012</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,21 +92,21 @@
       
       <tr>
         <td class="strong"><a href="#987b861c86dd3f0f5c8562880e0277c752742fc5" class="src_link" title="app/controllers/inhold_controller.rb">app/controllers/inhold_controller.rb</a></td>
-        <td class="red strong">80.0 %</td>
-        <td>30</td>
+        <td class="green strong">100.0 %</td>
+        <td>33</td>
         <td>15</td>
-        <td>12</td>
-        <td>3</td>
-        <td>0.8</td>
+        <td>15</td>
+        <td>0</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#aa71bd508f974e823e731937f5e0afcb1e6efb96" class="src_link" title="app/controllers/meetings_controller.rb">app/controllers/meetings_controller.rb</a></td>
-        <td class="green strong">94.23 %</td>
+        <td class="green strong">100.0 %</td>
         <td>97</td>
         <td>52</td>
-        <td>49</td>
-        <td>3</td>
+        <td>52</td>
+        <td>0</td>
         <td>1.3</td>
       </tr>
       
@@ -483,9 +483,9 @@
       <tr>
         <td class="strong"><a href="#1f3763d78891f46a83c26053d246102a4f89adf8" class="src_link" title="spec/controllers/inhold_controller_spec.rb">spec/controllers/inhold_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>33</td>
-        <td>16</td>
-        <td>16</td>
+        <td>46</td>
+        <td>30</td>
+        <td>30</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -493,9 +493,9 @@
       <tr>
         <td class="strong"><a href="#aa372d555fbdd5ffb52325a9ae0a72f8fd1edd2f" class="src_link" title="spec/controllers/meetings_controller_spec.rb">spec/controllers/meetings_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>116</td>
-        <td>57</td>
-        <td>57</td>
+        <td>123</td>
+        <td>64</td>
+        <td>64</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -714,8 +714,8 @@
           <code class="ruby">  def set_current_user</code>
         </li>
       
-        <li class="covered" data-hits="78" data-linenumber="5">
-          <span class="hits">78</span>
+        <li class="covered" data-hits="80" data-linenumber="5">
+          <span class="hits">80</span>
           
           <code class="ruby">    @current_user ||= session[:session_token ] &amp;&amp; User.find_by_session_token(session[:session_token])</code>
         </li>
@@ -918,14 +918,14 @@
           <code class="ruby">      if !@book.reviews.empty?</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="39">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="39">
+          <span class="hits">5</span>
           
           <code class="ruby">        @book.reviews.each {|review| </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="40">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="40">
+          <span class="hits">5</span>
           
           <code class="ruby">          @avg_rating += review.star</code>
         </li>
@@ -936,8 +936,8 @@
           <code class="ruby">        }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="42">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="42">
+          <span class="hits">5</span>
           
           <code class="ruby">        @avg_rating = (@avg_rating.to_f / @book.reviews.count.to_f).round</code>
         </li>
@@ -2713,11 +2713,11 @@
         <div class="source_table" id="987b861c86dd3f0f5c8562880e0277c752742fc5">
   <div class="header">
     <h3>app/controllers/inhold_controller.rb</h3>
-    <h4><span class="red">80.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>15</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2742,22 +2742,22 @@
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">  def user_params</code>
+          
+          <code class="ruby">  # def user_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">    params.require(:user).permit(:email)</code>
+          <code class="ruby">  #   params.require(:user).permit(:email)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -2814,8 +2814,8 @@
           <code class="ruby">  def change</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
           <code class="ruby">    @user = User.find_by_email(params[:email])</code>
         </li>
@@ -2826,20 +2826,20 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
           
           <code class="ruby">    if @user.present?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="19">
+          <span class="hits">2</span>
           
           <code class="ruby">      @user.in_hold = !@user.in_hold</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">      if @user.save(validate: false)</code>
         </li>
@@ -2859,19 +2859,19 @@
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      flash[:notice] = &quot;Something went wrong!!&quot;</code>
+          <code class="ruby">        flash[:notice] = &quot;Something went wrong!!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      redirect_to hold_path</code>
+          <code class="ruby">        redirect_to hold_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -2883,22 +2883,40 @@
         <li class="never" data-hits="" data-linenumber="27">
           
           
+          <code class="ruby">    else </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      flash[:warning] = &quot;User doesn&#39;t exist&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      redirect_to hold_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
@@ -2911,11 +2929,11 @@
         <div class="source_table" id="aa71bd508f974e823e731937f5e0afcb1e6efb96">
   <div class="header">
     <h3>app/controllers/meetings_controller.rb</h3>
-    <h4><span class="green">94.23 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>52</b> relevant lines. 
-      <span class="green"><b>49</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <span class="green"><b>52</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -3132,20 +3150,20 @@
           <code class="ruby">        if value == &quot;1&quot; then</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">          @group = Interest.find(key)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
           <code class="ruby">          if !(@group.meetings.empty?) then</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
           <code class="ruby">            @result[@group.genre] = @group.meetings.all</code>
         </li>
@@ -8193,8 +8211,8 @@
     <h3>spec/controllers/inhold_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>30</b> relevant lines. 
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8352,49 +8370,127 @@
           <code class="ruby"> </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">   # it &quot;change went wrong&quot; do</code>
+          <code class="ruby">    it &quot;should show error for non-existing user&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #  get :change, params:  {:email =&gt; &quot;s@gmail.com&quot;}</code>
+          <code class="ruby">      get :change, params:  {:email =&gt; &quot;s@gmail.com&quot;}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #  expect(flash[:notice]).to eq(&quot;Something went wrong!!&quot;)</code>
+          <code class="ruby">      expect(flash[:warning]).to eq(&quot;User doesn&#39;t exist&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #  expect(response).to redirect_to(hold_path)</code>
+          <code class="ruby">      expect(response).to redirect_to(hold_path)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  #  end    </code>
+          <code class="ruby">    end   </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;should show error if change can&#39;t be saved&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      fake_user = [double(&quot;User&quot;)]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(User).to receive(:find_by_email).with(&quot;s@gmail.com&quot;).and_return(fake_user[0])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:present?).and_return(true)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:in_hold).and_return(false)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:in_hold=).with(true).and_return(true)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(fake_user[0]).to receive(:save).and_return(false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :change, params:  {:email =&gt; &quot;s@gmail.com&quot;}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Something went wrong!!&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to redirect_to(hold_path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
           <code class="ruby">  end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -8409,8 +8505,8 @@
     <h3>spec/controllers/meetings_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>57</b> relevant lines. 
-      <span class="green"><b>57</b> lines covered</span> and
+      <b>64</b> relevant lines. 
+      <span class="green"><b>64</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8874,64 +8970,64 @@
           <code class="ruby">        it &#39;should render the search screen&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            </code>
+          <code class="ruby">          fake_group = [double(&quot;Group&quot;)]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">          post :search, params: { &quot;selected_groups&quot; =&gt; [{&#39;1&#39; =&gt; &#39;1&#39;}]} </code>
+          <code class="ruby">          fake_meeting = [double(&quot;Meeting&quot;)]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to render_template(&quot;search&quot;)</code>
+          <code class="ruby">          allow(Interest).to receive(:find).with(&quot;1&quot;).and_return(fake_group[0])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          allow(fake_group[0]).to receive(:meetings).and_return(fake_meeting[0])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        </code>
+          <code class="ruby">          allow(fake_meeting[0]).to receive(:empty?).and_return(false)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &#39;should validate search params&#39; do</code>
+          <code class="ruby">          allow(fake_group[0]).to receive(:genre).and_return(&quot;genre&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">            </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">          post :search, params: { &quot;selected_groups&quot; =&gt; []} </code>
+          <code class="ruby">          allow(fake_meeting[0]).to receive(:all).and_return(&quot;&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="85">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(flash[:notice]).to eq(&quot;No Interest Groups Were Selected&quot;)</code>
+          <code class="ruby">          post :search, params: { &quot;selected_groups&quot; =&gt; {&quot;1&quot; =&gt; &quot;1&quot;}} </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to redirect_to(meetings_path)</code>
+          <code class="ruby">          expect(response).to render_template(&quot;search&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
@@ -8946,40 +9042,40 @@
           <code class="ruby">        </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">        it &#39;should validate search params&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">          </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;Add a user to  a meeting&#39; do</code>
+          <code class="ruby">          post :search, params: { &quot;selected_groups&quot; =&gt; []} </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">        fixtures :meetings</code>
+          <code class="ruby">          expect(flash[:notice]).to eq(&quot;No Interest Groups Were Selected&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
-          <code class="ruby">        fixtures :interests</code>
+          <code class="ruby">          expect(response).to redirect_to(meetings_path)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="94">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="94">
           
-          <code class="ruby">        fixtures :users</code>
+          
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
@@ -8988,76 +9084,76 @@
           <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        it &#39;should render view calendar path after creating associations&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby">            </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="98">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          get :add, params: { :meeting =&gt; &#39;1&#39;, :user =&gt; &#39;1&#39;} </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="99">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          expect(response).to redirect_to(view_calendar_path)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;Show interest groups associated with a meeting&#39; do</code>
+          <code class="ruby">  describe &#39;Add a user to  a meeting&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
+        <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
           <code class="ruby">        fixtures :meetings</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="106">
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">        fixtures :interests</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="107">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">        fixtures :users</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;should render view calendar path after creating associations&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">            </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          get :add, params: { :meeting =&gt; &#39;1&#39;, :user =&gt; &#39;1&#39;} </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(response).to redirect_to(view_calendar_path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
@@ -9066,49 +9162,91 @@
           <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="109">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        it &#39;should render the meeting desrciption&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
-          <code class="ruby">            </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="111">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          get :show, params: { :meeting_id =&gt; &#39;1&#39;} </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="112">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          expect(response).to render_template(&quot;show&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="113">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;Show interest groups associated with a meeting&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        fixtures :meetings</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="113">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        fixtures :interests</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="114">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        fixtures :users</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="116">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;should render the meeting desrciption&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">            </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          get :show, params: { :meeting_id =&gt; &#39;1&#39;} </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="119">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(response).to render_template(&quot;show&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
           
           
           <code class="ruby">end</code>
