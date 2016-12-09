@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T03:37:55+00:00">2016-12-09T03:37:55+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T03:39:39+00:00">2016-12-09T03:39:39+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.05%</span></span>
+    (<span class="covered_percent"><span class="green">96.13%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>63</b> files in total.
-    <b>936</b> relevant lines. 
-    <span class="green"><b>899</b> lines covered</span> and
-    <span class="red"><b>37</b> lines missed </span>
+    <b>61</b> files in total.
+    <b>931</b> relevant lines. 
+    <span class="green"><b>895</b> lines covered</span> and
+    <span class="red"><b>36</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>7.8</td>
+        <td>7.9</td>
       </tr>
       
       <tr>
@@ -453,9 +453,9 @@
       <tr>
         <td class="strong"><a href="#5d2bb718d2887058e5b50071d4177e628f93fb4f" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>60</td>
-        <td>33</td>
-        <td>33</td>
+        <td>61</td>
+        <td>34</td>
+        <td>34</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -482,12 +482,12 @@
       
       <tr>
         <td class="strong"><a href="#1f3763d78891f46a83c26053d246102a4f89adf8" class="src_link" title="spec/controllers/inhold_controller_spec.rb">spec/controllers/inhold_controller_spec.rb</a></td>
-        <td class="yellow strong">90.0 %</td>
+        <td class="green strong">100.0 %</td>
         <td>19</td>
         <td>10</td>
-        <td>9</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -660,26 +660,6 @@
         <td>1.0</td>
       </tr>
       
-      <tr>
-        <td class="strong"><a href="#3ccc59ac7d4ba9b7c7669d410cfb2796bcbbfccc" class="src_link" title="spec/views/inhold/index.html.erb_spec.rb">spec/views/inhold/index.html.erb_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#6080537b62fbeea43a3aa72c5f38f2c3881737c6" class="src_link" title="spec/views/inhold/update.html.erb_spec.rb">spec/views/inhold/update.html.erb_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
     </tbody>
   </table>
 </div>
@@ -734,8 +714,8 @@
           <code class="ruby">  def set_current_user</code>
         </li>
       
-        <li class="covered" data-hits="69" data-linenumber="5">
-          <span class="hits">69</span>
+        <li class="covered" data-hits="70" data-linenumber="5">
+          <span class="hits">70</span>
           
           <code class="ruby">    @current_user ||= session[:session_token ] &amp;&amp; User.find_by_session_token(session[:session_token])</code>
         </li>
@@ -7061,8 +7041,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>33</b> relevant lines. 
-      <span class="green"><b>33</b> lines covered</span> and
+      <b>34</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7097,247 +7077,247 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">  get &#39;inhold_update&#39; =&gt; &#39;inhold#update&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
           <code class="ruby">  match &#39;/hold&#39;, to: &#39;inhold#index&#39;, via: :get</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  resources :meetings</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/meetings/view&#39;, to: &#39;meetings#show&#39;, via: :get</code>
+          <code class="ruby">  resources :meetings</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/meetings/search&#39;, to: &#39;meetings#search&#39;, via: :post</code>
+          <code class="ruby">  match &#39;/meetings/view&#39;, to: &#39;meetings#show&#39;, via: :get</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  match &#39;/meetings/add&#39;, to: &#39;meetings#add&#39;, via: :post</code>
+          <code class="ruby">  match &#39;/meetings/search&#39;, to: &#39;meetings#search&#39;, via: :post</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">  root &#39;books#index&#39;</code>
+          <code class="ruby">  match &#39;/meetings/add&#39;, to: &#39;meetings#add&#39;, via: :post</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">  root &#39;books#index&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  #Book Routes:</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">  resources :books</code>
+          
+          <code class="ruby">  #Book Routes:</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;allbooks&#39;, to: &#39;books#allbooks&#39;</code>
+          <code class="ruby">  resources :books</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  post &#39;books/search&#39;, to: &#39;books#search&#39;</code>
+          <code class="ruby">  get &#39;allbooks&#39;, to: &#39;books#allbooks&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;booksdelform&#39;, to: &#39;books#delform&#39;</code>
+          <code class="ruby">  post &#39;books/search&#39;, to: &#39;books#search&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  post &#39;deletebook&#39;, to: &#39;books#delete&#39;</code>
+          <code class="ruby">  get &#39;booksdelform&#39;, to: &#39;books#delform&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">  post &#39;deletebook&#39;, to: &#39;books#delete&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
           <code class="ruby">  #Review Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">  post &#39;/books/:id/review_create&#39;, to: &#39;reviews#create&#39;, :as =&gt; &#39;review_create&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  #User Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">  resources :users, only: [:show, :new, :create, :update ,:edit] do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    collection do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">      post &#39;emailref&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">      post &#39;emailpwd&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">      get &#39;emailpwd&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">      # get :confirm_email</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;/users/:id/:confirm_token/confirm_email&#39;, to: &#39;users#confirm_email&#39;, :as =&gt; &#39;confirm_user_email&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">  post &#39;/users/:id/:confirm_token/confirm_email&#39;, to: &#39;users#confirm_email_check&#39;, :as =&gt; &#39;confirm_user_email_check&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/reset&#39; , to: &#39;users#reset&#39; , via: :get</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  #Login and logout Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/login&#39;, to: &#39;sessions#new&#39;, via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/login_create&#39;, to: &#39;sessions#create&#39;, via: :post</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, via: :delete</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">  #New Role Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/new_staff_admin&#39;, to: &#39;roles#new&#39;, via: :get</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/new_staff_admin_create&#39;, to: &#39;roles#create&#39;, via: :post</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
@@ -7349,82 +7329,88 @@
         <li class="never" data-hits="" data-linenumber="47">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
           <code class="ruby">  #Common Interest Group Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">  match &#39;/view_calendar&#39;, to: &#39;groups#view_calendar&#39;, via: :get</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">  #Google Call Back:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;auth/:provider/callback&#39;, to: &#39;groups#view_calendar&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  #Follows Routes:</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
           <code class="ruby">  post &#39;/users/:user_id/:book_id/new_following&#39;, to: &#39;follows#create&#39;, :as =&gt; &#39;new_following_user&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">  delete &#39;/users/:user_id/:book_id/delete_following&#39;, to: &#39;follows#destroy&#39;, :as =&gt; &#39;delete_following_user&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;/users/:id/showFollowing&#39;, to: &#39;follows#showFollowing&#39;, :as =&gt; &#39;user_show_following&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;/users/:id/showFollowers&#39;, to: &#39;follows#showFollowers&#39;, :as =&gt; &#39;user_show_followers&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">end</code>
@@ -8175,11 +8161,11 @@
         <div class="source_table" id="1f3763d78891f46a83c26053d246102a4f89adf8">
   <div class="header">
     <h3>spec/controllers/inhold_controller_spec.rb</h3>
-    <h4><span class="yellow">90.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -8270,8 +8256,8 @@
           <code class="ruby">      get :update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
           <code class="ruby">      expect(response).to have_http_status(:success)</code>
         </li>
@@ -11805,102 +11791,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="3ccc59ac7d4ba9b7c7669d410cfb2796bcbbfccc">
-  <div class="header">
-    <h3>spec/views/inhold/index.html.erb_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe &quot;inhold/index.html.erb&quot;, type: :view do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="6080537b62fbeea43a3aa72c5f38f2c3881737c6">
-  <div class="header">
-    <h3>spec/views/inhold/update.html.erb_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe &quot;inhold/update.html.erb&quot;, type: :view do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>

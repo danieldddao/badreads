@@ -253,6 +253,7 @@
         null,
         1,
         1,
+        1,
         null,
         1,
         1,
@@ -519,7 +520,7 @@
         1,
         null,
         1,
-        69,
+        70,
         null,
         null,
         1,
@@ -800,7 +801,7 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -1792,22 +1793,8 @@
         null,
         null,
         null
-      ],
-      "/home/ubuntu/workspace/badreads/spec/views/inhold/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/badreads/spec/views/inhold/update.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1481254675
+    "timestamp": 1481254779
   }
 }
