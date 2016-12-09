@@ -19,6 +19,9 @@
                 %th{ :style => "text-align: center;" }
                     %h4 Position Level:
                     %h5= @user.position
+                 %th{ :style => "text-align: center;" }
+                    %h4 Prime User:
+                    %h5= @user.reviews.count >= 2
 
                    
     %br
