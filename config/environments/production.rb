@@ -41,7 +41,23 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
-
+  
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host:'badreads.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'localhost:3000',
+      :user_name => "badreadsselt@gmail.com",
+      :password => "mangaman",
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
