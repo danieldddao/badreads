@@ -8,7 +8,9 @@ user1 :
     position: User
     session_token: 123456
     in_hold: false
-
+    confirm_token: "123456"
+    email_confirmed: true
+    
 user2 :   
     id: 2 
     email: testuser2@gmail.com
@@ -18,3 +20,5 @@ user2 :
     position: Staff
     session_token: 123456
     in_hold: nil
+    email_confirmed: true
+    

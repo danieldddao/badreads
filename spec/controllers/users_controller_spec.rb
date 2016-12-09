@@ -83,7 +83,72 @@ describe UsersController do
     end
   end
   
-  describe 'destroying users' do
+  describe 'email referal' do
+    it 'should send email and redirect to user' do
+      controller.instance_variable_set(:@current_user, User.new(:id => 1, :email => "current@gmail.com")) 
+      post :emailref, params: {:send_referral => "test@gmail.com"}
+      expect(response).to redirect_to(user_path(1))
+    end
   end
   
+  describe 'email password' do
+    fixtures :users
+    it 'should send email and redirect to user' do
+      post :emailpwd, params: {:email => "testuser1@gmail.com"}
+      expect(response).to redirect_to(root_path)
+      expect(flash[:notice]).to eq("The new password has been sent to your email-id.")
+    end
+    it 'should show error for non-existing email' do
+      post :emailpwd, params: {:email => "test@gmail.com"}
+      expect(response).to redirect_to(root_path)
+      expect(flash[:warning]).to eq("Your email doesn't exist in our system!")
+    end
+  end
+  
+  describe 'confirm email check' do
+    it 'should send email and redirect to user' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find).with("3").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
+      allow(fake_user[0]).to receive(:confirm_token).and_return("123456")
+      allow(User).to receive(:email_activate).and_return(fake_user[0], "123456")
+
+      post :confirm_email_check, params: {:id => 3, :confirm_token => "123456", :user => {:password => "123456"}}
+      expect(flash[:notice]).to eq("Welcome to the Badreads App! Your email has been confirmed. Please sign in to continue.")
+      expect(response).to redirect_to(login_path)
+    end
+    it 'should show message for activated account' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find).with("3").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
+      allow(fake_user[0]).to receive(:confirm_token).and_return("")
+      allow(fake_user[0]).to receive(:email_confirmed).and_return(true)
+
+      post :confirm_email_check, params: {:id => 3, :confirm_token => "123456", :user => {:password => "123456"}}
+      expect(flash[:notice]).to eq("You already activated your account! You can login now!")
+      expect(response).to redirect_to(login_path)
+    end
+    it 'should show message for incorrect password' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find).with("3").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(false)
+      allow(fake_user[0]).to receive(:confirm_token).and_return("123456")
+      allow(fake_user[0]).to receive(:email_confirmed).and_return(false)
+
+      post :confirm_email_check, params: {:id => 3, :confirm_token => "123456", :user => {:password => "123456"}}
+      expect(flash[:warning]).to eq("Sorry! Password is not correct!")
+      expect(response).to redirect_to(confirm_user_email_path)
+    end
+    it 'should show message for incorrect url' do
+      fake_user = [double("User")]
+      allow(User).to receive(:find).with("3").and_return(fake_user[0])
+      allow(fake_user[0]).to receive(:authenticate).with("123456").and_return(true)
+      allow(fake_user[0]).to receive(:confirm_token).and_return("123456213")
+      allow(fake_user[0]).to receive(:email_confirmed).and_return(false)
+
+      post :confirm_email_check, params: {:id => 3, :confirm_token => "123456", :user => {:password => "123456"}}
+      expect(flash[:warning]).to eq("Sorry! URL is not correct! Can't activate your account!")
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end

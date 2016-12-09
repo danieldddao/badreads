@@ -71,9 +71,12 @@ class UsersController < ApplicationController
     if @user
       @user.update_attributes(:password => reset_pwd, :password_confirmation => reset_pwd)
       UserMailer.reset_password(reset_pwd,email_reset).deliver
+      flash[:notice] = "The new password has been sent to your email-id."
+      redirect_to root_path
+    else
+      flash[:warning] = "Your email doesn't exist in our system!"
+      redirect_to root_path
     end
-    flash[:notice] = "The new password has been sent to your email-id."
-    redirect_to root_path
   end
   
   def confirm_email
@@ -86,10 +89,10 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome to the Badreads App! Your email has been confirmed. Please sign in to continue."
       redirect_to login_path 
     else
-      if user.email_confirmed == true
+      if user && user.email_confirmed == true
         flash[:notice] = "You already activated your account! You can login now!"
         redirect_to login_path 
-      elsif !user.authenticate(params[:user][:password])
+      elsif user && !user.authenticate(params[:user][:password])
         flash[:warning] = "Sorry! Password is not correct!"
         redirect_to confirm_user_email_path
       else
