@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Social media web application for book lovers using Ruby on Rails.
 
-Things you may want to cover:
+Some basic functionalities of the app: 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* There are many user positions such as staff, admin, and normal user. 
+* The user can add new books to the library and remove existing books. 
+* The user can search and review books. 
+* The user can create, view, join, and search for book meetings by interest group. 
+* The user can follow other users and be followed by other users. 
