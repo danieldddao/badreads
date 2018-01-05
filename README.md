@@ -12,6 +12,14 @@ Some basic functionalities of the app:
 
 ## Heroku app: https://badreads.herokuapp.com
 
+## Authors
+
+* Daniel Dao - University of Iowa
+* Abdulaziz Alharbi - University of Iowa  
+* Adrian Pereira - University of Iowa  
+* Kunal Bharathi - University of Iowa 
+* Naren Vasudeva - University of Iowa 
+
 ## Screenshots
 <img src="https://github.com/danieldddao/badreads/blob/master/screenshots/1.png" width="400"> <img src="https://github.com/danieldddao/badreads/blob/master/screenshots/2.png" width="400">
 
